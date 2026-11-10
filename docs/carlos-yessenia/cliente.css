@@ -1,0 +1,13 @@
+/* Ajustes de medios verticales; la identidad visual y los componentes vienen de la plantilla original. */
+.home-hero .hero-bg img { object-position: center 30%; }
+.scene .media-wrap img, .scene .media-wrap video { object-fit: contain; background: #080808; }
+.thumb img, .ep-thumb img { object-position: center center; }
+.games-page .games-grid.arcade-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  .home-hero .hero-bg img[src='assets/fotos/hero.webp'] { content: url('assets/fotos/foto-20.webp'); object-position: 50% 34%; }
+}
+
+
+.subtitle {bottom:22%;font-family:Arial,sans-serif;font-weight:600;font-size:clamp(1.15rem,2.8vw,2rem);line-height:1.35;text-shadow:0 2px 8px #000,0 0 20px #000;}
+.player.controls-on .subtitle{bottom:30%;}

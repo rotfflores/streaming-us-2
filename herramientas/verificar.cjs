@@ -27,11 +27,14 @@ function fileFromLink(link, site) {
 for (const slug of orders) {
   const dir = path.join(docs, slug);
   const config = fs.readFileSync(path.join(dir, 'config.js'), 'utf8');
+  const clientFile = path.join(dir, 'cliente.js');
+  const clientConfig = fs.existsSync(clientFile) ? fs.readFileSync(clientFile, 'utf8') : null;
   for (const base of expectedHosts) {
     const site = new URL(base);
     const order = new URL(slug + '/', site);
     const ctx = { window: {}, URL, location: { href: order.href } };
     vm.runInNewContext(config, ctx, { filename: slug + '/config.js', timeout: 1000 });
+    if (clientConfig !== null) vm.runInNewContext(clientConfig, ctx, { filename: slug + '/cliente.js', timeout: 1000 });
     const data = ctx.window.TDN;
     assert.ok(data.pareja?.nombreA && data.pareja?.nombreB);
     assert.ok(data.temporadas?.length);
