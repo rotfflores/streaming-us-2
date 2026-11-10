@@ -124,7 +124,9 @@
   /* ================= 3. ACCESO ================= */
   const estrenoTime = () => (C.acceso.estreno ? new Date(C.acceso.estreno).getTime() : 0);
   const estrenoOk = () => !estrenoTime() || Date.now() >= estrenoTime();
-  const authOk = () => !C.acceso.password || ls.get("tdn_auth") === norm(C.acceso.password);
+  const cualquierClave = C.acceso.cualquierClave === true;
+  const authToken = cualquierClave ? "cualquier-clave-v1" : norm(C.acceso.password);
+  const authOk = () => (!cualquierClave && !C.acceso.password) || ls.get("tdn_auth") === authToken;
 
   // Devuelve false si redirige. Orden: estreno → intro → contraseña → perfil
   function gate(page) {
@@ -590,9 +592,9 @@
       <header class="auth-head"><div class="logo" data-logo="TEMPORADAS DE NOSOTROS"></div></header>
       <form class="auth-box" novalidate>
         <h1>Contenido exclusivo</h1>
-        <p>Esta serie solo está disponible para una persona en el mundo. Introduce la contraseña para continuar.</p>
+        <p>${cualquierClave ? "Escribe cualquier carácter para continuar." : "Esta serie solo está disponible para una persona en el mundo. Introduce la contraseña para continuar."}</p>
         <div class="field" id="f"><input type="password" id="pw" placeholder=" " autocomplete="off" autocapitalize="off" spellcheck="false"><label for="pw">Contraseña</label></div>
-        <div class="field-err">Contraseña incorrecta. Inténtalo de nuevo.</div>
+        <div class="field-err">${cualquierClave ? "Escribe al menos un carácter para entrar." : "Contraseña incorrecta. Inténtalo de nuevo."}</div>
         <button class="btn btn-red" type="submit">Entrar</button>
         <div class="auth-foot">¿No la recuerdas? <button type="button" id="hint">Ver pista</button><p id="hintText" hidden style="color:#b3b3b3"></p></div>
       </form></div>`;
@@ -601,8 +603,11 @@
     pw.focus();
     $(".auth-box").addEventListener("submit", (e) => {
       e.preventDefault();
-      if (norm(pw.value) === norm(C.acceso.password) || (C.acceso.demo && pw.value.trim())) {
-        ls.set("tdn_auth", norm(C.acceso.password));
+      const accepted = cualquierClave
+        ? pw.value.length > 0
+        : norm(pw.value) === authToken || (C.acceso.demo && pw.value.trim());
+      if (accepted) {
+        ls.set("tdn_auth", authToken);
         showLoader(900, () => (location.href = "profiles.html"));
       } else { f.classList.add("err"); $(".auth-box").classList.add("shake"); setTimeout(() => $(".auth-box").classList.remove("shake"), 500); }
     });

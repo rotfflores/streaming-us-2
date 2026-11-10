@@ -74,8 +74,9 @@ window.TDN = (function () {
      ------------------------------------------------------------- */
   const acceso = {
     demo: false,                        // true permite respuestas libres durante una demostración.
-    password: "estreno-demo",                 // "" = sin contraseña
-    pistaPassword: "Contraseña del pedido ficticio: estreno-demo",
+    cualquierClave: true,              // Cualquier carácter abre la pantalla de entrada.
+    password: "",                       // Con cualquierClave en false, fija una clave o déjala vacía para saltar la entrada.
+    pistaPassword: "Escribe cualquier carácter para entrar",
     estreno: ""                         // "2026-02-14T20:00:00" (hora local). "" = disponible ya
   };
 

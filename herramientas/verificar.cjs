@@ -38,6 +38,8 @@ for (const slug of orders) {
     if (slug === 'demo-regalo') {
       assert.equal(data.sitio.url, order.href);
       assert.equal(data.acceso.demo, false);
+      assert.equal(data.acceso.cualquierClave, true);
+      assert.equal(data.acceso.password, '');
       assert.equal(data.notificacion.whatsapp, '');
       assert.equal(data.notificacion.email, '');
       assert.equal(data.notificacion.endpoint, '');
