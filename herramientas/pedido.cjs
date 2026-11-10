@@ -5,7 +5,7 @@ const vm = require('node:vm');
 const root = path.join(__dirname, '..');
 const pages = path.join(root, 'plantilla', 'paginas');
 const docs = path.join(root, 'docs');
-const [slug, action, publicBase = 'https://rotfflores.github.io/streaming-us-2/'] = process.argv.slice(2);
+const [slug, action, publicBase = 'https://streaming-us-2.rotfstudio.com/'] = process.argv.slice(2);
 const update = action === '--actualizar';
 
 if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || slug.length > 80 || slug === 'comun' || (action && !update)) {
