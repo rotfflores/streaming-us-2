@@ -300,7 +300,7 @@
     SEASONS.filter((s) => !s.episodios.some((e) => isDone(e.id)) && s !== n?.season).slice(0, 4)
       .forEach((s) => items.push({ t: `${kindName(s)} disponible: ${s.titulo}`, s: String(s.anio), img: s.imagen, seed: "s" + s.num, url: `temporada.html?t=${s.num}` }));
     items.push({ t: `Ya disponible: ${C.final.titulo}`, s: "Solo para ti", img: C.final.imagen, seed: "final", url: "final.html" });
-    items.push({ t: "Estreno: Temporadas de Nosotros", s: `12 películas y 3 series originales para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
+    items.push({ t: "Estreno: Temporadas de Nosotros", s: C.sitio.estrenoTexto || `12 películas y 3 series originales para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
     return items;
   }
 
@@ -1515,7 +1515,7 @@
       { id: "racha", name: "Atrapa el Instante", type: "Récord infinito", desc: "Atrapa fotos rápidas y esquiva tormentas con solo dos vidas.", img: F.t5 },
       { id: "memory", name: "Memorama de fotos", type: "Memoria", desc: "Encuentra las parejas con fotos del proyecto.", img: F.t3 },
       { id: "puzzle", name: "Rompecabezas de recuerdos", type: "Puzzle", desc: "Elige una imagen y arma sus nueve piezas.", img: F.puzzle }
-    ];
+    ].filter((x) => !Array.isArray(C.arcades) || C.arcades.includes(x.id)); // config.js puede limitar los juegos según el paquete
     const arcade = arcades.find((x) => x.id === arcadeId);
     const selected = games.find((ep) => ep.id === param("j"));
     const done = games.filter((ep) => S.inter[ep.id]).length;
@@ -1570,7 +1570,7 @@
         <div class="games-grid arcade-grid">${arcades.map((item) => `<a class="game-card" href="juegos.html?arcade=${item.id}">
           <span class="game-card-art">${media(item.img, item.name, item.id)}<span class="game-card-badge">${esc(item.type)}</span></span>
           <span class="game-card-copy"><small>${esc(item.desc)}</small><strong>${esc(item.name)}</strong><span>Jugar ahora ${I.right}</span></span></a>`).join("")}</div>
-        <h2 class="games-section-title">Retos de la historia <small>${done} de ${games.length} completados</small></h2>
+        ${games.length ? `<h2 class="games-section-title">Retos de la historia <small>${done} de ${games.length} completados</small></h2>` : ""}
         <div class="games-grid">${games.map((ep) => {
           const raw = epImg(ep), img = isVideo(raw) ? ep.season.imagen : raw;
           const played = !!S.inter[ep.id];
