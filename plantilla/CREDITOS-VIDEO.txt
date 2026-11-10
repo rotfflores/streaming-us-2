@@ -1,0 +1,33 @@
+Clips de video: Mixkit (licencia gratuita de Mixkit, https://mixkit.co/license/)
+mirada.mp4=100947 baile.mp4=4636 playa.mp4=44495 lluvia.mp4=101485 atardecer.mp4=4664 final-prueba.mp4=4829
+
+Clips de episodios descargados de Mixkit (Mixkit Stock Video Free License; uso personal y comercial):
+encuentro.mp4 — https://mixkit.co/free-stock-video/couple-facing-each-other-and-smiling-affectionately-39964/
+primer-mensaje.mp4 — https://mixkit.co/free-stock-video/woman-texting-with-a-generic-cell-phone-51122/
+primera-cita.mp4 — https://mixkit.co/free-stock-video/romantic-date-in-a-coffee-shop-39951/
+baile-nuestra-cancion.mp4 — https://mixkit.co/free-stock-video/couple-in-love-dancing-happily-4636/
+viaje-juntos.mp4 — https://mixkit.co/free-stock-video/couple-walk-around-a-lake-in-nature-41538/
+dias-dificiles.mp4 — https://mixkit.co/free-stock-video/couple-sitting-upset-and-disappointed-4731/
+risas-juntos.mp4 — https://mixkit.co/free-stock-video/funny-couple-throwing-themselves-on-a-bed-42245/
+Licencia: https://mixkit.co/license/#videoFree
+
+Clips adicionales para ampliar los episodios (Mixkit Stock Video Free License):
+guadalajara.mp4 — https://mixkit.co/free-stock-video/nighttime-aerial-view-of-guadalajara-jalisco-43295/
+preparativos.mp4 — https://mixkit.co/free-stock-video/woman-getting-ready-in-front-of-a-mirror-42733/
+cotidiano.mp4 — https://mixkit.co/free-stock-video/couple-spending-time-together-relaxing-42263/
+cafe.mp4 — https://mixkit.co/free-stock-video/serving-coffee-directly-from-a-coffee-pot-4991/
+mudanza.mp4 — https://mixkit.co/free-stock-video/couple-arranging-moving-boxes-42127/
+llamada-lluvia.mp4 — https://mixkit.co/free-stock-video/young-woman-making-call-in-rain-100855/
+reencuentro.mp4 — https://mixkit.co/free-stock-video/urban-couple-hug-outside-the-telephone-booth-at-night-100859/
+tokio.mp4 — https://mixkit.co/free-stock-video/entrance-of-the-senso-ji-shrine-in-tokyo-4404/
+antes-ana.mp4 — https://mixkit.co/free-stock-video/woman-works-on-a-laptop-252/
+pizza.mp4 — https://mixkit.co/free-stock-video/man-and-woman-taking-a-slice-of-pizza-44007/
+foto-viaje.mp4 — https://mixkit.co/free-stock-video/couple-taking-photos-during-a-road-trip-42517/
+vinilo.mp4 — https://mixkit.co/free-stock-video/vinyl-record-playing-100875/
+vuelo.mp4 — https://mixkit.co/free-stock-video/airplane-taking-off-2626/
+Sus imágenes de carga del mismo nombre se extrajeron de cada clip y están en assets/fotos/.
+
+Clips por escena (assets/video/escenas/), Mixkit Stock Video Free License (https://mixkit.co/license/#videoFree). Nombre=ID de Mixkit:
+esc00=29956 esc01=25145 esc02=2074 esc03=51657 esc04=14669 esc05=17412 esc07=4350 esc08=4661 esc09=48377 esc10=4859 esc11=44499 esc12=4392 esc13=4650 esc14=10447 esc15=18308 esc16=4624 esc17=42716 esc19=4905 esc19b=51063 esc20=41581 esc21=48386
+n05=4825 n06b=3428 n09=42039 n10=31413 n12=41165 n16=52039 n20=41875 n23=42265 n28=4855 n29=344 n30=46568 n32=43375 n39=51500 n41=41541 n42=41859 n51=4701 n52=42255 n54=939 n55=41161 n56=3978 n57=39789 n60=303 n61=41569 n62=51252 n63=51257 n64=43150 n68=48394 n70=30141 n71=45869 n72=3420 n73=4530
+Imágenes de carga: assets/fotos/escenas/sNN.webp (un fotograma de cada clip).
