@@ -41,7 +41,6 @@
   Object.assign(c.notificacion, { whatsapp: "525511443943", email: "", endpoint: "" });
   Object.assign(c.sitio, {
     url: "https://streaming-us-2.rotfstudio.com/chatito-chatita/", titulo, clasificacion: "TP", clasificacionTexto: "Romance y aniversario",
-    whatsappVistaPrevia: "526182051723",
     heroTag: "PARA CHATITA", heroTop: "De Chatito · 11 de septiembre",
     sinopsis: "Yo surtía tu depósito de refrescos. Entre pedidos y risas nos fuimos acercando hasta que una tarde volví a cobrar y me regalaste un beso. Así empezaron nuestros diez años.",
     filaRecomendada: titulo, generos: ["Romance", "Nuestra historia", "Aniversario"]

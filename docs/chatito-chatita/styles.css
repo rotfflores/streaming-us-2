@@ -973,16 +973,6 @@ body.searching .hero, body.searching main.rows { display: none; }
 .song-card h2 { margin: 0 0 .65rem; font-size: 1rem; }
 .song-card audio { width: 100%; }
 .subtitle { color: #fff; text-shadow: 0 2px 5px #000, 0 0 18px #000; }
-.preview-notice {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: .5rem 1rem; width: fit-content; max-width: 100%; margin-bottom: 1rem; padding: .65rem .85rem;
-  border: 1px solid #a98546; border-radius: 6px; background: #221b14; color: #fff4de;
-  font-size: .86rem; text-align: left;
-}
-.preview-notice strong, .preview-notice span { display: block; }
-.preview-notice a { color: #ffdb93; font-weight: 700; text-decoration: underline; text-underline-offset: .2em; }
-.preview-notice a:focus-visible { outline: 2px solid #ffdb93; outline-offset: 4px; }
-.splash-start .preview-notice { margin-bottom: 0; }
 @media (max-width: 600px) {
   .home-hero .hero-bg img { object-position: 76% 50%; }
   .home-hero .hero-synopsis { -webkit-line-clamp: 4; }

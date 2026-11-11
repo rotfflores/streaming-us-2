@@ -534,16 +534,6 @@
 
   let refreshList = () => {};
 
-  function avisoVistaPrevia() {
-    const whatsapp = digits(C.sitio.whatsappVistaPrevia);
-    if (!whatsapp) return "";
-    const mensaje = encodeURIComponent(`Hola, quisiera más información sobre la vista de prueba de «${C.sitio.titulo}».`);
-    return `<aside class="preview-notice" aria-label="Aviso de vista de prueba">
-      <div><strong>Página de prueba</strong><span>Puedes solicitar cambios antes de la publicación.</span></div>
-      <a href="https://wa.me/${whatsapp}?text=${mensaje}" target="_blank" rel="noopener noreferrer">Más información</a>
-    </aside>`;
-  }
-
   /* ================= 9. PÁGINAS ================= */
 
   /* ---------- SPLASH (intro TA-DUM + fecha de estreno) ---------- */
@@ -577,7 +567,6 @@
 
     root.innerHTML = `<div class="splash" id="splash">${muteBtn()}
       <div class="splash-start" id="start">
-        ${avisoVistaPrevia()}
         <div class="logo" data-logo="TEMPORADAS DE NOSOTROS"></div>
         <p>Películas y series originales para <b style="color:#fff">${esc(P.nombreB)}</b></p>
         <button class="btn btn-red" id="go">${I.play} Comenzar</button>
@@ -597,10 +586,8 @@
       setTimeout(() => (location.href = authOk() ? "profiles.html" : "password.html"), 5000);
     };
     $("#go").onclick = start;
-    $("#splash").addEventListener("click", (e) => { if (!e.target.closest(".splash-mute, .preview-notice")) start(); });
-    addEventListener("keydown", (e) => {
-      if (!e.target.closest?.(".preview-notice") && (e.key === "Enter" || e.key === " ")) start();
-    });
+    $("#splash").addEventListener("click", (e) => { if (!e.target.closest(".splash-mute")) start(); });
+    addEventListener("keydown", (e) => (e.key === "Enter" || e.key === " ") && start());
   }
 
   /* ---------- PASSWORD ---------- */
@@ -608,7 +595,6 @@
     $("#app").innerHTML = `<div class="auth-page"><div class="auth-bg">${media(F.hero, "", "hero")}</div>
       <header class="auth-head"><div class="logo" data-logo="TEMPORADAS DE NOSOTROS"></div></header>
       <form class="auth-box" novalidate>
-        ${avisoVistaPrevia()}
         <h1>Contenido exclusivo</h1>
         <p>Esta serie solo está disponible para una persona en el mundo. Introduce la contraseña para continuar.</p>
         <div class="field" id="f"><input type="password" id="pw" inputmode="numeric" placeholder=" " autocomplete="off" autocapitalize="off" spellcheck="false"><label for="pw">Contraseña</label></div>
@@ -669,7 +655,6 @@
       <section class="hero home-hero" aria-label="Destacado">
         <div class="hero-bg">${heroImg ? media(heroImg, "", "hero") : media("", "Nosotros", "hero")}</div>
         <div class="hero-content">
-          ${avisoVistaPrevia()}
           <div class="hero-kicker"><span class="logo-mono">T</span>${only ? kindName(feat) : "Original"}</div>
           <h1 class="hero-title">${esc(only ? feat.titulo : C.sitio.titulo)}</h1>
           <div class="hero-tags"><span class="tag-red">${esc(C.sitio.heroTag)}</span><span class="top10-mini">TOP<b>10</b></span><span>${esc(C.sitio.heroTop)}</span></div>
