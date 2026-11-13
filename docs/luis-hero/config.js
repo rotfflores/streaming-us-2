@@ -43,7 +43,7 @@ window.TDN = (function () {
     perfilPareja: fo("perfil-pareja"),
     // t0..t5 también son las cartas del memorama de fotos
     t0: fo("pareja-fiesta"), t1: fo("hero-pastel"), t2: fo("hero-gala"),
-    t3: fo("pareja-eiffel"), t4: fo("pareja-basilica"), t5: fo("familia-cruzazul"),
+    t3: fo("abuelos-columpio"), t4: fo("pareja-basilica"), t5: fo("familia-cruzazul"),
     t6: fo("hero-cancha"), t7: fo("pareja-bengalas"),
     final: fo("pareja-casa"),
     puzzle: fo("love-jardin"),
@@ -57,15 +57,15 @@ window.TDN = (function () {
     temporadas: [
       "assets/audio/la-cosa-mas-bella-carta.mp3",
       "assets/audio/las-mananitas.mp3",
-      "assets/audio/eternal-flame.mp3",
       "assets/audio/careless-whisper.mp3",
+      "assets/audio/eternal-flame.mp3",
       "assets/audio/against-all-odds.mp3"
     ],
     canciones: [
       "La Cosa Más Bella · Eros Ramazzotti",
       "Las Mañanitas · Topo Gigio",
-      "Eternal Flame · The Bangles",
       "Careless Whisper · George Michael",
+      "Eternal Flame · The Bangles",
       "Against All Odds · Phil Collins"
     ],
     musica: "",
@@ -88,13 +88,13 @@ window.TDN = (function () {
     url: new URL("./", location.href).href,
     coincidencia: 100,
     clasificacion: "+13",
-    clasificacionTexto: "Romance, familia y fe",
+    clasificacionTexto: "Cumpleaños, familia y fe",
     heroTag: "ESTRENO DE CUMPLEAÑOS",
     heroTop: "N.º 1 en el corazón de Luis",
     sinopsis: `59 años de una mujer maravillosa, de una historia hermosa y de una vida que ha dado tanto amor. ` +
               `4 películas y 1 serie originales para celebrarte, ${P.nombreB}.`,
     estrenoTexto: `4 películas y 1 serie originales por tus 59 años, ${P.nombreB}`,
-    generos: ["Romántica", "Cumpleaños", "Basada en hechos reales"],
+    generos: ["Cumpleaños", "Familiar", "Basada en hechos reales"],
     filaRecomendada: "Para la cumpleañera"
   };
 
@@ -216,31 +216,31 @@ window.TDN = (function () {
           S("hero-cafe2.webp", "Hasta un café contigo", "se vuelve especial. ☕"),
           S("hero-iglesia.webp", "Con un corazón tan noble", "que siempre se da a los demás."),
           S("hero-piedad.webp", "Mujer de fe,", "mujer de paz."),
-          S("hero-sillon.webp", "Eres mi llama eterna,", "mi reina hermosa. ❤️")
+          S("hero-sillon.webp", "Eres la luz de mi vida,", "mi reina hermosa. ❤️")
         ],
         recompensa: "Cupón: un día completo de consentirte, tú mandas 👑"
       }]
     },
     {
-      num: 3, tipo: "pelicula", titulo: "Noches de Gala", anio: 2026, clasificacion: "TP",
+      num: 3, tipo: "pelicula", titulo: "Abuelita Hero", anio: 2026, clasificacion: "TP",
       imagen: F.t3, ...son(3), top10: true,
-      sinopsis: "Fiestas, brindis y bailes. Las noches más bonitas son las que pasamos juntos.",
-      creditos: cred(["Banda sonora", M.canciones[3]], ["Vestuario", "Siempre de gala, ella"]),
+      sinopsis: "Columpios, abrazos y la sonrisa más grande del mundo. Una película sobre la abuela más bonita.",
+      creditos: cred(["Coprotagonista", "Nuestra nieta"], ["Banda sonora", M.canciones[3]]),
       episodios: [{
-        titulo: "Noches de Gala", duracion: 115,
-        descripcion: "Mi compañera de fiesta y de vida.",
+        titulo: "Abuelita Hero", duracion: 100,
+        descripcion: "El día que la vida nos hizo abuelos.",
         escenas: [
-          S("pareja-eiffel.webp", "Tú y yo,", "listos para la fiesta."),
-          E(8, "Las noches más bonitas", "son las que paso contigo."),
-          S("pareja-fiesta.webp", "Elegantes, felices", "y siempre juntos."),
-          S("hero-gala.webp", "Cuando llegas a un lugar,", "todo se ilumina."),
-          S("hero-copa.webp", "Un brindis por nosotros", "y por los años que vienen."),
-          E(60, "Bailemos otra vez", "como si fuera la primera."),
-          S("hero-auto.webp", "De regreso a casa,", "la noche sigue siendo nuestra."),
-          S("pareja-bengalas.webp", "Que nunca se apaguen", "nuestras luces."),
-          E(69, "Mi compañera de fiesta", "y de vida. ✨")
+          S("bienvenida-luciana.webp", "«Luciana, bienvenida a casa de tus abuelitos»:", "el día que la vida nos hizo abuelos. 🎀"),
+          S("nieta-columpio2.webp", "Desde entonces", "tu sonrisa brilla más que nunca."),
+          S("nieta-columpio.webp", "Ahora los mejores días", "son en el parque, en el columpio."),
+          S("abuelos-columpio.webp", "Los abuelitos más orgullosos", "del mundo."),
+          S("nieta-sonrisa.webp", "Con ella en brazos", "se te ilumina toda la cara."),
+          S("abuela-bebe.webp", "Abrazos de abuela:", "los más calientitos del mundo. 🤗"),
+          S("nieto-bandera.webp", "Y la familia sigue creciendo…", "¡y saliendo bien azul! 💙"),
+          S("familia-cruzazul.webp", "Tu familia es tu mejor regalo,", "y tú eres el mejor regalo para ellos."),
+          S("hero-pastel.webp", "¡Feliz cumpleaños 59,", "abuelita hermosa! 🎂")
         ],
-        recompensa: "Cupón: una noche de baile, solo tú y yo 💃"
+        recompensa: "Cupón: una tarde de parque con la nieta, yo invito el helado 🍦"
       }]
     },
 
@@ -294,9 +294,9 @@ window.TDN = (function () {
   /* 6. DETRÁS DE CÁMARAS */
   const extras = [
     { titulo: "Casting", img: fo("perfil-pareja"), texto: "El papel de reina siempre fue tuyo, Hero." },
-    { titulo: "Locaciones", img: fo("pareja-basilica"), texto: "Fiestas, estadios, cafés, playas e iglesias: todos los lugares a donde fuimos juntos." },
+    { titulo: "Locaciones", img: fo("pareja-basilica"), texto: "Fiestas, estadios, parques, cafés, playas e iglesias: todos los lugares a donde fuimos juntos." },
     { titulo: "Banda sonora", img: fo("hero-gala"), texto: M.canciones.join(" · ") },
-    { titulo: "Elenco de lujo", img: fo("familia-cruzazul"), texto: "Toda la familia, que hoy te celebra contigo." },
+    { titulo: "Elenco de lujo", img: fo("nieta-columpio2"), texto: "Nuestra nieta y toda la familia, que hoy te celebran contigo." },
     { titulo: "Escenas eliminadas", img: fo("escaleras"), texto: "Hay escenas que solo existen para nosotros. Y así se quedan." }
   ];
 
@@ -335,7 +335,7 @@ Luis`
     ["Una producción original de", P.nombreA],
     ["Protagonizada por", "Hero, la cumpleañera"],
     ["Coprotagonista", P.nombreA],
-    ["Con la participación especial de", "Toda la familia"],
+    ["Con la participación especial de", "Nuestra nieta y toda la familia"],
     ["Dirección", "Dios, que nos juntó"],
     ["Banda sonora", M.canciones.join(" · ")],
     ["Efectos especiales", "Tu sonrisa, que ilumina todo"],
