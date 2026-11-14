@@ -1,0 +1,12 @@
+/* Ajustes de medios verticales; la identidad visual y los componentes vienen de la plantilla original. */
+.home-hero .hero-bg img { object-position: center center; }
+.scene .media-wrap img { object-fit: contain; background: #080808; }
+.thumb img, .ep-thumb img { object-position: center center; }
+.games-page .games-grid.arcade-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); }
+[hidden] { display: none !important; }
+
+.scene .media-wrap video { object-fit: contain; background: #080808; }
+.home-hero .hero-title { max-width: 9.5em; }
+@media (max-width: 680px) {
+  .home-hero .hero-bg img { object-position: center 42%; }
+}
