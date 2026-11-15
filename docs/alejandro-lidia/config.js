@@ -10,7 +10,8 @@
     ["Si la ves · Franco De Vita y Sin Bandera", "si-la-ves"],
     ["Dígale · David Bisbal", "digale"],
     ["Dejaría todo · Chayanne", "dejaria-todo"],
-    ["Volverte a amar · Alejandra Guzmán", "volverte-a-amar"]
+    ["Volverte a amar · Alejandra Guzmán", "volverte-a-amar"],
+    ["Se Murió De Amor", "se-murio-de-amor"]
   ].map(([cancion, key]) => ({ cancion, musica: `assets/audio/${key}.mp3` }));
 
   const still = (img, ...texto) => ({ img: typeof img === "number" ? photo(img) : img, texto });
@@ -62,7 +63,7 @@
       sinopsis: "Tres episodios sobre lo que Alejandro admira de Lidia, lo que quiere aprender y la conversación que le gustaría tener con ella.",
       creditos: [["De", A], ["Para", B]],
       episodios: [
-        episode("Mirarte otra vez", "Los detalles de Lidia que todavía le hacen sonreír.", 1, [
+        episode("Mirarte otra vez", "Los detalles de Lidia que todavía le hacen sonreír.", 5, [
           still(29, "Hay fotos en las que me basta verte para que se me dibuje una sonrisa."),
           still(24, "En las más sencillas reconozco gestos tuyos que se me quedaron grabados."),
           still(23, "Me acuerdo de tu manera de reírte y de cómo una tarde cualquiera contigo se me podía pasar volando."),
