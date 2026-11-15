@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url("assets/fonts/PlayfairDisplay.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("assets/fonts/PlayfairDisplay-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+:root { --font-story: "Playfair Display", Georgia, serif; }
+html { scroll-padding-top: var(--nav-h); }
+
+.hero-title, .intro-card h1, .modal-body h2, .thumb-title,
+.row-title, .ep-head h2, .ep-top > span:first-child, .section-title,
+.auth-box h1, .profiles h1, .games-header h1, .game-context h1,
+.games-section-title, .post h2, .t-main h1, .letter {
+  font-family: var(--font-story);
+}
+
+.hero-title {
+  color: #fff4e8;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.intro-card h1, .modal-body h2 {
+  font-weight: 700;
+  line-height: 1.13;
+  text-wrap: balance;
+}
+
+.thumb-title {
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.row-title .explore { font-family: var(--font); }
+
+.home-hero .hero-bg img { object-position: center 40%; }
+.scene .media-wrap img, .scene .media-wrap video { object-fit: contain; background: #080808; }
+.games-page .games-grid.arcade-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); }
+[hidden] { display: none !important; }
+.subtitle {
+  bottom: 22%;
+  font-family: var(--font-story);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 3.4vw, 2.65rem);
+  line-height: 1.22;
+  text-wrap: balance;
+  text-shadow: 0 2px 5px #000;
+}
+.player.controls-on .subtitle { bottom: 30%; }
+
+@media (min-width: 601px) {
+  .anniversary-hero::before {
+    background: linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.44) 34%, transparent 64%);
+  }
+}
+@media (max-width: 600px) {
+  .anniversary-hero .hero-bg { bottom: auto; height: 540px; animation: none; }
+  .anniversary-hero .hero-bg img { object-position: 72% top; }
+  .anniversary-hero::before {
+    background: linear-gradient(180deg, rgba(0,0,0,.44), transparent 105px, transparent 230px, #141414 540px);
+  }
+  .home-hero.anniversary-hero .hero-content {
+    padding-top: clamp(320px, 43svh, 370px);
+    padding-bottom: 90px;
+  }
+}
+@media (max-width: 600px) {
+  .anniversary-hero { background: #141414; }
+}
+
+.proposal-wrap { max-width: 780px; padding-bottom: 3rem; }
+.proposal-wrap .letter {
+  padding: clamp(1.35rem, 5vw, 3rem);
+  background: #24171b;
+  border: 1px solid #56323a;
+  color: #fceee8;
+  font-size: clamp(1.05rem, 2.8vw, 1.23rem);
+  scroll-margin-top: 1rem;
+}
+.proposal { text-align: center; margin: 2.75rem 0 3.5rem; }
+.proposal .section-title { color: #fff4e8; font-size: clamp(1.75rem, 6vw, 2.8rem); }
+.proposal-options { border: 0; padding: 0; margin: 1.35rem 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .65rem; }
+.proposal-options label { position: relative; cursor: pointer; }
+.proposal-options input { position: absolute; opacity: 0; }
+.proposal-options span { display: block; background: #281c21; border: 1px solid #835665; border-radius: 6px; padding: .75rem 1rem; }
+.proposal-options input:checked + span { background: #702f46; border-color: #ffc4d4; }
+.proposal-options input:focus-visible + span { outline: 2px solid #fff; outline-offset: 3px; }
+.proposal .actions { justify-content: center; }
+.proposal .btn:disabled { opacity: .5; cursor: default; }
+.proposal-note { color: var(--netflix-light); font-size: .9rem; line-height: 1.55; }
+.proposal-film .video-box { margin-bottom: 1rem; }
