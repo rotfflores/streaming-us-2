@@ -63,6 +63,7 @@ window.TDN = (() => {
       "Mucho antes de aquella primera cita, ya había algo entre nosotros.", 60, [
         escena("portada", "Lilibeth, todo empezó en 2019.", "Me gustaste desde la primera vez que te vi."),
         escena("mirada", "Quería acercarme a hablarte.", "Cuando te tenía enfrente, me ganaban los nervios."),
+        escena("fernando-gris", "A veces pienso en lo que me habría gustado decirte entonces.", "Me gustas. Así de sencillo."),
         escena("sonrisa", "Después por fin nos hablamos.", "Qué gusto me da recordar esa primera vez."),
         escena("fernando", "En ese entonces seguimos cada quien con su vida.", "Yo todavía me preguntaba qué pasaría si un día salíamos."),
         clip("cafe", "Hace unos meses hicimos un plan.", "Esta vez quedamos de vernos como algo más que amigos."),
@@ -75,6 +76,7 @@ window.TDN = (() => {
         escena("sol", "Después nos fuimos a caminar a Chiapa de Corzo.", "Quería que la tarde durara un poquito más."),
         escena("plaza", "Llegamos frente a la plaza.", "Ahí fue donde nos dimos nuestro primer beso."),
         escena("acuarela", "Todavía me da una sonrisa acordarme.", "De todo ese día, ese es el instante que más guardo."),
+        escena("ramo-en-camino", "Desde entonces me emocionan los planes contigo.", "Hasta ese ratito de camino antes de verte."),
         escena("fernando", "Lo que vino después fue enamorarnos.", "Poco a poco hicimos un lugar para el otro en nuestra vida."),
         escena("portada", "Cuando volvamos a Chiapa de Corzo,", "quiero que pasemos otra vez por esa plaza.")
       ], "Una caminata por Chiapa de Corzo"),
@@ -83,7 +85,9 @@ window.TDN = (() => {
       "Todo lo que quiero decirte cuando te llamo mi maestra más hermosa del mundo.", 72, [
         escena("lilibeth", "Siempre te digo lo mismo:", "eres la maestra más hermosa del mundo."),
         clip("aula", "Me da mucho orgullo que hayas elegido enseñar.", "Explicar algo hasta que otra persona lo entienda requiere paciencia."),
+        escena("lilibeth-al-sol", "Ojalá hoy alguien te diga lo mucho que vale lo que haces.", "Yo, por lo pronto, pienso seguir diciéndotelo."),
         escena("noche", "Quiero que sepas cuánto te admiro.", "Y que me gusta escucharte hablar de lo que te importa."),
+        escena("lilibeth-con-lentes", "Cada vez que te miro, me dan ganas de repetírtelo.", "Qué suerte la mía, maestra."),
         escena("hamaca", "También adoro estos momentos tranquilos.", "Una foto tuya así me alegra el día."),
         escena("sonrisa", "Si llegas cansada, quiero que encuentres tiempo para descansar.", "Y si quieres desahogarte, aquí estoy para escucharte."),
         escena("sol", "Qué bonito poder presumir que estoy enamorado de ti.", "Te amo, mi maestra.")
@@ -93,6 +97,7 @@ window.TDN = (() => {
       "Por lo bien que se siente compartir contigo hasta un día cualquiera.", 72, [
         escena("acuarela", "El diez de cada mes cumplimos otro mes juntos.", "Me gusta que tengamos una fecha nuestra."),
         escena("lilibeth", "También me gustan los días que ni miramos el calendario.", "Cualquier buen rato contigo me parece digno de celebrarse."),
+        escena("retrato-de-lilibeth", "Me gustan hasta esas fotos en las que solo me miras.", "Las vuelvo a ver cuando te extraño."),
         clip("caminar", "Quiero que sigamos haciéndonos tiempo.", "Me basta una vuelta contigo para que cambie mi día."),
         escena("mirada", "Me enamoré de ti, Lilibeth.", "Y me importa todo lo que hemos construido en estos meses."),
         escena("noche", "Gracias por abrirme un lugar en tu vida.", "Me siento afortunado de poder compartirla contigo."),
@@ -108,6 +113,7 @@ window.TDN = (() => {
           escena("fernando", "Lo curioso de acordarme de 2019", "es que todavía recuerdo lo que me costaba hablarte."),
           escena("sonrisa", "Ahora puedo decirte con toda confianza", "que me da gusto que seas tú quien está a mi lado."),
           escena("sol", "Me emociona saber que voy a verte.", "Hay días en que empiezo a sonreír desde antes de salir."),
+          escena("retrato-de-fernando", "Cuando me descubras sonriendo así, ya sabes por qué.", "Seguro estaba pensando en ti."),
           escena("acuarela", "Hemos formado un vínculo que me importa muchísimo.", "Quiero seguir cuidándolo contigo."),
           escena("lilibeth", "Te amo, Lilibeth.", "Me gusta poder decírtelo sin quedarme pensando si me atrevo.")
         ], "Una nota de Fernando, escrita a mano"),
@@ -115,6 +121,7 @@ window.TDN = (() => {
           escena("noche", "Gracias por haber dicho que sí a esa salida.", "Qué buena idea fue vernos y darnos el tiempo de caminar."),
           escena("plaza", "Me alegra que hayamos tenido aquella tarde.", "Se me quedó grabada hasta la plaza frente a la que nos besamos."),
           clip("cafe", "Gracias por los ratos que me regalas.", "Me gusta cuando podemos contarnos el día con calma."),
+          escena("flores-con-nota", "Gracias por recibir mis flores y mis notas.", "A veces escribo mejor lo que de frente me cuesta decir."),
           escena("hamaca", "Gracias por dejarme conocerte tal como eres.", "Cada vez descubro más cosas que admiro de ti."),
           escena("acuarela", "Me encanta todo lo que está creciendo entre nosotros.", "Gracias por dejarme vivirlo contigo.")
         ], "Una comida juntos, como en la primera cita"),
@@ -123,6 +130,7 @@ window.TDN = (() => {
           escena("noche", "Quiero conocer los lugares que tú elegirías.", "Y escuchar tus planes antes de hacer los nuestros."),
           escena("aula", "Quiero seguir celebrando las cosas que logras.", "También quiero estar cerca cuando necesites un descanso."),
           escena("mirada", "Ojalá nos sigamos buscando aun en las semanas ocupadas.", "Siempre podemos apartar un rato para los dos."),
+          escena("dos-tatuajes", "Ojalá nos sigan haciendo sonreír las cosas pequeñas.", "A mí me da ternura ver a estos dos mirándose."),
           escena("portada", "¿Qué te gustaría hacer conmigo, Lilibeth?", "Te dejo una carta en El Final. Ahora quiero leerte a ti.")
         ], "El siguiente plan lo elige Lilibeth")
       ]
