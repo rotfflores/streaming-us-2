@@ -71,9 +71,11 @@
   if (!C) { document.body.innerHTML = "<p style='padding:2rem'>Falta config.js</p>"; return; }
   const P = C.pareja, F = C.fotos;
   const SEASONS = C.temporadas;
-  const EPS = [];
-  SEASONS.forEach((s) => s.episodios.forEach((e, i) =>
-    EPS.push(Object.assign(e, { t: s.num, e: i + 1, id: `${s.num}-${i + 1}`, season: s, idx: EPS.length }))));
+  const catalogo = SEASONS.flatMap((s) => s.episodios.map((e, i) =>
+    Object.assign(e, { t: s.num, e: i + 1, id: `${s.num}-${i + 1}`, season: s })));
+  const episodiosPorId = new Map(catalogo.map((ep) => [ep.id, ep]));
+  const EPS = C.ordenReproduccion.map((id) => episodiosPorId.get(id));
+  EPS.forEach((ep, idx) => { ep.idx = idx; });
 
   const epById = (id) => EPS.find((x) => x.id === id);
   const seasonByNum = (n) => SEASONS.find((s) => String(s.num) === String(n));
@@ -685,6 +687,7 @@
       row("top10", "Top series en tu corazón", series.map((x, i) => topCard(x, i + 1)).join(""));
     else rowsEl.innerHTML =
       (continuing.length ? row("continuar", `Continuar viendo como ${esc(pr.name)}`, continuing.map((e) => epCard(e, { progress: true })).join("")) : "") +
+      row("orden", "Nuestra historia en orden", EPS.map((e) => epCard(e)).join("")) +
       `<a class="games-promo" href="juegos.html"><span class="games-promo-mark">🎮</span><span><b>Un juego de nuestra historia</b><small>Memorama con nuestras fotos · Juega cuando quieras</small></span><span class="games-promo-arrow">${I.right}</span></a>` +
       row("peliculas", "Películas de nosotros", SEASONS.filter(isMovie).map(seasonCard).join("")) +
       row("series", "Series de nosotros", SEASONS.filter((x) => !isMovie(x)).map(seasonCard).join("") + finalCard()) +
@@ -1083,7 +1086,7 @@
           </div></div></div></div>`);
       player.append(es);
       // Solo pasa solo al siguiente episodio dentro de una serie; al terminar un título no se reproduce nada más
-      const autoNext = !seasonEnd && nxt;
+      const autoNext = !seasonEnd && nxt?.t === ep.t;
       requestAnimationFrame(() => { es.classList.add("show"); if (autoNext) $("#nextBtn").classList.add("run"); });
       let n = 10;
       const label = nxt ? "Ver siguiente" : "Ver el final";

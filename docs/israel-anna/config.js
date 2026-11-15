@@ -115,10 +115,11 @@ window.TDN = (() => {
       titulo, url: 'https://streaming-us-2.rotfstudio.com/israel-anna/', coincidencia: 100, clasificacion: 'TP',
       clasificacionTexto: 'Romance y recuerdos compartidos',
       heroTag: 'DE ISRAEL PARA ANNA', heroTop: '17 de noviembre de 2026',
-      sinopsis: 'Israel vuelve a las madrugadas del rancho, cuando le escribía a Anna antes de trabajar y apenas empezaba su historia.',
+      sinopsis: 'Su historia empieza en Francisco Villa y sigue en el rancho, con los mensajes que Israel le escribía a Anna a las cuatro de la mañana.',
       generos: ['Romance', 'Música'], filaRecomendada: titulo
     },
     temporadas,
+    ordenReproduccion: ["4-1", "0-1", "1-1", "2-1", "3-1", "4-2", "4-3"],
     extras: [],
     final: {
       titulo: 'Para ti, Anna',
