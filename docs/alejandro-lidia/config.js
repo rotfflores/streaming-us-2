@@ -28,9 +28,10 @@
   });
 
   const temporadas = [
-    film(0, "cine", "Una película de terror", "Una plática por Facebook y una función de Actividad paranormal. Así empezó todo.", 0, [
+    film(0, "carta", "Una historia de amor", "Todo empezó con una plática por Facebook y una salida al cine. Ninguno se imaginaba la historia que iban a vivir juntos.", 0, [
+      still(1, "Lidia, cuando veo esta foto, me da gusto pensar en todo lo que vivimos desde el día en que nos conocimos."),
       clip("mensaje", "Lidia, todavía me da ternura pensar que todo empezó con una plática en Facebook."),
-      still(ambient("cine"), "¿Quién iba a decir que salir a ver Actividad paranormal iba a ser el principio de una historia tan bonita?"),
+      still(ambient("cine"), "La primera película que vimos juntos fue Actividad paranormal. ¿Quién iba a pensar que de esa salida iba a nacer algo tan bonito?"),
       still(9, "Me gusta volver a esos primeros momentos, cuando todavía nos quedaba tanto por conocernos."),
       still(20, "Entre todo lo que pudo pasar aquella noche, qué suerte que coincidimos tú y yo."),
       still(8, "Si pudiera repetir algo de ese día, sería la emoción de estar empezando a conocerte.")
@@ -90,7 +91,7 @@
 
   const fotos = {
     hero: cover("hero"), perfilB: cover("perfil-lidia"), perfilPareja: cover("perfil-pareja"),
-    t0: cover("cine"), t1: cover("nokia"), t2: cover("lluvia"), t3: cover("familia"),
+    t0: temporadas[0].imagen, t1: cover("nokia"), t2: cover("lluvia"), t3: cover("familia"),
     t4: cover("serie"), t5: photo(14), final: cover("carta"), postCreditos: photo(1)
   };
   const letter = `Lidia:
