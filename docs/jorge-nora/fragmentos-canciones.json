@@ -1,0 +1,32 @@
+[
+  {
+    "archivo": "Eden Muñoz - La Magia de Conectar (Video Oficial).mp3",
+    "inicioSegundos": 41,
+    "duracionSegundos": 46,
+    "destino": "assets/audio/la-magia-de-conectar.mp3"
+  },
+  {
+    "archivo": "Grupo Firme - Herencia de Grandes - Amor De Antes (Video Oficial).mp3",
+    "inicioSegundos": 72.5,
+    "duracionSegundos": 44,
+    "destino": "assets/audio/amor-de-antes.mp3"
+  },
+  {
+    "archivo": "Aquí Es - La Original Banda El Limón (video oficial).mp3",
+    "inicioSegundos": 114,
+    "duracionSegundos": 46,
+    "destino": "assets/audio/aqui-es.mp3"
+  },
+  {
+    "archivo": "Carin León - Desde Que Te Tengo [Live From Japan].mp3",
+    "inicioSegundos": 194,
+    "duracionSegundos": 44,
+    "destino": "assets/audio/desde-que-te-tengo.mp3"
+  },
+  {
+    "archivo": "Hasta Viejitos – Carín León, Karol G (Letra Lyrics).mp3",
+    "inicioSegundos": 129,
+    "duracionSegundos": 49,
+    "destino": "assets/audio/hasta-viejitos.mp3"
+  }
+]
