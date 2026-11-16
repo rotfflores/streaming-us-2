@@ -195,6 +195,7 @@
     notificacion: { whatsapp: "523314270193", email: "", endpoint: "" },
     sitio: {
       url: "https://streaming-us-2.rotfstudio.com/homenaje-papa/", titulo: "Siempre, papá",
+      heroTitulo: "Por siempre en nuestro corazón",
       heroTop: "Un homenaje familiar", heroTag: "EN MEMORIA DE PAPÁ",
       clasificacion: "TP", clasificacionTexto: "Homenaje familiar",
       sinopsis: "Una foto en plena carrera abre este álbum. Detrás vienen las mesas de familia, los viajes y las palabras que todavía queremos decirte. Para ti, papá.",

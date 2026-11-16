@@ -650,7 +650,7 @@
         <div class="hero-bg">${heroImg ? media(heroImg, "", "hero") : media("", "Nosotros", "hero")}</div>
         <div class="hero-content">
           <div class="hero-kicker"><span class="logo-mono">T</span>${only ? kindName(feat) : "Original"}</div>
-          <h1 class="hero-title">${esc(only ? feat.titulo : C.sitio.titulo)}</h1>
+          <h1 class="hero-title">${esc(only ? feat.titulo : C.sitio.heroTitulo)}</h1>
           <div class="hero-tags"><span class="tag-red">${esc(C.sitio.heroTag)}</span><span>${esc(C.sitio.heroTop)}</span></div>
           <p class="hero-synopsis">${esc(only ? feat.sinopsis : C.sitio.sinopsis)}</p>
           <div class="hero-btns">
