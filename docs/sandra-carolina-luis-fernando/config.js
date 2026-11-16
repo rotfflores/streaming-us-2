@@ -102,7 +102,8 @@ window.TDN = (function () {
   /* 5. PELÍCULAS Y SERIES */
   // S: foto del pedido en versión vertical completa · V: video del pedido · E: clip de ../comun/medios
   const S = (n, a, b) => ({ img: "assets/fotos/v/" + n + ".webp", texto: [a, b] });
-  const V = (n, a, b) => ({ img: "assets/video/" + n + ".mp4?v=3", poster: "assets/video/" + n + ".webp?v=3", texto: [a, b] });
+  // Videos de escena en vertical (720x1280): el video completo, centrado sobre su propio fondo difuminado.
+  const V = (n, a, b) => ({ img: "assets/video/v/" + n + ".mp4?v=4", poster: "assets/video/v/" + n + ".webp?v=4", texto: [a, b] });
   const L = (n, lineas) => ({ ...(/\.mp4$/.test(n) ? V(n.replace(".mp4", ""), "", "") : S(n, "", "")), texto: lineas });
   const CLIPS = [
     /*00*/ ["guadalajara.mp4", "s00.webp"], /*01*/ ["escenas/esc00.mp4", "s01.webp"],
@@ -144,7 +145,7 @@ window.TDN = (function () {
     /*72*/ ["escenas/n72.mp4", "s72.webp"], /*73*/ ["escenas/n73.mp4", "s73.webp"],
     /*74*/ ["escenas/esc11.mp4", "s74.webp"]
   ];
-  const E = (n, a, b) => ({ img: "../comun/medios/video/" + CLIPS[n][0], poster: "../comun/medios/fotos/escenas/" + CLIPS[n][1], texto: [a, b] });
+  const E = (n, a, b) => V(CLIPS[n][0].split("/").pop().replace(".mp4", ""), a, b);
   const cred = (...extra) => [["Protagonizada por", `${P.nombreB} y ${P.nombreA}`], ...extra, ["Dirección", "Sandra Carolina, con todo su amor"]];
   const dur = (escenas) => 6 + 11 * escenas.length;
   const peli = (num, titulo, track, imagen, sinopsis, descripcion, escenas, extra = {}) => ({
