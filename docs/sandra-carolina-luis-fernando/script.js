@@ -799,238 +799,76 @@
     if (!unlocked(ep)) { ss.set("miel_y_oro_sc_lf_toast", "🔒 Ese episodio aún está bloqueado"); return location.replace(`temporada.html?t=${ep.t}`); }
     document.title = `${epFull(ep)} | Miel y oro`;
 
-    const D = ep.duracion || 75, INTRO = 4;
-    let t = !isDone(ep.id) && S.watch[ep.id] ? S.watch[ep.id] * D : 0;
-    if (t > D - 3) t = 0;
-    const scenes = ep.escenas?.length ? ep.escenas : [{ texto: ep.descripcion }];
-    const per = (D - INTRO) / scenes.length;
+    const source = `assets/video/titulos/${ep.id}.mp4`;
     const nxt = EPS[ep.idx + 1];
+    const target = nxt ? epUrl(nxt) : "final.html";
+    $("#app").innerHTML = `<div class="player native-player controls-on" id="player">
+      <video class="native-video" id="episodeVideo" controls playsinline autoplay preload="metadata"
+        src="${esc(source)}" poster="${esc(epImg(ep))}" aria-label="${esc(epFull(ep))}"></video>
+      <header class="p-top">
+        <button class="back" type="button" id="back" aria-label="Volver a la ficha">${I.back}</button>
+        <span class="p-title">${esc(epFull(ep))}</span>
+        <a class="native-source" href="${esc(source)}" target="_blank" rel="noopener">Abrir video</a>
+        <button type="button" class="p-btn" id="playerNext" aria-label="Ver siguiente">${I.next}</button>
+      </header>
+      <p class="native-status" id="videoStatus" role="status" hidden>
+        Usa «Abrir video» para reproducir este título en otra pestaña.
+      </p>
+    </div>`;
+    const player = $("#player");
+    const video = $("#episodeVideo");
+    video.muted = Sound.muted;
+    video.volume = ls.get("miel_y_oro_sc_lf_vol", 0.8);
+    let ended = false;
+    let savedAt = 0;
 
-    const sceneHtml = (sc, i) => {
-      const textOnly = !("img" in sc) && !sc.video;
-      const clip = sc.img && isVideo(sc.img);
-      const visual = clip
-        ? `<video class="media-img" src="${esc(sc.img)}" poster="${esc(sc.poster)}" muted playsinline preload="metadata"></video>`
-        : sc.video ? `<video src="${esc(sc.video)}" playsinline preload="metadata"></video>`
-        : media(sc.img, ep.season.titulo, ep.id + i);
-      return `<div class="scene ${textOnly ? "text-only" : ""}" data-i="${i}">
-        <div class="media-wrap">${visual}</div>
-        ${textOnly ? `<div class="scene-card"><p>${esc(sc.texto)}</p></div>` : ""}</div>`;
-    };
-    $("#app").innerHTML = `<div class="player controls-on" id="player">
-      <div class="stage" id="stage">${scenes.map(sceneHtml).join("")}</div>
-      <div class="subtitle" id="sub" aria-live="polite"></div>
-      <div class="intro-card ${t >= INTRO ? "hide" : ""}" id="intro"><div class="logo" data-logo="Miel y oro"></div>
-        <div class="ep-label">${isMovie(ep.season) ? "Una película original" : `Serie original · ${esc(ep.season.titulo)} · Episodio ${ep.e}`}</div><h1>${esc(ep.titulo)}</h1></div>
-      <div class="big-play" id="bigPlay"><span></span></div>
-      <button type="button" class="btn btn-play player-start" id="playerStart">${I.play} Reproducir</button>
-      <button class="skip-intro hidden" id="skip">Saltar intro</button>
-      <div class="p-top"><button class="back" id="back" aria-label="Volver">${I.back}</button><span class="p-title">${esc(epFull(ep))}</span></div>
-      <div class="p-bottom">
-        <div class="p-bar-row"><div class="p-bar" id="bar" role="slider" aria-label="Progreso" aria-valuemin="0" aria-valuemax="${D}" tabindex="0">
-          <div class="p-track"><div class="p-buffer" id="buf"></div><div class="p-fill" id="fill"></div>
-          <div class="p-knob" id="knob"></div></div></div>
-          <span class="p-time" id="time"></span></div>
-        <div class="p-ctrls">
-          <button class="p-btn" data-a="play" aria-label="Reproducir/Pausar">${I.play}</button>
-          <button class="p-btn hide-xs" data-a="back10" aria-label="Retroceder 10 s">${I.back10}</button>
-          <button class="p-btn hide-xs" data-a="fwd10" aria-label="Adelantar 10 s">${I.fwd10}</button>
-          <div class="vol"><button class="p-btn" data-a="mute" aria-label="Volumen"></button>
-            <div class="vol-slider"><input type="range" min="0" max="1" step="0.05" id="volR" aria-label="Volumen"></div></div>
-          <div class="p-name"><b>${esc(ep.cancion || ep.season.cancion || "Miel y oro")}</b> &nbsp;${esc(epFull(ep))}</div>
-          <button class="p-btn" data-a="next" aria-label="Siguiente título">${I.next}</button>
-          <button class="p-btn" data-a="subs" aria-label="Subtítulos">${I.subs}</button>
-          <button class="p-btn" data-a="full" aria-label="Pantalla completa">${I.full}</button>
-        </div></div></div>`;
-    renderLogos();
-
-    const player = $("#player"), sceneEls = $$(".scene"), sub = $("#sub"), intro = $("#intro"), skip = $("#skip");
-    const fill = $("#fill"), knob = $("#knob"), buf = $("#buf"), timeEl = $("#time"), bar = $("#bar");
-    const playBtn = $('[data-a="play"]'), muteBtn = $('[data-a="mute"]'), volR = $("#volR");
-    const playerStart = $("#playerStart");
-    let playing = false, last = 0, cur = -1, curBeat = -1, ended = false, savedAt = 0, playAttempt = 0;
-
-    // --- Audio (música opcional) ---
-    let vol = ls.get("miel_y_oro_sc_lf_vol", 0.8);
-    const musicSrc = ep.musica || ep.season.musica || C.media.musica;
-    const music = musicSrc ? new Audio(musicSrc) : null;
-    if (music) music.preload = "auto";
-    const applyVol = () => {
-      const v = Sound.muted ? 0 : vol;
-      if (music) music.volume = v;
-      $$("video", player).forEach((vd) => { vd.volume = v; vd.muted = vd.classList.contains("media-img") || v === 0; });
-      muteBtn.innerHTML = v === 0 ? I.mute : I.vol;
-      volR.value = vol;
-    };
-    applyVol();
-    volR.addEventListener("input", () => { vol = +volR.value; ls.set("miel_y_oro_sc_lf_vol", vol); if (vol > 0) Sound.muted = false; applyVol(); });
-
-    const subsOn = () => ls.get("miel_y_oro_sc_lf_subs", true);
-    player.classList.toggle("no-subs", !subsOn());
-    $('[data-a="subs"]').classList.toggle("off", !subsOn());
-
-    function startMusic(automatic, attempt) {
-      if (!music?.paused) return;
-      Sound.introAudio?.pause();
-      music.currentTime = t;
-      music.play().catch(error => {
-        if (!playing || attempt !== playAttempt || error.name === "AbortError") return;
-        if (automatic && error.name === "NotAllowedError") {
-          pause(false);
-          return;
-        }
-        toast("La música no pudo iniciarse. Las escenas seguirán reproduciéndose.");
-      });
-    }
-
-    function play(automatic = false) {
-      if (ended || playing) return;
-      playing = true; playBtn.innerHTML = I.pause;
-      playerStart.hidden = true;
-      startMusic(automatic, ++playAttempt);
-      const v = $(".scene.on video"); v?.play().catch(() => {});
-      flash(I.play); poke();
-    }
-    function pause(showFlash = true) {
-      playing = false; playBtn.innerHTML = I.play;
-      ++playAttempt;
-      playerStart.hidden = false;
-      music?.pause();
-      $(".scene.on video")?.pause();
-      if (showFlash) flash(I.pause);
-      player.classList.add("controls-on");
+    video.addEventListener("loadedmetadata", () => {
+      if (isDone(ep.id) || !S.watch[ep.id]) return;
+      const resume = S.watch[ep.id] * video.duration;
+      if (resume < video.duration - 3) video.currentTime = resume;
+    });
+    video.addEventListener("volumechange", () => {
+      Sound.muted = video.muted;
+      ls.set("miel_y_oro_sc_lf_vol", video.volume);
+    });
+    video.addEventListener("timeupdate", () => saveWatch());
+    video.addEventListener("pause", () => saveWatch(true));
+    video.addEventListener("ended", finish);
+    video.addEventListener("error", () => { $("#videoStatus").hidden = false; });
+    addEventListener("pagehide", () => {
       saveWatch(true);
-    }
-    const toggle = () => (playing ? pause() : play());
-    function flash(icon) { const b = $("#bigPlay"); $("span", b).innerHTML = icon; b.classList.remove("flash"); b.offsetWidth; b.classList.add("flash"); }
-
-    function seek(to) {
-      if (ended) return;
-      t = clamp(to, 0, D - 0.2);
-      if (music) {
-        music.currentTime = t;
-      }
-      render(true);
-    }
-    function saveWatch(force) {
-      if (isDone(ep.id) || ended) return;
-      if (force || performance.now() - savedAt > 2000) { S.watch[ep.id] = +(t / D).toFixed(3); save(); savedAt = performance.now(); }
-    }
-
-    function render(force) {
-      const pct = (t / D) * 100;
-      fill.style.width = pct + "%"; knob.style.left = pct + "%";
-      buf.style.width = Math.min(100, pct + 12) + "%";
-      timeEl.textContent = "-" + fmt(D - t);
-      bar.setAttribute("aria-valuenow", Math.round(t));
-      intro.classList.toggle("hide", t >= INTRO);
-      skip.classList.toggle("hidden", t >= INTRO - 0.4 || t < 0.8);
-      const i = t < INTRO ? 0 : Math.min(scenes.length - 1, Math.floor((t - INTRO) / per));
-      const sc = scenes[i];
-      const lines = Array.isArray(sc.texto) ? sc.texto : [sc.texto || ""];
-      const elapsed = clamp(t - INTRO - i * per, 0, per - .001);
-      const beat = t < INTRO ? -1 : Math.min(lines.length - 1, Math.floor(elapsed / per * lines.length));
-      if (i !== cur || beat !== curBeat || force) {
-        if (i !== cur || force) {
-          sceneEls.forEach((el, k) => {
-            const on = k === i; el.classList.toggle("on", on);
-            const v = $("video", el);
-            if (v && on) {
-              v.loop = false;
-              v.currentTime = Math.min(elapsed, v.duration || elapsed);
-              if (playing) v.play().catch(() => {});
-            } else v?.pause();
-          });
-          cur = i;
-        }
-        sub.textContent = ("img" in sc || sc.video) && beat >= 0 ? lines[beat] : "";
-        sub.classList.remove("beat-in"); sub.offsetWidth; sub.classList.add("beat-in");
-        curBeat = beat;
-      }
-      if (playing) saveWatch();
-    }
-
-    function frame(ts) {
-      const dt = last ? Math.min(0.25, (ts - last) / 1000) : 0; last = ts;
-      if (playing) {
-        t += dt;
-        if (t >= D) { t = D; finish(); }
-        render();
-      }
-      requestAnimationFrame(frame);
-    }
-
-    // --- Controles auto-ocultables ---
-    let idle;
-    function poke() {
-      player.classList.add("controls-on"); player.classList.remove("idle");
-      clearTimeout(idle);
-      idle = setTimeout(() => { if (playing) { player.classList.remove("controls-on"); player.classList.add("idle"); } }, 3000);
-    }
-    player.addEventListener("mousemove", poke);
-    // Tocar la imagen: con mouse pausa/reanuda; en táctil, primero muestra controles
-    player.addEventListener("pointerup", (e) => {
-      if (ended || e.target.closest(".p-top, .p-bottom, .skip-intro, .player-start, .endscreen, .title-credits")) return;
-      if (e.pointerType === "mouse") return toggle();
-      if (!player.classList.contains("controls-on")) poke(); else toggle();
-    });
-    $("#sub").style.pointerEvents = "none";
-
-    // --- Barra de progreso (clic y arrastre) ---
-    const fromEvent = (e) => { const r = bar.getBoundingClientRect(); return ((e.clientX - r.left) / r.width) * D; };
-    bar.addEventListener("pointerdown", (e) => {
-      capture(bar, e); seek(fromEvent(e));
-      const mv = (ev) => seek(fromEvent(ev));
-      const up = () => { bar.removeEventListener("pointermove", mv); bar.removeEventListener("pointerup", up); saveWatch(true); };
-      bar.addEventListener("pointermove", mv); bar.addEventListener("pointerup", up);
+      video.pause();
     });
 
-    // --- Botones ---
-    const fsEl = document.documentElement;
-    const isFs = () => document.fullscreenElement || document.webkitFullscreenElement;
-    const actions = {
-      play: toggle,
-      back10: () => seek(t - 10),
-      fwd10: () => seek(t + 10),
-      mute: () => { Sound.muted = !Sound.muted; if (!Sound.muted && vol === 0) vol = 0.8; applyVol(); },
-      next: () => { saveWatch(true); go(nxt ? epUrl(nxt) : "final.html"); },
-      subs: () => { const on = !subsOn(); ls.set("miel_y_oro_sc_lf_subs", on); player.classList.toggle("no-subs", !on); $('[data-a="subs"]').classList.toggle("off", !on); toast(on ? "Subtítulos: Español" : "Subtítulos desactivados"); },
-      full: () => {
-        if (isFs()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-        else if (fsEl.requestFullscreen || fsEl.webkitRequestFullscreen) (fsEl.requestFullscreen || fsEl.webkitRequestFullscreen).call(fsEl);
-        else toast("Tu navegador no permite pantalla completa aquí");
-      }
-    };
-    $$(".p-btn[data-a]").forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); actions[b.dataset.a](); poke(); }));
-    playerStart.addEventListener("click", () => play());
-    document.addEventListener("fullscreenchange", () => ($('[data-a="full"]').innerHTML = isFs() ? I.unfull : I.full));
-    skip.onclick = () => { seek(INTRO); play(); };
-    $("#back").onclick = () => { saveWatch(true); go(`temporada.html?t=${ep.t}`); };
-    addEventListener("keydown", (e) => {
-      if (ended || e.target.closest("input, textarea, button")) return;
-      const k = e.key.toLowerCase();
-      if (k === " " || k === "k") { e.preventDefault(); toggle(); }
-      else if (k === "arrowright") actions.fwd10();
-      else if (k === "arrowleft") actions.back10();
-      else if (k === "f") actions.full();
-      else if (k === "m") actions.mute();
-      else if (k === "escape" && !isFs()) $("#back").click();
-      poke();
-    });
-    addEventListener("pagehide", () => saveWatch(true));
+    function saveWatch(force = false) {
+      if (isDone(ep.id) || ended || !Number.isFinite(video.duration) || !video.currentTime) return;
+      if (!force && performance.now() - savedAt < 2000) return;
+      S.watch[ep.id] = Math.min(1, video.currentTime / video.duration);
+      save();
+      savedAt = performance.now();
+    }
 
-    // --- Final del episodio ---
+    function leave(url) {
+      saveWatch(true);
+      video.pause();
+      go(url);
+    }
+    $("#back").onclick = () => leave(`temporada.html?t=${ep.t}`);
+    $("#playerNext").onclick = () => leave(target);
+
     function finish() {
       if (ended) return;
-      ended = true; playing = false; playBtn.innerHTML = I.play;
-      playerStart.hidden = true;
-      music?.pause();
-      $(".scene.on video")?.pause();
-      S.done[ep.id] = true; delete S.watch[ep.id]; save();
+      ended = true;
+      video.controls = false;
+      S.done[ep.id] = true;
+      delete S.watch[ep.id];
+      save();
       const seasonEnd = ep.e === ep.season.episodios.length;
       if (seasonEnd) rollCredits(endScreen);
       else endScreen();
     }
+
+
 
     // Créditos de cada película o serie
     function rollCredits(then) {
@@ -1055,7 +893,7 @@
       };
       requestAnimationFrame(step);
       $(".credits-ui button", el).onclick = (e) => { e.stopPropagation(); close(); };
-      $(".end-back", el).onclick = (e) => { e.stopPropagation(); closed = true; music?.pause(); go("index.html"); };
+      $(".end-back", el).onclick = (e) => { e.stopPropagation(); closed = true; go("index.html"); };
     }
 
     function endScreen() {
@@ -1091,14 +929,15 @@
       const iv = autoNext ? setInterval(() => { n--; $("#nextTxt").textContent = n > 0 ? `${label} en ${n}` : label; if (n <= 0) { clearInterval(iv); go(target); } }, 1000) : 0;
       $(".end-back", es).onclick = () => { clearInterval(iv); go("index.html"); };
       $("#nextBtn").onclick = () => { clearInterval(iv); go(target); };
-      $("#again").onclick = () => { clearInterval(iv); es.remove(); ended = false; t = 0; cur = -1; curBeat = -1; render(true); play(); };
+      $("#again").onclick = () => {
+        clearInterval(iv);
+        es.remove();
+        ended = false;
+        video.currentTime = 0;
+        video.controls = true;
+        video.play().catch(() => {});
+      };
     }
-
-    render(true);
-    requestAnimationFrame(frame);
-    setTimeout(() => {
-      if (!playAttempt) play(true);
-    }, 350);
   }
 
   /* ---------- TEMPORADA FINAL ---------- */
