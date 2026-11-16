@@ -15,6 +15,14 @@
   .sort-buttons { flex-direction: column; }
 }
 [hidden] { display: none !important; }
+.player-start {
+  position: absolute; z-index: 8; top: 66%; left: 50%; transform: translate(-50%, -50%);
+  box-shadow: 0 4px 24px #0009;
+}
+@media (max-width: 899px) {
+  body[data-page="season"] .season-hero { height: auto; min-height: 0; }
+  body[data-page="season"] .season-hero .hero-content { padding-bottom: 4rem; }
+}
 @media (max-width: 600px) {
   .home-hero.couple-hero { background: var(--netflix-black); }
   .home-hero.couple-hero .hero-bg { height: clamp(300px, 49svh, 450px); }

@@ -823,6 +823,7 @@
       <div class="intro-card ${t >= INTRO ? "hide" : ""}" id="intro"><div class="logo" data-logo="Miel y oro"></div>
         <div class="ep-label">${isMovie(ep.season) ? "Una película original" : `Serie original · ${esc(ep.season.titulo)} · Episodio ${ep.e}`}</div><h1>${esc(ep.titulo)}</h1></div>
       <div class="big-play" id="bigPlay"><span></span></div>
+      <button type="button" class="btn btn-play player-start" id="playerStart">${I.play} Reproducir</button>
       <button class="skip-intro hidden" id="skip">Saltar intro</button>
       <div class="p-top"><button class="back" id="back" aria-label="Volver">${I.back}</button><span class="p-title">${esc(epFull(ep))}</span></div>
       <div class="p-bottom">
@@ -846,7 +847,8 @@
     const player = $("#player"), sceneEls = $$(".scene"), sub = $("#sub"), intro = $("#intro"), skip = $("#skip");
     const fill = $("#fill"), knob = $("#knob"), buf = $("#buf"), timeEl = $("#time"), bar = $("#bar");
     const playBtn = $('[data-a="play"]'), muteBtn = $('[data-a="mute"]'), volR = $("#volR");
-    let playing = false, last = 0, cur = -1, curBeat = -1, ended = false, savedAt = 0;
+    const playerStart = $("#playerStart");
+    let playing = false, last = 0, cur = -1, curBeat = -1, ended = false, savedAt = 0, playAttempt = 0;
 
     // --- Audio (música opcional) ---
     let vol = ls.get("miel_y_oro_sc_lf_vol", 0.8);
@@ -867,26 +869,32 @@
     player.classList.toggle("no-subs", !subsOn());
     $('[data-a="subs"]').classList.toggle("off", !subsOn());
 
-    let startingMusic = false;
-    function startMusic() {
-      if (!music?.paused || startingMusic) return;
+    function startMusic(automatic, attempt) {
+      if (!music?.paused) return;
       Sound.introAudio?.pause();
-      startingMusic = true;
       music.currentTime = t;
-      music.play().catch(() => {
-        if (playing) pause(false);
-      }).finally(() => { startingMusic = false; });
+      music.play().catch(error => {
+        if (!playing || attempt !== playAttempt || error.name === "AbortError") return;
+        if (automatic && error.name === "NotAllowedError") {
+          pause(false);
+          return;
+        }
+        toast("La música no pudo iniciarse. Las escenas seguirán reproduciéndose.");
+      });
     }
 
-    function play() {
-      if (ended) return;
+    function play(automatic = false) {
+      if (ended || playing) return;
       playing = true; playBtn.innerHTML = I.pause;
-      startMusic();
+      playerStart.hidden = true;
+      startMusic(automatic, ++playAttempt);
       const v = $(".scene.on video"); v?.play().catch(() => {});
       flash(I.play); poke();
     }
     function pause(showFlash = true) {
       playing = false; playBtn.innerHTML = I.play;
+      ++playAttempt;
+      playerStart.hidden = false;
       music?.pause();
       $(".scene.on video")?.pause();
       if (showFlash) flash(I.pause);
@@ -962,7 +970,7 @@
     player.addEventListener("mousemove", poke);
     // Tocar la imagen: con mouse pausa/reanuda; en táctil, primero muestra controles
     player.addEventListener("pointerup", (e) => {
-      if (ended || e.target.closest(".p-top, .p-bottom, .skip-intro, .endscreen, .title-credits")) return;
+      if (ended || e.target.closest(".p-top, .p-bottom, .skip-intro, .player-start, .endscreen, .title-credits")) return;
       if (e.pointerType === "mouse") return toggle();
       if (!player.classList.contains("controls-on")) poke(); else toggle();
     });
@@ -994,11 +1002,12 @@
       }
     };
     $$(".p-btn[data-a]").forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); actions[b.dataset.a](); poke(); }));
+    playerStart.addEventListener("click", () => play());
     document.addEventListener("fullscreenchange", () => ($('[data-a="full"]').innerHTML = isFs() ? I.unfull : I.full));
     skip.onclick = () => { seek(INTRO); play(); };
     $("#back").onclick = () => { saveWatch(true); go(`temporada.html?t=${ep.t}`); };
     addEventListener("keydown", (e) => {
-      if (ended || e.target.closest("input, textarea")) return;
+      if (ended || e.target.closest("input, textarea, button")) return;
       const k = e.key.toLowerCase();
       if (k === " " || k === "k") { e.preventDefault(); toggle(); }
       else if (k === "arrowright") actions.fwd10();
@@ -1014,6 +1023,7 @@
     function finish() {
       if (ended) return;
       ended = true; playing = false; playBtn.innerHTML = I.play;
+      playerStart.hidden = true;
       music?.pause();
       $(".scene.on video")?.pause();
       S.done[ep.id] = true; delete S.watch[ep.id]; save();
@@ -1086,7 +1096,9 @@
 
     render(true);
     requestAnimationFrame(frame);
-    setTimeout(play, 350);
+    setTimeout(() => {
+      if (!playAttempt) play(true);
+    }, 350);
   }
 
   /* ---------- TEMPORADA FINAL ---------- */
