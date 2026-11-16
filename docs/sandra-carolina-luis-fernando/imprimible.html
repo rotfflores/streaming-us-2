@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Boleto de estreno | Miel y oro</title>
+  <title>Boleto de estreno | Temporadas de Nosotros</title>
   <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261006-3">
+  <link rel="icon" href="../comun/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../comun/styles.css">
   <style>
     /* Boleto imprimible con QR. Tamaño pensado para media carta / A5 horizontal. */
     body { animation: none; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding: 2rem 16px; }
@@ -38,14 +38,13 @@
       .ticket { box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; grid-template-columns: 1fr 250px; }
     }
   </style>
-  <script src="config.js?v=20261006-2"></script>
-  <script src="cliente.js?v=miel-oro-1"></script>
+  <script src="config.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
   <div class="ticket">
     <div class="t-main">
-      <div class="logo" id="logo">Miel y oro</div>
+      <div class="logo" id="logo">TEMPORADAS DE NOSOTROS</div>
       <div class="t-kicker">ESTRENO EXCLUSIVO · 1 ENTRADA</div>
       <h1 id="who"></h1>
       <p id="sub"></p>
@@ -53,6 +52,7 @@
         <div><small>ESTRENO</small><b id="date"></b></div>
         <div><small>TEMPORADAS</small><b id="seasons"></b></div>
         <div><small>CLASIFICACIÓN</small><b id="age"></b></div>
+        <div id="pwWrap"><small>CONTRASEÑA</small><b id="pw"></b></div>
       </div>
     </div>
     <div class="t-side">
@@ -63,6 +63,7 @@
   </div>
   <p class="url" id="url"></p>
   <div class="no-print">
+    <label style="display:flex;align-items:center;gap:.4rem;color:var(--netflix-gray)"><input type="checkbox" id="showPw"> Imprimir contraseña</label>
     <button class="btn btn-gray" id="png">Descargar QR (PNG)</button>
     <button class="btn btn-red" onclick="print()">Imprimir</button>
   </div>
@@ -71,23 +72,21 @@
       const C = window.TDN, P = C.pareja;
       // URL a codificar: la de config.sitio.url o, si falta, la carpeta actual
       const url = C.sitio.url || location.href.replace(/imprimible\.html.*$/, "index.html");
-      const shareable = C.sitio.url || (location.protocol === "https:" && location.hostname !== "localhost");
-      document.getElementById("url").textContent = shareable ? "Enlace del QR: " + url : "";
+      document.getElementById("url").textContent = "Enlace del QR: " + url + (C.sitio.url ? "" : "  ← [PENDIENTE] define sitio.url en config.js");
       document.getElementById("who").textContent = "Para " + P.nombreB;
-      document.getElementById("sub").textContent = "Una historia original de " + P.nombreA + ": 8 películas, 2 series y 3 juegos para " + P.nombreB + ".";
-      document.getElementById("date").textContent = C.acceso.estreno ? new Date(C.acceso.estreno).toLocaleString("es", { dateStyle: "medium", timeStyle: "short" }) : P.aniversario;
+      document.getElementById("sub").textContent = "Una serie original de " + P.nombreA + ". " + P.anios + (P.anios === 1 ? " año" : " años") + " de historia, en " + C.temporadas.length + " temporadas.";
+      document.getElementById("date").textContent = C.acceso.estreno ? new Date(C.acceso.estreno).toLocaleString("es", { dateStyle: "medium", timeStyle: "short" }) : "Ya disponible";
       document.getElementById("seasons").textContent = C.temporadas.length + " + Final";
       document.getElementById("age").textContent = C.sitio.clasificacion + " Romance";
-      if (!shareable) {
-        document.querySelector(".t-side").textContent = "El QR estará disponible al publicar.";
-        document.getElementById("png").disabled = true;
-        return;
-      }
+      const pwWrap = document.getElementById("pwWrap"), cb = document.getElementById("showPw");
+      document.getElementById("pw").textContent = C.acceso.password || "—";
+      const syncPw = () => (pwWrap.style.display = cb.checked && C.acceso.password ? "" : "none");
+      cb.onchange = syncPw; syncPw();
       if (window.QRCode) new QRCode(document.getElementById("qr"), { text: url, width: 360, height: 360, colorDark: "#141414", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M });
       else document.getElementById("qr").textContent = "No se pudo cargar el generador de QR (sin conexión).";
       document.getElementById("png").onclick = () => {
         const c = document.querySelector("#qr canvas"); if (!c) return;
-        const a = document.createElement("a"); a.download = "qr-miel-y-oro.png"; a.href = c.toDataURL("image/png"); a.click();
+        const a = document.createElement("a"); a.download = "qr-temporadas-de-nosotros.png"; a.href = c.toDataURL("image/png"); a.click();
       };
     })();
   </script>
