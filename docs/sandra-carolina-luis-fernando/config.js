@@ -70,7 +70,7 @@ window.TDN = (function () {
     temporadas: [T.tan.musica, T.ena.musica, T.loc.musica, T.todo.musica],
     canciones: [T.tan.cancion, T.ena.cancion, T.loc.cancion, T.todo.cancion],
     musica: "",
-    videoFinal: "assets/video/final-miel-y-oro.mp4",
+    videoFinal: "assets/video/final-miel-y-oro.mp4?v=3",
     audioRemitente: ""
   };
 
@@ -102,7 +102,7 @@ window.TDN = (function () {
   /* 5. PELÍCULAS Y SERIES */
   // S: foto del pedido en versión vertical completa · V: video del pedido · E: clip de ../comun/medios
   const S = (n, a, b) => ({ img: "assets/fotos/v/" + n + ".webp", texto: [a, b] });
-  const V = (n, a, b) => ({ img: "assets/video/" + n + ".mp4", poster: "assets/video/" + n + ".webp", texto: [a, b] });
+  const V = (n, a, b) => ({ img: "assets/video/" + n + ".mp4?v=3", poster: "assets/video/" + n + ".webp?v=3", texto: [a, b] });
   const L = (n, lineas) => ({ ...(/\.mp4$/.test(n) ? V(n.replace(".mp4", ""), "", "") : S(n, "", "")), texto: lineas });
   const CLIPS = [
     /*00*/ ["guadalajara.mp4", "s00.webp"], /*01*/ ["escenas/esc00.mp4", "s01.webp"],
