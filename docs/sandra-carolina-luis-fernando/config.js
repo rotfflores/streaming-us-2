@@ -7,6 +7,9 @@
    clímax (cortes de 78 a 171 s). Relleno: clips de ../comun/medios, miel.mp4 / olas.mp4 /
    camino.webp / miel.webp (Pexels: Aurelijus U., huynhdong huynh, Willian Justen de
    Vasconcellos, Adonyi Gábor) y la animación "Miel y Oro" hecha para este pedido.
+   MARCA: esta carpeta usa su propio script.js (copia de ../comun/script.js) con el nombre
+   "Miel y Oro" en lugar de "Temporadas de Nosotros". No usar pedido.cjs --actualizar
+   sin volver a apuntar las páginas a script.js.
    ===================================================================== */
 window.TDN = (function () {
 
