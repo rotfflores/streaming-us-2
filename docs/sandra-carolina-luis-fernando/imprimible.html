@@ -38,7 +38,7 @@
       .ticket { box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; grid-template-columns: 1fr 250px; }
     }
   </style>
-  <script src="config.js"></script>
+  <script src="config.js?v=2"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
@@ -72,7 +72,7 @@
       const C = window.TDN, P = C.pareja;
       // URL a codificar: la de config.sitio.url o, si falta, la carpeta actual
       const url = C.sitio.url || location.href.replace(/imprimible\.html.*$/, "index.html");
-      document.getElementById("url").textContent = "Enlace del QR: " + url + (C.sitio.url ? "" : "  ← [PENDIENTE] define sitio.url en config.js");
+      document.getElementById("url").textContent = "Enlace del QR: " + url + (C.sitio.url ? "" : "  ← [PENDIENTE] define sitio.url en config.js?v=2");
       document.getElementById("who").textContent = "Para " + P.nombreB;
       document.getElementById("sub").textContent = "Una serie original de " + P.nombreA + ". " + P.anios + (P.anios === 1 ? " año" : " años") + " de historia, en " + C.temporadas.length + " temporadas.";
       document.getElementById("date").textContent = C.acceso.estreno ? new Date(C.acceso.estreno).toLocaleString("es", { dateStyle: "medium", timeStyle: "short" }) : "Ya disponible";

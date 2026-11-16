@@ -66,7 +66,7 @@ window.TDN = (function () {
     todo2:   { musica: A("todo-lo-fue-2"),        cancion: "Todo Lo Fue · Lenin Ramírez" }
   };
   const M = {
-    intro: "../comun/medios/audio/intro.mp3",
+    intro: "assets/audio/intro.mp3",   // sonido de entrada de la página original
     temporadas: [T.tan.musica, T.ena.musica, T.loc.musica, T.todo.musica],
     canciones: [T.tan.cancion, T.ena.cancion, T.loc.cancion, T.todo.cancion],
     musica: "",
