@@ -31,6 +31,14 @@ window.TDN = (() => {
     episodios: [episodio(titulo, sinopsis, portada(num), track, escenas)]
   });
 
+  const mensajeDeTere = [
+    "El universo, o lo que haya sido, nos puso en distintos lugares. No sé qué fue lo que hizo que nuestros caminos coincidieran de esta manera, pero sí sé lo que has provocado en mí.",
+    "Me has hecho recuperar una ilusión que creía difícil volver a sentir.",
+    "Me has recordado lo bonito que es enamorarse, tener ganas de alguien, emocionarse con sus palabras y encontrar felicidad en los pequeños detalles.",
+    "Llegaste sin saber cuán bien podías hacerme.",
+    "Hoy eres alguien con quien quiero compartir muchísimo más que momentos bonitos. Quiero compartir lo que me resta de vida.",
+  ];
+
   const temporadas = [
     pelicula(0, 'Aquel 14 de octubre', todoContigo,
       'Una coincidencia en una aplicación se convierte, desde la primera conversación, en algo que Tere y Rafa quieren seguir descubriendo.', [
@@ -57,7 +65,12 @@ window.TDN = (() => {
         escena(video('dedicatoria'), 'Qué bonito poder decirte lo que siento y quedarme con ganas de saber cómo lo vives tú.'),
         escena(8, 'Me da gusto compartir contigo lo que me entusiasma, hasta las cosas más sencillas.'),
         escena(25, 'Quiero seguir teniendo detalles contigo, incluso en los días comunes.'),
-        escena(20, 'Y quiero que tú también puedas contar conmigo cuando el día se ponga difícil.')
+        escena(20, 'Y quiero que tú también puedas contar conmigo cuando el día se ponga difícil.'),
+        escena(17, mensajeDeTere[0]),
+        escena(2, mensajeDeTere[1]),
+        escena(18, mensajeDeTere[2]),
+        escena(23, mensajeDeTere[3]),
+        escena(24, mensajeDeTere[4])
       ]),
     pelicula(3, 'Cuando dijimos casarnos', teAmare,
       'La propuesta de casarse le da un rumbo a lo que imaginaban. Tere piensa en los pasos que quiere tomar con Rafa, desde la libertad de los dos.', [
@@ -152,6 +165,7 @@ window.TDN = (() => {
         'Si vuelvo a aquel 14 de octubre, me acuerdo de las ganas que me dieron de seguir conociéndote. Me gustaba descubrir lo que compartíamos y también escucharte cuando me contabas algo que yo habría visto de otra manera.',
         'Gracias por hacerme un lugar en tus días. Por contarme tus ilusiones y por escuchar las mías. A 8,500 kilómetros he llegado a sentirte muy cerca. Y a veces, al despedirnos, me quedo con unas ganas enormes de abrazarte y seguir platicando otro rato.',
         'Cuando empezamos a hablar de casarnos me dio mucha ilusión pensar en todo lo que podríamos compartir. Me encantaría que, cuando toque decidir un viaje, un cambio o cualquier paso grande, nos tomemos el tiempo de hablarlo. Quiero saber qué te hace ilusión a ti y que los dos podamos elegirlo con libertad.',
+        ...mensajeDeTere,
         'Gracias por este comienzo, Rafa. Todavía me sorprende todo lo que pudo cambiar en un mes. Me hace feliz que al pensar en lo que viene me den tantas ganas de vivirlo contigo.',
         'No nos encontramos cerca, nos encontramos de verdad.',
         'Con amor,\nTere'
