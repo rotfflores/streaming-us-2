@@ -45,7 +45,7 @@ window.TDN = (() => {
         escena(22, 'Nuestra historia comenzó un 14 de octubre.', 'Fue una coincidencia en una aplicación.'),
         escena(2, 'Desde la primera conversación me dieron ganas de seguir conociéndote.'),
         escena(11, 'Con cada cosa que me contabas, iba descubriendo maneras en las que nos parecíamos.'),
-        escena(3, 'Coincidíamos en gustos, en lo que valoramos', 'y hasta en cómo entendemos algunas cosas de la vida.'),
+        escena(17, 'Coincidíamos en gustos, en lo que valoramos', 'y hasta en cómo entendemos algunas cosas de la vida.'),
         escena(13, 'Me gustó el respeto con el que empezamos a conocernos.'),
         escena(17, 'Ahora pienso en ese día y me da gusto que hayamos seguido hablando.')
       ]),
