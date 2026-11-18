@@ -366,8 +366,8 @@
   function footer() {
     return `<footer class="footer">
       <ul><li>Preguntas frecuentes del amor</li><li>Centro de ayuda (abrazos)</li><li>Términos de nosotros</li><li>Privacidad: solo dos</li>
-      <li>Preferencias de besos</li><li>Una historia para Yaret / Wonka</li><li>Contáctanos: al oído</li><li>Avisos legales</li></ul>
-      <p>© ${P.anioInicio ? P.anioInicio + "–" : ""}${new Date().getFullYear()} Yaret / Wonka · Temporadas de Nosotros</p></footer>`;
+      <li>Preferencias de besos</li><li>Una historia para babe / Wonka</li><li>Contáctanos: al oído</li><li>Avisos legales</li></ul>
+      <p>© ${P.anioInicio ? P.anioInicio + "–" : ""}${new Date().getFullYear()} babe / Wonka · Temporadas de Nosotros</p></footer>`;
   }
 
   /* ================= 8. FILAS, HOVER-POP Y MODAL ================= */
@@ -1045,7 +1045,7 @@
     // Créditos de cada película o serie
     function rollCredits(then) {
       const s = ep.season;
-      const list = [...(s.creditos || []), ["Banda sonora", ep.cancion || s.cancion || C.sitio.generos.join(" · ")], ["", `© ${s.anio ? s.anio + " " : ""}Yaret / Wonka`]];
+      const list = [...(s.creditos || []), ["Banda sonora", ep.cancion || s.cancion || C.sitio.generos.join(" · ")], ["", `© ${s.anio ? s.anio + " " : ""}babe / Wonka`]];
       const el = h(`<div class="title-credits"><div class="credits"><div class="credits-roll">
           <div class="logo" data-logo="TEMPORADAS DE NOSOTROS"></div>
           <div class="credit solo" style="margin:0 auto 2.4rem;font-style:normal;color:#fff;font-size:1.5rem">${esc(s.titulo)}</div>

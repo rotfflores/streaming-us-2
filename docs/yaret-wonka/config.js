@@ -4,7 +4,7 @@
  const photo=i=>M.fotos[i%M.fotos.length].ruta;
  const cover=i=>M.fotos[i%M.fotos.length].portada;
  const track=n=>({musica:M.canciones[n].src,cancion:M.canciones[n].titulo});
- const nombre=i=>i%2?'Wonka':'Yaret';
+ const nombre=i=>i%2?'Wonka':'babe';
  const materials=[...M.fotos,...M.videos.filter(v=>!v.especial)].sort((a,b)=>a.orden-b.orden);
  const groups=Array.from({length:15},(_,i)=>materials.slice(Math.floor(i*materials.length/15),Math.floor((i+1)*materials.length/15)));
  const games={
@@ -13,12 +13,12 @@
   leo:{tipo:'adivinanza',titulo:'El zodíaco que nos une',texto:'En nuestra historia decimos: «El zodíaco en ___ nos une». ¿Qué palabra falta?',respuestas:['leo'],pista:'Tres letras, mucho corazón.',ok:'El zodíaco en Leo nos une.'},
   memoria:{tipo:'memory',titulo:'Recuerdos de dos en dos',pares:[0,1,2,3,4,5].map(photo),ok:'Hay momentos que siempre encuentran su pareja.'},
   puzzle:{tipo:'puzzle',titulo:'Volver a encontrarnos',imagen:photo(2),ok:'Pieza por pieza, otra vez tú y yo.'},
-  palabras:{tipo:'sopa',titulo:'Lo que nos une',palabras:['YARET','WONKA','CHICAGO','LEO','AMOR','PAZ','DEPORTE'],ok:'Todas estas palabras tienen algo de nosotros.'},
+  palabras:{tipo:'sopa',titulo:'Lo que nos une',palabras:['BABE','WONKA','CHICAGO','LEO','AMOR','PAZ','DEPORTE'],ok:'Todas estas palabras tienen algo de nosotros.'},
   conexion:{tipo:'quiz',titulo:'Nuestra conexión',pregunta:'¿Qué palabras describen lo que sentimos?',opciones:['Amor, paz y pasión','Prisa y distancia','Solo casualidad'],correcta:0,ok:'Amor para elegirnos, paz para quedarnos y pasión para acercarnos.'}
  };
  const story=[
   ['Lo que nunca te dije','Hace años nos gustábamos y el tiempo guardó las palabras. Hoy podemos decirlas.',[
-   ['Yaret, antes de esta historia','hubo algo que no nos atrevíamos a decir.'],
+   ['babe, antes de esta historia','hubo algo que no nos atrevíamos a decir.'],
    ['Nos conocimos hace años,','y nos gustábamos más de lo que confesábamos.'],
    ['Somos el amor de otra vida','que nos alcanzó para encontrarnos en esta.'],
    ['Entonces todavía no sabíamos','que la vida nos volvería a encontrar.'],
@@ -46,7 +46,7 @@
    ['Deseo que podamos hablarnos con cariño','y apoyarnos cuando haga falta.'],
    ['Gracias por esta calma compartida.','Gracias por ser parte de mi vida.']]],
   ['La pasión de elegirte','Una dedicatoria a la atracción, la ternura y las ganas de estar cerca.',[
-   ['Yaret, hay mucha pasión','en esta historia que estamos viviendo.'],
+   ['babe, hay mucha pasión','en esta historia que estamos viviendo.'],
    ['Me gusta sentirte cerca','y saber que nos amamos tanto.'],
    ['Quiero seguir encontrando maneras','de hacerte sentir todo lo que provocas en mí.'],
    ['Que no se nos olvide el coqueteo,','ni un detalle porque sí.'],
@@ -60,7 +60,7 @@
    ['Quiero seguir compartiendo tus días,','tus ganas y la ilusión por nuestro trabajo.'],
    ['Amar lo que hacemos y compartirlo contigo','hace más especial esta historia.']]],
   ['En el mismo equipo','El deporte que nos gusta y el deseo de acompañar los retos de cada quien.',[
-   ['Yaret, el deporte','es otra de las cosas que compartimos.'],
+   ['babe, el deporte','es otra de las cosas que compartimos.'],
    ['Me gusta pensar en nuevos planes','que podamos disfrutar los dos.'],
    ['Quiero celebrar tu esfuerzo','y tenerte cerca en mis propios retos.'],
    ['Que encontremos tiempo para movernos,','para reír y para recuperar energía.'],
@@ -74,7 +74,7 @@
    ['Quiero que mi gratitud se convierta','en tiempo, detalles y cuidado.'],
    ['Gracias por ser tú','en este capítulo de mi vida.']]],
   ['Todos nuestros próximos junios','Los deseos que quiero poner sobre la mesa para seguir construyendo juntos.',[
-   ['Yaret, nuestro aniversario','es el 3 de junio.'],
+   ['babe, nuestro aniversario','es el 3 de junio.'],
    ['Cuando pienso en lo que viene,','me ilusiona seguir celebrando contigo.'],
    ['Quiero conocer tus metas','y encontrar maneras de apoyarte.'],
    ['Sueño con más recuerdos compartidos,','con tiempo para disfrutarlos.'],
@@ -88,7 +88,7 @@
    ['Que hablar de nosotros','sea una forma de acercarnos.'],
    ['Hoy te lo dejo escrito:','me hace feliz que seas tú.']]],
   ['Aprender a cuidarnos','Una invitación a cuidar la calma que nos conecta.',[
-   ['Yaret, quiero cuidar','la paz que hay entre nosotros.'],
+   ['babe, quiero cuidar','la paz que hay entre nosotros.'],
    ['Hacer tiempo para estar presentes','y disfrutar nuestra compañía.'],
    ['Deseo que podamos decir','lo que nos hace bien.'],
    ['Y escuchar con respeto','cuando algo necesite cambiar.'],
@@ -102,7 +102,7 @@
    ['Lo que vivimos se siente','como una historia de película.'],
    ['Y mi parte favorita','es estar viviéndola contigo.']]],
   ['Lo extraordinario de lo sencillo','Un deseo de disfrutar los pequeños momentos tanto como los grandes.',[
-   ['Yaret, quiero disfrutar contigo','también los días sin una ocasión especial.'],
+   ['babe, quiero disfrutar contigo','también los días sin una ocasión especial.'],
    ['Una conversación larga,','un rato para nosotros.'],
    ['Un plan que nos guste a los dos','y una foto para recordarlo después.'],
    ['Me ilusiona seguir descubriendo','qué te hace sonreír.'],
@@ -116,7 +116,7 @@
    ['Me ilusiona imaginar nuevos planes','y elegirlos juntos, paso a paso.'],
    ['Que hacer equipo','también signifique ayudarnos a crecer.']]],
   ['Continuará contigo','El próximo capítulo todavía puede sorprendernos.',[
-   ['Yaret, lo que viene','todavía tiene páginas por escribir.'],
+   ['babe, lo que viene','todavía tiene páginas por escribir.'],
    ['Quiero llenarlas de amor,','de paz y de mucha pasión.'],
    ['De planes compartidos','y nuevas razones para agradecer.'],
    ['Que otro 3 de junio','nos encuentre cuidando lo nuestro.'],
@@ -143,7 +143,7 @@
   const episodios=[offset,offset+1].map((k,j)=>episode(story[k][0],story[k][1],12+i,scenes(groups[k],story[k][2]),assigned[k]));
   temporadas.push({num:12+i,tipo:'serie',titulo:titles[i],anio:2026,clasificacion:'TP',imagen:cover((i+1)*3),sinopsis:story[offset][1]+' '+story[offset+1][1],...track(12+i),episodios});
  }
- const carta=`Yaret:
+ const carta=`babe:
 
 Hace años nos conocimos y nos guardamos lo mucho que nos gustábamos. A veces pienso en todas las palabras que entonces no dijimos y me alegra que nuestra historia haya encontrado otra oportunidad.
 
@@ -155,7 +155,7 @@ El zodíaco en Leo nos une. También nos unen el amor por los animales y el gust
 
 Quiero cuidar lo que somos en los detalles: escucharte con atención, hacer tiempo para nosotros y decirte lo que siento. Que el amor se note en cómo nos hablamos y en cómo nos acompañamos.
 
-Yaret, cuando pienso en el futuro, deseo que podamos seguir haciendo equipo. Quiero conocer tus metas, celebrar tus avances y compartir también mis sueños contigo. Me ilusiona imaginar nuevos recuerdos, planes que nos gusten a los dos y días sencillos que se vuelvan especiales por estar juntos.
+babe, cuando pienso en el futuro, deseo que podamos seguir haciendo equipo. Quiero conocer tus metas, celebrar tus avances y compartir también mis sueños contigo. Me ilusiona imaginar nuevos recuerdos, planes que nos gusten a los dos y días sencillos que se vuelvan especiales por estar juntos.
 
 Cada 3 de junio quiero que tengamos una razón más para agradecer esta historia. Que nunca dejemos de cuidar el amor, la paz y la pasión que nos unen.
 
@@ -163,16 +163,16 @@ Wonka, gracias por este reencuentro y por todo lo que estamos viviendo. Todavía
 
 Te amo, con todo mi corazón.`;
  window.TDN={
-  pareja:{nombreA:'Mi amor',nombreB:'Yaret',nombreCompletoA:'',nombreCompletoB:'Yaret / Wonka',apodos:['Yaret','Wonka'],apodo:'Wonka',aniversario:'3 de junio',fechaInicio:'',anioInicio:'',anios:0,fechaCodigo:'0306',ciudad:'Chicago',viajes:[],suenos:['Cuidar nuestro amor','Apoyar nuestras metas','Crear recuerdos juntos'],gustosB:['Animales','Deporte'],mensajeFinal:'Wonka, quiero seguir escribiendo esta historia contigo.'},
+  pareja:{nombreA:'Mi amor',nombreB:'babe',nombreCompletoA:'',nombreCompletoB:'Yaret / Wonka',apodos:['babe','Wonka'],apodo:'Wonka',aniversario:'3 de junio',fechaInicio:'',anioInicio:'',anios:0,fechaCodigo:'0306',ciudad:'Chicago',viajes:[],suenos:['Cuidar nuestro amor','Apoyar nuestras metas','Crear recuerdos juntos'],gustosB:['Animales','Deporte'],mensajeFinal:'Wonka, quiero seguir escribiendo esta historia contigo.'},
   fotos:{hero:'assets/fotos/hero.webp',perfilB:M.fotos.find(f=>f.orden===69).ruta,perfilPareja:M.fotos.find(f=>f.orden===47).ruta,t0:photo(0),t1:photo(1),t2:photo(2),t3:photo(3),t4:photo(4),t5:photo(5),t6:photo(6),t7:photo(7),final:M.fotos.find(f=>f.orden===69).portada,puzzle:photo(2),puzzle2:photo(3),postCreditos:M.fotos.find(f=>f.orden===79).ruta},
   media:{intro:'assets/audio/intro.mp3',temporadas:M.canciones.map(t=>t.src),canciones:M.canciones.map(t=>t.titulo),musica:'',videoFinal:'assets/video/montaje-final.mp4',audioRemitente:''},
   acceso:{password:'7e831593833c68e3f2f6323a7d176d98fe2dd518e6847f813f528a513679333d',demo:false,pistaPassword:'Nuestro aniversario: día y mes, en cuatro números.',estreno:''},
   notificacion:{whatsapp:'524431373757',email:'',endpoint:''},
-  sitio:{url:'https://streaming-us-2.rotfstudio.com/yaret-wonka/splash.html',titulo:'La vida nos debía esta historia',heroTop:'Para Yaret / Wonka · México y Chicago',heroTag:'3 DE JUNIO · NUESTRO ANIVERSARIO',coincidencia:100,clasificacion:'TP',clasificacionTexto:'Amor, paz y pasión',sinopsis:'Nos conocimos hace años y nos guardamos lo mucho que nos gustábamos. La vida volvió a reunirnos en Chicago. Hoy vivimos una historia de ensueño: mucho amor, paz y pasión. Esta pantalla es para ti, Yaret.',generos:['Romance','Nuestro reencuentro','Una historia real'],filaRecomendada:'Para volver a sentir lo nuestro'},
+  sitio:{url:'https://streaming-us-2.rotfstudio.com/yaret-wonka/splash.html',titulo:'La vida nos debía esta historia',heroTop:'Para babe / Wonka · México y Chicago',heroTag:'3 DE JUNIO · NUESTRO ANIVERSARIO',coincidencia:100,clasificacion:'TP',clasificacionTexto:'Amor, paz y pasión',sinopsis:'Nos conocimos hace años y nos guardamos lo mucho que nos gustábamos. La vida volvió a reunirnos en Chicago. Hoy vivimos una historia de ensueño: mucho amor, paz y pasión. Esta pantalla es para ti, babe.',generos:['Romance','Nuestro reencuentro','Una historia real'],filaRecomendada:'Para volver a sentir lo nuestro'},
   temporadas,
-  extras:[{titulo:'Nuestras raíces',img:photo(0),texto:'Somos de México. Chicago guarda nuestro reencuentro.'},{titulo:'El zodíaco en Leo nos une',img:photo(1),texto:'Las estrellas se alinean para reunirnos… También nos unen el amor por los animales y el deporte.'},{titulo:'Nuestra conexión',img:photo(2),texto:'Mucho amor, paz y mucha pasión.'},{titulo:'Cada 3 de junio',img:photo(3),texto:'Una fecha para celebrar lo que vivimos y lo que deseamos construir.'}],
-  final:{titulo:'Todo lo que quiero decirte',imagen:cover(3),sinopsis:'Yaret, una carta para agradecer lo nuestro y soñar con los capítulos que vienen.',preguntas:['Wonka, ¿qué sentiste al volver a ver nuestra historia?','¿Qué recuerdas de nuestro reencuentro en Chicago?','Yaret, ¿qué detalle nuestro te hace sentir paz?','¿Qué sueño te gustaría que apoyáramos juntos?','¿Cómo te gustaría celebrar nuestro próximo 3 de junio?'],carta:()=>carta},
-  creditos:[['Para','Yaret / Wonka'],['Nuestra fecha','3 de junio'],['El reencuentro','Chicago'],['Nuestras raíces','México'],['Lo que nos une','Amor · Paz · Pasión'],['Banda sonora',M.canciones.map(t=>t.titulo).join(' · ')],['','Todavía nos quedan capítulos por escribir.']],
-  postCreditos:{imagen:photo(4),etiqueta:'DESPUÉS DE LOS CRÉDITOS',texto:'Wonka, nuestra historia sigue…',anuncio:'Continuará contigo',subtitulo:'Más amor, más paz y nuevas razones para acercarnos.',sorpresa:'Yaret, te amo. ♡'}
+  extras:[{titulo:'Nuestras raíces',img:photo(0),texto:'Somos de México. Chicago guarda nuestro reencuentro.'},{titulo:'El zodíaco en Leo nos une',img:photo(1),texto:'Las estrellas se alinean para reunirnos… También nos unen el amor por los animales y el deporte.'},{titulo:'Nuestra conexión',img:photo(2),texto:'Mucho amor, paz y mucha pasión.'},{titulo:'3M, Marimar, Mowgli, Marisol',img:photo(3),texto:'Una fecha para celebrar lo que vivimos y lo que deseamos construir.'}],
+  final:{titulo:'Todo lo que quiero decirte',imagen:cover(3),sinopsis:'babe, una carta para agradecer lo nuestro y soñar con los capítulos que vienen.',preguntas:['Wonka, ¿qué sentiste al volver a ver nuestra historia?','¿Qué recuerdas de nuestro reencuentro en Chicago?','babe, ¿qué detalle nuestro te hace sentir paz?','¿Qué sueño te gustaría que apoyáramos juntos?','¿Cómo te gustaría celebrar nuestro próximo 3 de junio?'],carta:()=>carta},
+  creditos:[['Para','babe / Wonka'],['Nuestra fecha','3 de junio'],['El reencuentro','Chicago'],['Nuestras raíces','México'],['Lo que nos une','Amor · Paz · Pasión'],['Banda sonora',M.canciones.map(t=>t.titulo).join(' · ')],['','Todavía nos quedan capítulos por escribir.']],
+  postCreditos:{imagen:photo(4),etiqueta:'DESPUÉS DE LOS CRÉDITOS',texto:'Wonka, nuestra historia sigue…',anuncio:'Continuará contigo',subtitulo:'Más amor, más paz y nuevas razones para acercarnos.',sorpresa:'babe, te amo. ♡'}
  };
 })();
