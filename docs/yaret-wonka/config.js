@@ -10,7 +10,7 @@
  const games={
   fecha:{tipo:'codigo',titulo:'La fecha que es nuestra',modo:'fecha',pregunta:'¿Qué día celebramos nuestro aniversario?',placeholder:'DDMM',respuestas:['0306'],pista:'El 3 de junio, día y mes.',ok:'Cada 3 de junio, otra razón para celebrarnos.'},
   ciudad:{tipo:'quiz',titulo:'El reencuentro',pregunta:'¿En qué ciudad la vida volvió a reunirnos?',opciones:['Chicago','Madrid','Monterrey'],correcta:0,ok:'Chicago guarda el capítulo en que lo nuestro pudo comenzar.'},
-  leo:{tipo:'adivinanza',titulo:'Dos corazones, un signo',texto:'Compartimos un signo de fuego cuyo símbolo es un león. ¿Cuál es?',respuestas:['leo'],pista:'Tres letras, mucho corazón.',ok:'Leo y Leo. Qué bonita coincidencia.'},
+  leo:{tipo:'adivinanza',titulo:'El zodíaco que nos une',texto:'En nuestra historia decimos: «El zodíaco en ___ nos une». ¿Qué palabra falta?',respuestas:['leo'],pista:'Tres letras, mucho corazón.',ok:'El zodíaco en Leo nos une.'},
   memoria:{tipo:'memory',titulo:'Recuerdos de dos en dos',pares:[0,1,2,3,4,5].map(photo),ok:'Hay momentos que siempre encuentran su pareja.'},
   puzzle:{tipo:'puzzle',titulo:'Volver a encontrarnos',imagen:photo(2),ok:'Pieza por pieza, otra vez tú y yo.'},
   palabras:{tipo:'sopa',titulo:'Lo que nos une',palabras:['YARET','WONKA','CHICAGO','LEO','AMOR','PAZ','DEPORTE'],ok:'Todas estas palabras tienen algo de nosotros.'},
@@ -20,9 +20,9 @@
   ['Lo que nunca te dije','Hace años nos gustábamos y el tiempo guardó las palabras. Hoy podemos decirlas.',[
    ['Yaret, antes de esta historia','hubo algo que no nos atrevíamos a decir.'],
    ['Nos conocimos hace años,','y nos gustábamos más de lo que confesábamos.'],
-   ['Había sentimientos guardados','entre lo que decíamos y lo que callábamos.'],
+   ['Somos el amor de otra vida','que nos alcanzó para encontrarnos en esta.'],
    ['Entonces todavía no sabíamos','que la vida nos volvería a encontrar.'],
-   ['Hoy quiero decirlo sin esconderme:','me haces muy feliz.'],
+   ['Me encanta que respetemos nuestras heridas,','pero nos cuidemos avanzando como equipo que somos.'],
    ['Qué bonito que lo que sentíamos','por fin tenga un lugar entre los dos.']]],
   ['Chicago tenía otros planes','Lejos de México, una ciudad se convirtió en el escenario de nuestro reencuentro.',[
    ['Wonka, somos de México,','pero la vida nos reunió de nuevo en Chicago.'],
@@ -31,8 +31,8 @@
    ['Una ciudad puede ser enorme;','a tu lado encontré cercanía.'],
    ['Lo que antes se quedaba en silencio','hoy tiene abrazos y palabras.'],
    ['Chicago guarda nuestro reencuentro.','Y yo guardo la alegría de tenerte.']]],
-  ['Dos Leo, la misma chispa','El signo que compartimos y la atracción que tiene una forma tan nuestra.',[
-   ['Yaret, hasta en el signo coincidimos:','Leo y Leo.'],
+  ['El zodíaco en Leo nos une','Las estrellas se alinean para reunirnos… y el zodíaco en Leo nos une.',[
+   ['Las estrellas se alinean para reunirnos…','El zodíaco en Leo nos une.'],
    ['Me gusta esa pequeña complicidad','de descubrir cosas que nos unen.'],
    ['Hay mucha pasión en lo nuestro,','y me encanta sentirla contigo.'],
    ['Quiero que esa chispa también sea','cariño, escucha y atención.'],
@@ -151,7 +151,7 @@ Somos de México, pero la vida nos volvió a reunir en el extranjero, en Chicago
 
 Wonka, nos amamos mucho, y eso es lo que más quiero celebrar. Gracias por la paz de nuestra conexión, por tanto amor y por esa pasión que nos acerca. Me hace feliz que seas tú quien comparte conmigo este capítulo.
 
-Tenemos hasta el signo en común: dos Leo. También nos unen el amor por los animales y el gusto por el deporte. Me gusta descubrir esas coincidencias y saber que, además de lo que ya compartimos, todavía nos queda tanto por conocer del otro.
+El zodíaco en Leo nos une. También nos unen el amor por los animales y el gusto por el deporte. Me gusta descubrir esas coincidencias y saber que, además de lo que ya compartimos, todavía nos queda tanto por conocer del otro.
 
 Quiero cuidar lo que somos en los detalles: escucharte con atención, hacer tiempo para nosotros y decirte lo que siento. Que el amor se note en cómo nos hablamos y en cómo nos acompañamos.
 
@@ -170,7 +170,7 @@ Te amo, con todo mi corazón.`;
   notificacion:{whatsapp:'524431373757',email:'',endpoint:''},
   sitio:{url:'https://streaming-us-2.rotfstudio.com/yaret-wonka/splash.html',titulo:'La vida nos debía esta historia',heroTop:'Para Yaret / Wonka · México y Chicago',heroTag:'3 DE JUNIO · NUESTRO ANIVERSARIO',coincidencia:100,clasificacion:'TP',clasificacionTexto:'Amor, paz y pasión',sinopsis:'Nos conocimos hace años y nos guardamos lo mucho que nos gustábamos. La vida volvió a reunirnos en Chicago. Hoy vivimos una historia de ensueño: mucho amor, paz y pasión. Esta pantalla es para ti, Yaret.',generos:['Romance','Nuestro reencuentro','Una historia real'],filaRecomendada:'Para volver a sentir lo nuestro'},
   temporadas,
-  extras:[{titulo:'Nuestras raíces',img:photo(0),texto:'Somos de México. Chicago guarda nuestro reencuentro.'},{titulo:'Leo y Leo',img:photo(1),texto:'El signo que compartimos, el amor por los animales y el deporte.'},{titulo:'Nuestra conexión',img:photo(2),texto:'Mucho amor, paz y mucha pasión.'},{titulo:'Cada 3 de junio',img:photo(3),texto:'Una fecha para celebrar lo que vivimos y lo que deseamos construir.'}],
+  extras:[{titulo:'Nuestras raíces',img:photo(0),texto:'Somos de México. Chicago guarda nuestro reencuentro.'},{titulo:'El zodíaco en Leo nos une',img:photo(1),texto:'Las estrellas se alinean para reunirnos… También nos unen el amor por los animales y el deporte.'},{titulo:'Nuestra conexión',img:photo(2),texto:'Mucho amor, paz y mucha pasión.'},{titulo:'Cada 3 de junio',img:photo(3),texto:'Una fecha para celebrar lo que vivimos y lo que deseamos construir.'}],
   final:{titulo:'Todo lo que quiero decirte',imagen:cover(3),sinopsis:'Yaret, una carta para agradecer lo nuestro y soñar con los capítulos que vienen.',preguntas:['Wonka, ¿qué sentiste al volver a ver nuestra historia?','¿Qué recuerdas de nuestro reencuentro en Chicago?','Yaret, ¿qué detalle nuestro te hace sentir paz?','¿Qué sueño te gustaría que apoyáramos juntos?','¿Cómo te gustaría celebrar nuestro próximo 3 de junio?'],carta:()=>carta},
   creditos:[['Para','Yaret / Wonka'],['Nuestra fecha','3 de junio'],['El reencuentro','Chicago'],['Nuestras raíces','México'],['Lo que nos une','Amor · Paz · Pasión'],['Banda sonora',M.canciones.map(t=>t.titulo).join(' · ')],['','Todavía nos quedan capítulos por escribir.']],
   postCreditos:{imagen:photo(4),etiqueta:'DESPUÉS DE LOS CRÉDITOS',texto:'Wonka, nuestra historia sigue…',anuncio:'Continuará contigo',subtitulo:'Más amor, más paz y nuevas razones para acercarnos.',sorpresa:'Yaret, te amo. ♡'}
