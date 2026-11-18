@@ -52,13 +52,13 @@
    ['Que no se nos olvide el coqueteo,','ni un detalle porque sí.'],
    ['Deseo que tengamos nuestro tiempo,','con intimidad, cariño y confianza.'],
    ['Me ilusiona seguir eligiéndote','con esta misma emoción.']]],
-  ['Un corazón para los animales','La ternura que compartimos también forma parte de nuestra historia.',[
-   ['Wonka, compartimos','el amor por los animales.'],
-   ['Me gusta que haya ternura','entre las cosas que nos acercan.'],
-   ['Quiero que ese cariño también se note','en cómo tratamos al mundo.'],
-   ['En tener paciencia, en cuidar,','en prestar atención a lo pequeño.'],
-   ['Me ilusiona compartir más momentos','con esa sensibilidad que nos une.'],
-   ['Amar también es cuidar.','Y quiero seguir aprendiendo contigo.']]],
+  ['Entre la cancha y la granja','Nos une el amor por los animales, el deporte y nuestro trabajo, y la alegría de compartirlo.',[
+   ['Wonka, entre la cancha y la granja','también se escribe algo de nosotros.'],
+   ['Tenemos algo muy bonito en común:','amamos nuestro trabajo y lo compartimos.'],
+   ['Me gusta compartir contigo','lo que hacemos con tanto amor.'],
+   ['Nos unen los animales, el deporte','y el gusto por lo que hacemos.'],
+   ['Quiero seguir compartiendo tus días,','tus ganas y la ilusión por nuestro trabajo.'],
+   ['Amar lo que hacemos y compartirlo contigo','hace más especial esta historia.']]],
   ['En el mismo equipo','El deporte que nos gusta y el deseo de acompañar los retos de cada quien.',[
    ['Yaret, el deporte','es otra de las cosas que compartimos.'],
    ['Me gusta pensar en nuevos planes','que podamos disfrutar los dos.'],
