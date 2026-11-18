@@ -1,0 +1,65 @@
+html { scroll-padding-top: var(--nav-h); }
+
+.home-hero .hero-bg img { object-position: center 36%; }
+.anniversary-hero { background: #1e1113; }
+.anniversary-hero .hero-bg {
+  left: 28%;
+  animation: none;
+}
+.anniversary-hero .hero-bg img { object-position: 58% 43%; }
+.anniversary-hero::before {
+  background: linear-gradient(90deg, #1e1113 27%, #1e1113ee 34%, #1e111350 60%, transparent 78%);
+}
+.anniversary-hero .hero-tags > span:last-child { color: #f6ceb0; }
+.anniversary-hero .hero-title { max-width: 10em; }
+.splash-start p:first-of-type { color: #f6ceb0; }
+.scene .media-wrap img, .scene .media-wrap video { object-fit: contain; background: #080808; }
+.games-page .games-grid.arcade-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); }
+[hidden] { display: none !important; }
+.subtitle {
+  bottom: 22%;
+  text-shadow: 0 2px 5px #000;
+}
+.player.controls-on .subtitle { bottom: 30%; }
+.player-start {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+}
+.scene-source {
+  position: absolute;
+  top: max(4.5rem, calc(env(safe-area-inset-top) + 3.5rem));
+  right: max(1rem, env(safe-area-inset-right));
+  padding: .35em .65em;
+  border-radius: .25rem;
+  background: #141414d9;
+  color: #f4eee9;
+  font-size: .75rem;
+}
+
+@media (max-width: 899px) {
+  .anniversary-hero .hero-bg {
+    left: 0;
+    bottom: auto;
+    height: clamp(305px, 80vw, 530px);
+  }
+  .anniversary-hero::before {
+    background: linear-gradient(180deg, #1414149c, transparent 68px, transparent 39%, #1e1113 clamp(305px, 80vw, 530px));
+  }
+  .anniversary-hero.home-hero .hero-content {
+    padding-top: clamp(250px, 66vw, 465px);
+    padding-bottom: 94px;
+  }
+  .anniversary-hero .hero-synopsis {
+    display: block;
+  }
+  .anniversary-hero .hero-bg img {
+    content: url('assets/fotos/hero-movil.webp');
+    object-position: center;
+  }
+}
+.extra-story { white-space: pre-line; line-height: 1.65; }
+.anniversary-hero .hero-title { max-width: 11em; }
+.subtitle { text-wrap: pretty; }
