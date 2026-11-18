@@ -1,0 +1,28 @@
+/* Ajustes de medios verticales; la identidad visual y los componentes vienen de la plantilla original. */
+.home-hero .hero-bg img { object-position: center center; }
+.scene .media-wrap img { object-fit: contain; background: #080808; }
+.thumb img, .ep-thumb img { object-position: center center; }
+.games-page .games-grid.arcade-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 300px)); }
+[hidden] { display: none !important; }
+
+.scene .media-wrap video { object-fit: contain; background: #080808; }
+.home-hero .hero-title { max-width: 9.5em; }
+@media (max-width: 680px) {
+  .home-hero .hero-bg {
+    bottom: auto;
+    height: clamp(360px, 61svh, 520px);
+    animation: none;
+  }
+  .home-hero .hero-bg img { object-position: center 25%; }
+  .home-hero::before {
+    height: clamp(360px, 61svh, 520px);
+    background: linear-gradient(180deg, #0003, transparent 25%, #14141426 48%, #141414 100%);
+  }
+  .home-hero { background: var(--netflix-black); }
+  .home-hero .hero-content {
+    padding-top: clamp(280px, 41svh, 380px);
+    padding-bottom: 88px;
+  }
+}
+
+@media (max-width: 680px) { .home-hero .hero-bg img { content: url("assets/fotos/hero-movil.webp"); object-position: center top; } }
