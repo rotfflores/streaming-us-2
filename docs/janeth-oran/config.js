@@ -7,7 +7,7 @@
   const tracks = [
     ['Tan enamorados · Carolina Ross', 'tan-enamorados'],
     ['Estrellitas y duendes', 'estrellitas-y-duendes'],
-    ['El problema · Ricardo Arjona', 'el-problema'],
+    ['No Hay Cielo · Franco de Vita', 'no-hay-cielo'],
     ['Bésame · Ricardo Montaner', 'besame'],
     ['Estoy Enamorado · Thalía y Pedro Capó', 'estoy-enamorado']
   ].map(([cancion, key]) => ({ cancion, musica: `assets/audio/${key}.mp3` }));
