@@ -23,7 +23,7 @@ window.TDN={
     "culpableAnecdota": 2,
     "gustosB": [],
     "suenos": [
-      "Compartir tiempo juntos",
+      "Seguir enamorándonos cada día",
       "Apoyar nuestras metas",
       "Crear nuevos recuerdos"
     ],
@@ -172,8 +172,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-05.webp",
               "texto": [
-                "Quiero darte tiempo.",
-                "Del que se comparte sin mirar el reloj."
+                "Te quiero, Stefany.",
+                "Eres la mujer de mi vida."
               ]
             },
             {
@@ -261,15 +261,15 @@ window.TDN={
             {
               "img": "assets/ambiente/cielo.webp",
               "texto": [
-                "Que tengas espacio para ser tú misma.",
-                "También cuando estés conmigo."
+                "Eres hermosa, Stefany.",
+                "Me enamora tu forma de ser."
               ]
             },
             {
               "img": "assets/fotos/foto-10.webp",
               "texto": [
-                "Quiero escucharte con atención.",
-                "Sin dar por hecho lo que sientes."
+                "Te quiero tal como eres.",
+                "Eres una mujer maravillosa."
               ]
             },
             {
@@ -290,8 +290,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-12.webp",
               "texto": [
-                "Que mi amor también sea respeto,",
-                "paciencia y ganas de entenderte."
+                "Eres la mujer de mi vida,",
+                "la dueña de mis pensamientos y de mi amor."
               ]
             },
             {
@@ -358,8 +358,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-13.webp",
               "texto": [
-                "Gracias por el tiempo que compartes conmigo.",
-                "Para mí tiene mucho valor."
+                "Gracias por llenar mi vida de amor.",
+                "Eres lo más hermoso que hay en ella."
               ]
             },
             {
@@ -402,8 +402,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-18.webp",
               "texto": [
-                "En una pregunta hecha con interés.",
-                "En tiempo para escuchar tu respuesta."
+                "En un te quiero que nace del corazón.",
+                "En recordarte lo hermosa que eres."
               ]
             },
             {
@@ -436,7 +436,7 @@ window.TDN={
       "musica": "assets/audio/la-mujer-que-sone.mp3",
       "cancion": "La mujer que soñé — Los Temerarios",
       "top10": false,
-      "sinopsis": "Nuestro 7 de noviembre y una invitación a seguir construyendo: tiempo, cariño y sueños compartidos.",
+      "sinopsis": "Nuestro 7 de noviembre, todo mi amor por ti y la ilusión de seguir juntos. Eres la mujer de mi vida.",
       "creditos": [
         [
           "Para",
@@ -454,7 +454,7 @@ window.TDN={
       "episodios": [
         {
           "titulo": "Todos los mañanas que deseo",
-          "descripcion": "Nuestro 7 de noviembre y una invitación a seguir construyendo: tiempo, cariño y sueños compartidos.",
+          "descripcion": "Nuestro 7 de noviembre, todo mi amor por ti y la ilusión de seguir juntos. Eres la mujer de mi vida.",
           "duracion": 88,
           "musica": "assets/audio/la-mujer-que-sone.mp3",
           "cancion": "La mujer que soñé — Los Temerarios",
@@ -463,7 +463,7 @@ window.TDN={
               "img": "assets/fotos/foto-21.webp",
               "texto": [
                 "El 7 de noviembre tiene tu nombre.",
-                "Nuestro aniversario merece este espacio."
+                "Feliz aniversario, mujer de mi vida."
               ]
             },
             {
@@ -477,14 +477,14 @@ window.TDN={
               "img": "assets/ambiente/cielo.webp",
               "texto": [
                 "Sueño con hacer planes contigo.",
-                "Con escuchar también los que tú deseas."
+                "Porque eres la mujer con la que sueño."
               ]
             },
             {
               "img": "assets/fotos/foto-04.webp",
               "texto": [
-                "Con encontrar ratitos para los dos.",
-                "Incluso cuando los días estén llenos."
+                "Con abrazarte y decirte cuánto te quiero.",
+                "Con recordarte cada día que eres hermosa."
               ]
             },
             {
@@ -527,7 +527,7 @@ window.TDN={
               "img": "assets/fotos/foto-21.webp",
               "texto": [
                 "Stefany, feliz aniversario.",
-                "Quiero seguir eligiendo tiempo contigo. — Abraham"
+                "Eres la mujer de mi vida. Te quiero. — Abraham"
               ]
             }
           ],
@@ -596,8 +596,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-14.webp",
               "texto": [
-                "Me gusta dedicarte tiempo.",
-                "Saber de ti, escucharte, encontrarte cerca."
+                "Me encanta estar enamorado de ti.",
+                "De tu sonrisa y de lo hermosa que eres."
               ]
             },
             {
@@ -628,7 +628,7 @@ window.TDN={
             {
               "img": "assets/fotos/foto-07.webp",
               "texto": [
-                "Por compartir tu tiempo conmigo.",
+                "Por llenar de amor mi corazón.",
                 "Por ser parte de estos recuerdos."
               ]
             },
@@ -650,8 +650,8 @@ window.TDN={
             {
               "img": "assets/ambiente/olas.mp4",
               "texto": [
-                "Que encuentre la forma de cuidarte",
-                "con atención y respeto."
+                "Que nunca te falte un te quiero",
+                "ni un recordatorio de lo hermosa que eres."
               ],
               "poster": "assets/ambiente/olas.webp"
             },
@@ -668,7 +668,7 @@ window.TDN={
         },
         {
           "titulo": "El próximo capítulo",
-          "descripcion": "Metas expresadas como deseos: escucharnos, apoyarnos y construir nuevos recuerdos.",
+          "descripcion": "Eres la mujer de mi vida: quiero seguir amándote y construyendo sueños contigo.",
           "duracion": 66,
           "musica": "assets/audio/te-metiste.mp3",
           "cancion": "Te metiste — Ariel Camacho y Los Plebes del Rancho",
@@ -676,15 +676,15 @@ window.TDN={
             {
               "img": "assets/fotos/foto-05.webp",
               "texto": [
-                "No quiero escribir el futuro sin escucharte.",
-                "Quiero saber qué sueñas tú."
+                "Tú eres la mujer de mi vida.",
+                "La que quiero a mi lado en cada sueño."
               ]
             },
             {
               "img": "assets/ambiente/cielo.webp",
               "texto": [
                 "Que podamos elegir nuestros planes",
-                "con ilusión y con espacio para los dos."
+                "con todo el amor que siento por ti."
               ]
             },
             {
@@ -697,8 +697,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-13.webp",
               "texto": [
-                "Hacer tiempo para vernos.",
-                "Para conversar sin dejar todo para después."
+                "Abrazarte y llenarte de besos.",
+                "Decirte una y otra vez: te quiero, hermosa."
               ]
             },
             {
@@ -742,7 +742,7 @@ window.TDN={
     {
       "titulo": "Todos los mañanas que deseo",
       "img": "assets/fotos/foto-21.webp",
-      "texto": "Nuestro 7 de noviembre y una invitación a seguir construyendo: tiempo, cariño y sueños compartidos."
+      "texto": "Nuestro 7 de noviembre, todo mi amor por ti y la ilusión de seguir juntos. Eres la mujer de mi vida."
     }
   ],
   "final": {
@@ -784,7 +784,7 @@ window.TDN={
     ],
     [
       "Nuestro próximo capítulo",
-      "Tiempo para los dos y nuevos recuerdos"
+      "Te quiero, hermosa. Eres la mujer de mi vida"
     ],
     [
       "",
@@ -800,4 +800,4 @@ window.TDN={
     "sorpresa": "Feliz aniversario. Con amor, Abraham. ♡"
   }
 };
-window.TDN.final.carta=()=>"Mi Stefany:\n\nQuise reunir nuestras fotos, nuestros videos y estas canciones para dedicarte un momento distinto. Un espacio en el que puedas detenerte, mirar las imágenes y encontrar algo de todo el cariño que siento por ti.\n\nA veces cuesta encontrar las palabras. Hoy quiero empezar por las más sencillas: te quiero y me importa lo que compartimos. No quiero que tengas que adivinarlo; deseo aprender a expresártelo en mis palabras, en el tiempo que te dedico y en la atención con la que te escucho.\n\nGracias por compartir tu tiempo conmigo y por ser parte de los recuerdos que guardan estas imágenes. Me alegra poder volver a ellos. Quiero que este regalo sea una manera de agradecerte, pero también un recordatorio para mí: lo bonito merece atención todos los días, no solamente en nuestro aniversario.\n\nNuestro 7 de noviembre me invita a celebrar lo nuestro y a pensar en lo que deseo hacia adelante. Quiero escucharte con calma, conocer lo que te ilusiona y tener espacio para hablar de lo que cada uno necesita. Me gustaría que podamos acompañarnos con respeto, cariño y libertad para ser quienes somos.\n\nSueño con seguir haciendo planes contigo. No tienen que ser enormes para significar mucho: un rato para conversar, una salida que nos ilusione, una nueva foto o tiempo para escucharnos sin prisas. También quiero conocer tus metas y apoyarte mientras vas por ellas. Que podamos celebrar lo que logras y encontrar los sueños que nos gustaría construir juntos.\n\nNo tengo escrito todo lo que viene, Stefany. Prefiero que podamos descubrirlo y decidirlo entre los dos. Hoy sí puedo decirte lo que deseo: cuidar lo que compartimos, demostrarte mi cariño y seguir creando recuerdos que nos guste volver a mirar.\n\nOjalá que cuando regreses a estas películas encuentres una sonrisa, una canción que quieras volver a escuchar y la certeza de que este detalle fue pensado para ti. Feliz aniversario, Stefany. Me ilusiona que todavía tengamos muchos capítulos por escribir.\n\nCon todo mi amor,\nAbraham";
+window.TDN.final.carta=()=>"Mi Stefany:\n\nQuise reunir nuestras fotos, nuestros videos y estas canciones para decirte algo que nace de mi corazón: te quiero, Stefany. Eres la mujer de mi vida y este regalo está lleno de todo el amor que siento por ti.\n\nEres hermosa, mi amor. Me enamoran tu sonrisa, tu forma de ser y lo especial que eres para mí. Cuando miro nuestras imágenes, pienso en lo feliz que me hace tenerte en mi vida. Quiero que nunca olvides cuánto te quiero y lo mucho que significas para mí.\n\nGracias por ser parte de mi vida y por los recuerdos tan bonitos que guardan estas imágenes. Gracias por hacerme sonreír y por llenar de amor mi corazón. Eres una mujer maravillosa, Stefany, y me siento feliz de poder dedicarte estas palabras y estas canciones.\n\nNuestro 7 de noviembre me invita a celebrar lo nuestro y a decirte lo que siento sin rodeos: eres la mujer de mi vida. Te quiero con todo mi corazón. Quiero seguir abrazándote, besándote y recordándote cada día que eres hermosa y que estoy enamorado de ti.\n\nSueño con seguir haciendo planes contigo, compartir nuevas aventuras y llenar nuestra historia de más fotos, besos y momentos felices. Me ilusiona acompañarte en tus metas, celebrar tus logros y construir sueños juntos. En todos esos sueños hay algo que tengo muy claro: quiero que estés tú, la mujer que amo.\n\nNo tengo escrito todo lo que viene, Stefany. Prefiero que podamos descubrirlo y decidirlo entre los dos. Hoy sí puedo decirte lo que deseo: cuidar lo que compartimos, demostrarte mi cariño y seguir creando recuerdos que nos guste volver a mirar.\n\nOjalá que cuando regreses a estas películas encuentres una sonrisa, una canción que quieras volver a escuchar y la certeza de que este detalle fue pensado para ti. Feliz aniversario, Stefany. Me ilusiona que todavía tengamos muchos capítulos por escribir.\n\nCon todo mi amor,\nAbraham";
