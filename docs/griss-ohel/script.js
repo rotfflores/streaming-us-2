@@ -838,6 +838,10 @@
       <div class="intro-card ${t >= INTRO ? "hide" : ""}" id="intro"><div class="logo" data-logo="TEMPORADAS DE NOSOTROS"></div>
         <div class="ep-label">${isMovie(ep.season) ? "Una película original" : `Serie original · ${esc(ep.season.titulo)} · Episodio ${ep.e}`}</div><h1>${esc(ep.titulo)}</h1></div>
       <div class="big-play" id="bigPlay"><span></span></div>
+      <div class="sound-prompt" id="soundPrompt" hidden>
+        <button class="btn btn-play" type="button" id="enableSound">${I.play} Reproducir con sonido</button>
+        <p id="soundMessage" role="status">Toca para activar la música.</p>
+      </div>
       <button class="skip-intro hidden" id="skip">Saltar intro</button>
       <div class="p-top"><button class="back" id="back" aria-label="Volver">${I.back}</button><span class="p-title">${esc(epFull(ep))}</span></div>
       <div class="p-bottom">
@@ -864,29 +868,71 @@
     let playing = false, last = 0, cur = -1, curBeat = -1, ended = false, savedAt = 0, introSound = false;
 
     // --- Audio (música opcional) ---
-    let vol = ls.get("groh_vol", 0.8);
+    let vol = Number(ls.get("groh_vol", 0.8));
+    if (!Number.isFinite(vol)) vol = 0.8;
+    vol = clamp(vol, 0, 1);
     const musicSrc = ep.musica || ep.season.musica || C.media.musica;
     const music = musicSrc ? new Audio(musicSrc) : null;
     if (music) { music.loop = true; music.preload = "auto"; }
+    const soundPrompt = $("#soundPrompt"), enableSound = $("#enableSound"), soundMessage = $("#soundMessage");
+    let musicPending = false, musicBlocked = false;
     const applyVol = () => {
       const v = Sound.muted ? 0 : vol;
-      if (music) music.volume = v;
+      if (music) { music.volume = v; music.muted = Sound.muted || vol === 0; }
       $$("video", player).forEach((vd) => { vd.volume = v; vd.muted = vd.classList.contains("media-img") || v === 0; });
       muteBtn.innerHTML = v === 0 ? I.mute : I.vol;
       volR.value = vol;
+      if (music) soundPrompt.hidden = !musicBlocked && v > 0;
     };
     applyVol();
     volR.addEventListener("input", () => { vol = +volR.value; ls.set("groh_vol", vol); if (vol > 0) Sound.muted = false; applyVol(); });
+
+    // AUDIO_RECOVERY_START: retry blocked playback only from a user gesture.
+    function requestMusic(userGesture = false) {
+      if (!music || !playing || musicPending || (!userGesture && musicBlocked) || !music.paused) return;
+      musicPending = true;
+      Sound.introAudio?.pause();
+      const failed = (error) => {
+        if (error?.name === "AbortError") return;
+        musicBlocked = true;
+        pause(false);
+        soundPrompt.hidden = false;
+        enableSound.textContent = error?.name === "NotAllowedError" ? "Reproducir con sonido" : "Reintentar audio";
+        soundMessage.textContent = error?.name === "NotAllowedError"
+          ? "Toca para activar la música y continuar."
+          : "No se pudo cargar la canción. Toca para reintentar.";
+      };
+      try {
+        // Keep play() in the click handler's call stack for mobile browsers.
+        Promise.resolve(music.play()).then(() => {
+          musicBlocked = false;
+          soundPrompt.hidden = Sound.muted || vol === 0 ? false : true;
+          if (!playing) music.pause();
+        }).catch(failed).finally(() => { musicPending = false; });
+      } catch (error) { failed(error); musicPending = false; }
+    }
+    // AUDIO_RECOVERY_END
+    enableSound.onclick = (event) => {
+      event.stopPropagation();
+      Sound.muted = false;
+      if (vol === 0) vol = 0.8;
+      ls.set("groh_vol", vol);
+      applyVol();
+      if (t < INTRO) { t = INTRO; render(true); }
+      // A failed network load needs a fresh load; autoplay rejection does not.
+      if (music?.error) music.load();
+      play(true);
+    };
 
     const subsOn = () => ls.get("groh_subs", true);
     player.classList.toggle("no-subs", !subsOn());
     $('[data-a="subs"]').classList.toggle("off", !subsOn());
 
-    function play() {
+    function play(userGesture = true) {
       if (ended) return;
       playing = true; playBtn.innerHTML = I.pause;
       if (t < INTRO && !introSound) { introSound = true; Sound.tadum(); }
-      if (t >= INTRO) music?.play().catch(() => {});
+      if (t >= INTRO) requestMusic(userGesture);
       const v = $(".scene.on video"); v?.play().catch(() => {});
       flash(I.play); poke();
     }
@@ -936,7 +982,7 @@
         sub.classList.remove("beat-in"); sub.offsetWidth; sub.classList.add("beat-in");
         curBeat = beat;
       }
-      if (playing && t >= INTRO && music?.paused) { Sound.introAudio?.pause(); music.play().catch(() => {}); }
+      if (playing && t >= INTRO && music?.paused) requestMusic();
       if (playing) saveWatch();
     }
 
@@ -960,7 +1006,7 @@
     player.addEventListener("mousemove", poke);
     // Tocar la imagen: con mouse pausa/reanuda; en táctil, primero muestra controles
     player.addEventListener("pointerup", (e) => {
-      if (ended || e.target.closest(".p-top, .p-bottom, .skip-intro, .endscreen, .title-credits")) return;
+      if (ended || e.target.closest(".p-top, .p-bottom, .skip-intro, .sound-prompt, .endscreen, .title-credits")) return;
       if (e.pointerType === "mouse") return toggle();
       if (!player.classList.contains("controls-on")) poke(); else toggle();
     });
@@ -982,7 +1028,7 @@
       play: toggle,
       back10: () => seek(t - 10),
       fwd10: () => seek(t + 10),
-      mute: () => { Sound.muted = !Sound.muted; if (!Sound.muted && vol === 0) vol = 0.8; applyVol(); },
+      mute: () => { Sound.muted = !Sound.muted; if (!Sound.muted && vol === 0) vol = 0.8; applyVol(); if (!Sound.muted && musicBlocked) play(true); },
       next: () => { saveWatch(true); go(nxt ? epUrl(nxt) : "final.html"); },
       subs: () => { const on = !subsOn(); ls.set("groh_subs", on); player.classList.toggle("no-subs", !on); $('[data-a="subs"]').classList.toggle("off", !on); toast(on ? "Subtítulos: Español" : "Subtítulos desactivados"); },
       full: () => {
@@ -1086,7 +1132,7 @@
 
     render(true);
     requestAnimationFrame(frame);
-    setTimeout(play, 350);
+    setTimeout(() => play(false), 350);
   }
 
   /* ---------- TEMPORADA FINAL ---------- */
