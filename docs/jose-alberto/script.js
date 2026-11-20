@@ -297,7 +297,7 @@
     SEASONS.filter((s) => !s.episodios.some((e) => isDone(e.id)) && s !== n?.season).slice(0, 4)
       .forEach((s) => items.push({ t: `${kindName(s)} disponible: ${s.titulo}`, s: String(s.anio), img: s.imagen, seed: "s" + s.num, url: `temporada.html?t=${s.num}` }));
     items.push({ t: `Ya disponible: ${C.final.titulo}`, s: "Solo para ti", img: C.final.imagen, seed: "final", url: "final.html" });
-    items.push({ t: "Estreno: Temporadas de Nosotros", s: `${SEASONS.filter(isMovie).length} películas y ${SEASONS.filter((s) => !isMovie(s)).length} serie original para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
+    items.push({ t: "Estreno: " + C.sitio.titulo, s: `${SEASONS.filter(isMovie).length} películas y ${SEASONS.filter((s) => !isMovie(s)).length} serie original para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
     return items;
   }
 
@@ -651,7 +651,7 @@
         <div class="hero-bg">${heroImg ? media(heroImg, "", "hero") : media("", "Nosotros", "hero")}</div>
         <div class="hero-content">
           <div class="hero-kicker"><span class="logo-mono">T</span>${only ? kindName(feat) : "Original"}</div>
-          <h1 class="hero-title">${esc(only ? feat.titulo : "Temporadas de Nosotros")}</h1>
+          <h1 class="hero-title">${esc(only ? feat.titulo : C.sitio.titulo)}</h1>
           <div class="hero-tags"><span class="tag-red">${esc(C.sitio.heroTag)}</span><span class="top10-mini">TOP<b>10</b></span><span>${esc(C.sitio.heroTop)}</span></div>
           <p class="hero-synopsis">${esc(only ? feat.sinopsis : C.sitio.sinopsis)}</p>
           <div class="hero-btns">
@@ -716,7 +716,7 @@
 
     $("#hPlay").onclick = (e) => expandTo($(".hero"), playTarget);
     $("#hInfo").onclick = () => expandTo($(".hero"), `temporada.html?t=${feat.num}`);
-    $("#hList").onclick = (e) => { const on = only ? toggleList("s:" + feat.num, feat.titulo) : toggleList("serie", "Temporadas de Nosotros"); e.currentTarget.innerHTML = `${on ? I.check : I.plus} Mi lista`; };
+    $("#hList").onclick = (e) => { const on = only ? toggleList("s:" + feat.num, feat.titulo) : toggleList("serie", C.sitio.titulo); e.currentTarget.innerHTML = `${on ? I.check : I.plus} Mi lista`; };
     $("#hMute").onclick = (e) => { Sound.muted = !Sound.muted; e.currentTarget.innerHTML = Sound.muted ? I.mute : I.vol; toast(Sound.muted ? "Sonido desactivado" : "Sonido activado"); };
 
     const q = param("q");
