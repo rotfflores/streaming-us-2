@@ -65,7 +65,7 @@ window.TDN={
       "Yo Quiero Ser — Perro Callejero"
     ],
     "musica": "",
-    "videoFinal": "assets/video/para-ohel.mp4",
+    "videoFinal": "assets/video/para-ohel-v2.mp4",
     "audioRemitente": ""
   },
   "acceso": {
@@ -101,7 +101,7 @@ window.TDN={
       "titulo": "El hombre de nuestras vidas",
       "anio": "19 de noviembre",
       "clasificacion": "TP",
-      "imagen": "assets/fotos/portada-18.webp",
+      "imagen": "assets/fotos/portada-01.webp",
       "musica": "assets/audio/sentirme-vivo.mp3",
       "cancion": "Sentirme Vivo — Emmanuel",
       "top10": true,
@@ -129,15 +129,10 @@ window.TDN={
           "cancion": "Sentirme Vivo — Emmanuel",
           "escenas": [
             {
-              "img": "assets/fotos/foto-18.webp",
-              "texto": [
-                "Ohel Antonio, hoy la historia lleva tu nombre.",
-                "Feliz Día del Hombre, mi amor. ❤️"
-              ]
-            },
-            {
               "img": "assets/fotos/foto-01.webp",
               "texto": [
+                "Ohel Antonio, hoy la historia lleva tu nombre.",
+                "Feliz Día del Hombre, mi amor. ❤️",
                 "Queremos recordarte algo que nunca debería olvidarse:",
                 "eres muy especial para nosotras."
               ]
@@ -146,61 +141,42 @@ window.TDN={
               "img": "assets/fotos/foto-02.webp",
               "texto": [
                 "Cuando miramos estas fotos,",
-                "sentimos gratitud por compartir la vida contigo."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-03.webp",
-              "texto": [
+                "sentimos gratitud por compartir la vida contigo.",
                 "Admiramos tu fortaleza.",
                 "Esa manera tan tuya de seguir adelante."
               ]
             },
             {
-              "img": "assets/fotos/foto-04.webp",
+              "img": "assets/fotos/foto-03.webp",
               "texto": [
                 "Admiramos también tu corazón.",
-                "El cariño que dejas en nuestros días."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-05.webp",
-              "texto": [
+                "El cariño que dejas en nuestros días.",
                 "Y tus detalles, mi amor.",
                 "Esos gestos que nos hacen sentir importantes para ti."
               ]
             },
             {
-              "img": "assets/fotos/foto-06.webp",
+              "img": "assets/fotos/foto-04.webp",
               "texto": [
                 "Estamos orgullosas del hombre",
-                "que tenemos a nuestro lado."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-07.webp",
-              "texto": [
+                "que tenemos a nuestro lado.",
                 "Hoy queremos detener el tiempo un poquito",
                 "y celebrarte con todo nuestro cariño."
               ]
             },
             {
-              "img": "assets/fotos/foto-08.webp",
+              "img": "assets/fotos/foto-05.webp",
               "texto": [
                 "Aquí están tus recuerdos, tus canciones",
-                "y el amor de tu reina y princesa."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-10.webp",
-              "texto": [
+                "y el amor de tu reina y princesa.",
                 "Que nunca te falte esta certeza:",
                 "te amamos muchísimo. ❤️"
               ]
             }
           ],
           "interaccion": null,
-          "recompensa": ""
+          "recompensa": "",
+          "videoMontaje": "assets/video/titulo-01.mp4"
         }
       ]
     },
@@ -210,7 +186,7 @@ window.TDN={
       "titulo": "Mi amor, mi pareja ideal",
       "anio": "19 de noviembre",
       "clasificacion": "TP",
-      "imagen": "assets/fotos/portada-22.webp",
+      "imagen": "assets/fotos/portada-07.webp",
       "musica": "assets/audio/la-pareja-ideal.mp3",
       "cancion": "La Pareja Ideal — Marisela y Marco Antonio Solís",
       "top10": false,
@@ -238,57 +214,37 @@ window.TDN={
           "cancion": "La Pareja Ideal — Marisela y Marco Antonio Solís",
           "escenas": [
             {
-              "img": "assets/fotos/foto-22.webp",
+              "img": "assets/fotos/foto-07.webp",
               "texto": [
                 "Mi amor, entre tantas formas de decirlo,",
-                "hoy quiero empezar con un gracias."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-02.webp",
-              "texto": [
+                "hoy quiero empezar con un gracias.",
                 "Gracias por tu corazón.",
                 "Por lo que das de ti a nuestra familia."
               ]
             },
             {
-              "img": "assets/fotos/foto-04.webp",
+              "img": "assets/fotos/foto-19.webp",
               "texto": [
                 "Por tus esfuerzos de cada día.",
-                "Por los detalles que hablan de tu cariño."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-05.webp",
-              "texto": [
+                "Por los detalles que hablan de tu cariño.",
                 "Me gusta mirarte en nuestras fotos",
                 "y recordar lo importante que eres para mí."
               ]
             },
             {
-              "img": "assets/fotos/foto-07.webp",
+              "img": "assets/fotos/foto-22.webp",
               "texto": [
                 "Hay palabras que quiero decirte más seguido:",
-                "te amo, te admiro, me importas."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-19.webp",
-              "texto": [
+                "te amo, te admiro, me importas.",
                 "Deseo que encuentres conmigo un abrazo",
                 "cuando necesites descansar."
               ]
             },
             {
-              "img": "assets/fotos/foto-26.webp",
-              "texto": [
-                "Y que podamos seguir cuidando lo nuestro",
-                "con atención, ternura y tiempo juntos."
-              ]
-            },
-            {
               "img": "assets/fotos/foto-27.webp",
               "texto": [
+                "Y que podamos seguir cuidando lo nuestro",
+                "con atención, ternura y tiempo juntos.",
                 "Quiero seguir escuchando tus sueños.",
                 "Y acompañarte con todo mi amor."
               ]
@@ -297,19 +253,15 @@ window.TDN={
               "img": "assets/fotos/foto-28.webp",
               "texto": [
                 "Que tengamos motivos para sonreír",
-                "y ganas de seguir creando recuerdos."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-29.webp",
-              "texto": [
+                "y ganas de seguir creando recuerdos.",
                 "Ohel Antonio, mi amor, te amo.",
                 "Con todo mi cariño, tu reina. — Griss ❤️"
               ]
             }
           ],
           "interaccion": null,
-          "recompensa": ""
+          "recompensa": "",
+          "videoMontaje": "assets/video/titulo-02.mp4"
         }
       ]
     },
@@ -319,7 +271,7 @@ window.TDN={
       "titulo": "Tu reina y princesa",
       "anio": "19 de noviembre",
       "clasificacion": "TP",
-      "imagen": "assets/fotos/portada-12.webp",
+      "imagen": "assets/fotos/portada-09.webp",
       "musica": "assets/audio/yo-quiero-ser.mp3",
       "cancion": "Yo Quiero Ser — Perro Callejero",
       "top10": false,
@@ -347,78 +299,54 @@ window.TDN={
           "cancion": "Yo Quiero Ser — Perro Callejero",
           "escenas": [
             {
-              "img": "assets/fotos/foto-12.webp",
-              "texto": [
-                "Hay dos corazones que hoy quieren decirte:",
-                "te amamos, Ohel Antonio. ❤️"
-              ]
-            },
-            {
               "img": "assets/fotos/foto-09.webp",
               "texto": [
+                "Hay dos corazones que hoy quieren decirte:",
+                "te amamos, Ohel Antonio. ❤️",
                 "Tu reina y princesa",
                 "tenemos mucho que agradecerte."
               ]
             },
             {
-              "img": "assets/fotos/foto-17.webp",
+              "img": "assets/fotos/foto-12.webp",
               "texto": [
                 "Gracias por hacernos sentir",
-                "que somos importantes en tu vida."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-23.webp",
-              "texto": [
+                "que somos importantes en tu vida.",
                 "Por tus esfuerzos y tus detalles.",
                 "Por lo que entregas a nuestra familia."
               ]
             },
             {
-              "img": "assets/fotos/foto-24.webp",
+              "img": "assets/fotos/foto-17.webp",
               "texto": [
                 "Estas fotos guardan nuestra cercanía.",
-                "Y el cariño con que hoy las miramos."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-25.webp",
-              "texto": [
+                "Y el cariño con que hoy las miramos.",
                 "Tu lugar en nuestras vidas es enorme.",
                 "Queremos que lo recuerdes siempre."
               ]
             },
             {
-              "img": "assets/fotos/foto-30.webp",
+              "img": "assets/fotos/foto-23.webp",
               "texto": [
                 "Admiramos al hombre que eres.",
-                "Y llevamos ese orgullo en el corazón."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-11.webp",
-              "texto": [
+                "Y llevamos ese orgullo en el corazón.",
                 "Deseamos compartir más sonrisas contigo.",
                 "Más tiempo y más abrazos de los nuestros."
               ]
             },
             {
-              "img": "assets/fotos/foto-13.webp",
+              "img": "assets/fotos/foto-30.webp",
               "texto": [
                 "Cuando necesites sentirte querido,",
-                "vuelve a estas palabras y a estas imágenes."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-20.webp",
-              "texto": [
+                "vuelve a estas palabras y a estas imágenes.",
                 "Aquí están tu reina y princesa.",
                 "Con todo nuestro cariño, siempre. ❤️😘"
               ]
             }
           ],
           "interaccion": null,
-          "recompensa": ""
+          "recompensa": "",
+          "videoMontaje": "assets/video/titulo-03.mp4"
         }
       ]
     },
@@ -428,7 +356,7 @@ window.TDN={
       "titulo": "La vida que soñamos contigo",
       "anio": "19 de noviembre",
       "clasificacion": "TP",
-      "imagen": "assets/fotos/portada-14.webp",
+      "imagen": "assets/fotos/portada-10.webp",
       "musica": "assets/audio/vivir-lo-nuestro.mp3",
       "cancion": "Vivir Lo Nuestro — India y Marc Anthony",
       "top10": false,
@@ -456,15 +384,10 @@ window.TDN={
           "cancion": "Vivir Lo Nuestro — India y Marc Anthony",
           "escenas": [
             {
-              "img": "assets/fotos/foto-14.webp",
-              "texto": [
-                "Hoy celebramos al hombre que eres.",
-                "Y soñamos con seguir compartiendo la vida contigo."
-              ]
-            },
-            {
               "img": "assets/fotos/foto-10.webp",
               "texto": [
+                "Hoy celebramos al hombre que eres.",
+                "Y soñamos con seguir compartiendo la vida contigo.",
                 "Que la vida te regale",
                 "muchos motivos para sonreír."
               ]
@@ -473,61 +396,42 @@ window.TDN={
               "img": "assets/fotos/foto-11.webp",
               "texto": [
                 "Que encuentres momentos de calma",
-                "para disfrutar lo que te hace bien."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-15.webp",
-              "texto": [
+                "para disfrutar lo que te hace bien.",
                 "Deseamos verte cumplir tus metas.",
                 "Y poder celebrar tus alegrías a tu lado."
               ]
             },
             {
-              "img": "assets/fotos/foto-16.webp",
+              "img": "assets/fotos/foto-14.webp",
               "texto": [
                 "Queremos seguir creando recuerdos juntos.",
-                "De esos que después miramos con cariño."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-18.webp",
-              "texto": [
+                "De esos que después miramos con cariño.",
                 "Que nuestros planes tengan tiempo para la familia.",
                 "Para escucharnos y estar cerca."
               ]
             },
             {
-              "img": "assets/fotos/foto-20.webp",
+              "img": "assets/fotos/foto-15.webp",
               "texto": [
                 "Que nunca te falten nuestro amor",
-                "ni nuestros abrazos."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-22.webp",
-              "texto": [
+                "ni nuestros abrazos.",
                 "Nos ilusiona seguir cuidando este cariño.",
                 "Con paciencia, detalles y compañía."
               ]
             },
             {
-              "img": "assets/fotos/foto-25.webp",
+              "img": "assets/fotos/foto-16.webp",
               "texto": [
                 "No sabemos todo lo que vendrá.",
-                "Sí sabemos cuánto deseamos vivirlo contigo."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-29.webp",
-              "texto": [
+                "Sí sabemos cuánto deseamos vivirlo contigo.",
                 "Por más sonrisas juntos, mi amor.",
                 "Tu reina y princesa te amamos muchísimo. ❤️"
               ]
             }
           ],
           "interaccion": null,
-          "recompensa": ""
+          "recompensa": "",
+          "videoMontaje": "assets/video/titulo-04.mp4"
         }
       ]
     },
@@ -560,50 +464,36 @@ window.TDN={
           "cancion": "Se Fue La Pantera — Grupo Firme, Grupo Recluta y Banda La Indicada",
           "escenas": [
             {
-              "img": "assets/fotos/foto-21.webp",
+              "img": "assets/fotos/foto-06.webp",
               "texto": [
                 "Mi amor, admiramos tu fortaleza.",
-                "Queremos que hoy también recibas cariño."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-04.webp",
-              "texto": [
+                "Queremos que hoy también recibas cariño.",
                 "Vemos tus esfuerzos.",
                 "Lo que das de ti por nuestra familia."
               ]
             },
             {
-              "img": "assets/fotos/foto-06.webp",
+              "img": "assets/fotos/foto-20.webp",
               "texto": [
                 "Tus detalles nos recuerdan",
-                "cuánto te importamos."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-14.webp",
-              "texto": [
+                "cuánto te importamos.",
                 "Estamos orgullosas del hombre",
                 "que tenemos a nuestro lado."
               ]
             },
             {
-              "img": "assets/fotos/foto-16.webp",
+              "img": "assets/fotos/foto-21.webp",
               "texto": [
                 "Deseamos que nunca olvides",
-                "lo importante que eres para nosotras."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-18.webp",
-              "texto": [
+                "lo importante que eres para nosotras.",
                 "Hoy te celebramos con amor, Ohel Antonio.",
                 "Gracias por ser parte de nuestras vidas. ❤️"
               ]
             }
           ],
           "interaccion": null,
-          "recompensa": ""
+          "recompensa": "",
+          "videoMontaje": "assets/video/titulo-05.mp4"
         },
         {
           "titulo": "El corazón detrás de los detalles",
@@ -613,50 +503,36 @@ window.TDN={
           "cancion": "La Pareja Ideal — Marisela y Marco Antonio Solís",
           "escenas": [
             {
-              "img": "assets/fotos/foto-03.webp",
+              "img": "assets/fotos/foto-08.webp",
               "texto": [
                 "A veces el amor cabe en un detalle.",
-                "Otras veces, en un esfuerzo de cada día."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-05.webp",
-              "texto": [
+                "Otras veces, en un esfuerzo de cada día.",
                 "En ambos reconocemos tu cariño.",
                 "Y queremos agradecértelo de corazón."
               ]
             },
             {
-              "img": "assets/fotos/foto-08.webp",
+              "img": "assets/fotos/foto-18.webp",
               "texto": [
                 "Gracias por hacernos sentir importantes.",
-                "Por lo que das a nuestra familia."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-17.webp",
-              "texto": [
+                "Por lo que das a nuestra familia.",
                 "Por ese corazón tuyo",
                 "que hoy queremos celebrar."
               ]
             },
             {
-              "img": "assets/fotos/foto-19.webp",
+              "img": "assets/fotos/foto-25.webp",
               "texto": [
                 "Deseamos corresponderte con ternura.",
-                "Con amor, atención y nuestros abrazos."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-27.webp",
-              "texto": [
+                "Con amor, atención y nuestros abrazos.",
                 "Que este gracias se quede contigo.",
                 "De tu reina y princesa, con todo nuestro amor. ❤️"
               ]
             }
           ],
           "interaccion": null,
-          "recompensa": ""
+          "recompensa": "",
+          "videoMontaje": "assets/video/titulo-06.mp4"
         },
         {
           "titulo": "Que nunca te falten nuestros abrazos",
@@ -666,50 +542,36 @@ window.TDN={
           "cancion": "Vivir Lo Nuestro — India y Marc Anthony",
           "escenas": [
             {
-              "img": "assets/fotos/foto-15.webp",
+              "img": "assets/fotos/foto-13.webp",
               "texto": [
                 "Mi amor, nuestro deseo para ti",
-                "empieza con una sonrisa."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-24.webp",
-              "texto": [
+                "empieza con una sonrisa.",
                 "Que la vida te dé razones para sonreír.",
                 "Y tiempo para disfrutarlas."
               ]
             },
             {
-              "img": "assets/fotos/foto-13.webp",
+              "img": "assets/fotos/foto-24.webp",
               "texto": [
                 "Que tus metas te ilusionen.",
-                "Queremos acompañarte con amor."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-20.webp",
-              "texto": [
+                "Queremos acompañarte con amor.",
                 "Que sigamos regalándonos tiempo juntos.",
                 "Para conversar y crear nuevos recuerdos."
               ]
             },
             {
-              "img": "assets/fotos/foto-25.webp",
+              "img": "assets/fotos/foto-29.webp",
               "texto": [
                 "Que nunca te falten nuestro cariño",
-                "ni nuestros abrazos."
-              ]
-            },
-            {
-              "img": "assets/fotos/foto-18.webp",
-              "texto": [
+                "ni nuestros abrazos.",
                 "Feliz Día del Hombre, Ohel Antonio.",
                 "Te amamos. Tu reina y princesa. ❤️😘"
               ]
             }
           ],
           "interaccion": null,
-          "recompensa": ""
+          "recompensa": "",
+          "videoMontaje": "assets/video/titulo-07.mp4"
         }
       ]
     }
@@ -717,22 +579,22 @@ window.TDN={
   "extras": [
     {
       "titulo": "El hombre de nuestras vidas",
-      "img": "assets/fotos/portada-18.webp",
+      "img": "assets/fotos/portada-01.webp",
       "texto": "Ohel Antonio: una película para recordarte cuánto te amamos y lo orgullosas que estamos de ti."
     },
     {
       "titulo": "Mi amor, mi pareja ideal",
-      "img": "assets/fotos/portada-22.webp",
+      "img": "assets/fotos/portada-07.webp",
       "texto": "De Griss para el hombre que ama: un encuentro con la ternura, los detalles y las ganas de seguir juntos."
     },
     {
       "titulo": "Tu reina y princesa",
-      "img": "assets/fotos/portada-12.webp",
+      "img": "assets/fotos/portada-09.webp",
       "texto": "El amor de tu familia en imágenes: la cercanía, los abrazos y todo lo que significas para nosotras."
     },
     {
       "titulo": "La vida que soñamos contigo",
-      "img": "assets/fotos/portada-14.webp",
+      "img": "assets/fotos/portada-10.webp",
       "texto": "Nuestros deseos para ti: motivos para sonreír, amor para acompañarte y nuevos recuerdos en familia."
     }
   ],

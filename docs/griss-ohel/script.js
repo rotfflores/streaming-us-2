@@ -123,7 +123,24 @@
   /* ================= 3. ACCESO ================= */
   const estrenoTime = () => (C.acceso.estreno ? new Date(C.acceso.estreno).getTime() : 0);
   const estrenoOk = () => !estrenoTime() || Date.now() >= estrenoTime();
-  const authOk = () => !C.acceso.password || ls.get("groh_auth") === norm(C.acceso.password);
+  const authOk = () => !C.acceso.password || ss.get("groh_auth") === norm(C.acceso.password);
+
+  // VISIT_ACCESS_START
+  function prepareVisitAccess() {
+    // Retire the old permanent login. Only internal navigation keeps access.
+    ls.del("groh_auth");
+    let internal = false;
+    try {
+      const from = new URL(document.referrer), base = new URL(".", location.href);
+      internal = from.origin === base.origin && from.pathname.startsWith(base.pathname);
+    } catch { /* Direct entry or WhatsApp does not provide a referrer. */ }
+    const reload = performance.getEntriesByType("navigation")[0]?.type === "reload";
+    const sharedEntry = new URL(location.href).searchParams.get("compartir") === "1";
+    if (!internal || reload || sharedEntry) {
+      ss.del("groh_auth"); ss.del("groh_who"); ss.del("groh_return");
+    }
+  }
+  // VISIT_ACCESS_END
 
   // Devuelve false si redirige. Orden: estreno → intro → contraseña → perfil
   function gate(page) {
@@ -132,7 +149,11 @@
     const here = (location.pathname.split("/").pop() || "index.html") + location.search;
     if (!estrenoOk()) return goTo("splash.html");
     if (!ss.get("groh_intro")) { if (page !== "home") ss.set("groh_return", here); return goTo("splash.html"); }
-    if (!authOk()) return page === "password" ? true : goTo("password.html");
+    if (!authOk()) {
+      if (page === "password") return true;
+      if (page !== "home") ss.set("groh_return", here);
+      return goTo("password.html");
+    }
     if (page === "password") return goTo("profiles.html");
     if (page !== "profiles" && !ss.get("groh_who")) { if (page !== "home") ss.set("groh_return", here); return goTo("profiles.html"); }
     return true;
@@ -603,7 +624,7 @@
       const sha = async (t) => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)))).map((b) => b.toString(16).padStart(2, "0")).join("");
       const ok = await sha(norm(pw.value)).catch(() => "");
       if (ok === norm(C.acceso.password) || (C.acceso.demo && pw.value.trim())) {
-        ls.set("groh_auth", norm(C.acceso.password));
+        ss.set("groh_auth", norm(C.acceso.password));
         showLoader(900, () => (location.href = "profiles.html"));
       } else { f.classList.add("err"); $(".auth-box").classList.add("shake"); setTimeout(() => $(".auth-box").classList.remove("shake"), 500); }
     });
@@ -815,244 +836,146 @@
   function pagePlayer() {
     document.body.classList.add("player-page");
     const ep = epById(`${param("t")}-${param("e")}`);
-    if (!ep) return location.replace("index.html");
-    if (!unlocked(ep)) { ss.set("groh_toast", "🔒 Ese episodio aún está bloqueado"); return location.replace(`temporada.html?t=${ep.t}`); }
+    if (!ep || !ep.videoMontaje) return location.replace("index.html");
     document.title = `${epFull(ep)} | Temporadas de Nosotros`;
-
-    const D = ep.duracion || 75, INTRO = 6;
+    const D = ep.duracion || 88, INTRO = 0, nxt = EPS[ep.idx + 1];
     let t = !isDone(ep.id) && S.watch[ep.id] ? S.watch[ep.id] * D : 0;
     if (t > D - 3) t = 0;
-    const scenes = ep.escenas?.length ? ep.escenas : [{ texto: ep.descripcion }];
-    const per = (D - INTRO) / scenes.length;
-    const nxt = EPS[ep.idx + 1];
-
-    const sceneHtml = (sc, i) => {
-      const textOnly = !("img" in sc) && !sc.video;
-      return `<div class="scene ${textOnly ? "text-only" : ""}" data-i="${i}">
-        <div class="media-wrap">${sc.video ? `<video src="${esc(sc.video)}" playsinline preload="metadata"></video>` : media(sc.img, ep.season.titulo, ep.id + i, sc.poster)}</div>
-        ${textOnly ? `<div class="scene-card"><p>${esc(sc.texto)}</p></div>` : ""}</div>`;
-    };
+    let playing = false, ended = false, savedAt = 0, cur = -1, curBeat = -1;
+    const captions = ep.videoMontaje.replace(/\.mp4$/, ".vtt");
     $("#app").innerHTML = `<div class="player controls-on" id="player">
-      <div class="stage" id="stage">${scenes.map(sceneHtml).join("")}</div>
-      <div class="subtitle" id="sub" aria-live="polite"></div>
-      <div class="intro-card ${t >= INTRO ? "hide" : ""}" id="intro"><div class="logo" data-logo="TEMPORADAS DE NOSOTROS"></div>
-        <div class="ep-label">${isMovie(ep.season) ? "Una película original" : `Serie original · ${esc(ep.season.titulo)} · Episodio ${ep.e}`}</div><h1>${esc(ep.titulo)}</h1></div>
+      <div class="stage"><video id="movie" class="native-movie" src="${esc(ep.videoMontaje)}" poster="${esc(ep.escenas[0].img)}" playsinline webkit-playsinline preload="metadata">
+        <track kind="subtitles" src="${esc(captions)}" srclang="es" label="Español" default>
+      </video></div>
       <div class="big-play" id="bigPlay"><span></span></div>
-      <div class="sound-prompt" id="soundPrompt" hidden>
-        <button class="btn btn-play" type="button" id="enableSound">${I.play} Reproducir con sonido</button>
-        <p id="soundMessage" role="status">Toca para activar la música.</p>
-      </div>
-      <button class="skip-intro hidden" id="skip">Saltar intro</button>
       <div class="p-top"><button class="back" id="back" aria-label="Volver">${I.back}</button><span class="p-title">${esc(epFull(ep))}</span></div>
       <div class="p-bottom">
         <div class="p-bar-row"><div class="p-bar" id="bar" role="slider" aria-label="Progreso" aria-valuemin="0" aria-valuemax="${D}" tabindex="0">
-          <div class="p-track"><div class="p-buffer" id="buf"></div><div class="p-fill" id="fill"></div>
-          <div class="p-knob" id="knob"></div></div></div>
-          <span class="p-time" id="time"></span></div>
+          <div class="p-track"><div class="p-buffer" id="buf"></div><div class="p-fill" id="fill"></div><div class="p-knob" id="knob"></div></div></div><span class="p-time" id="time"></span></div>
         <div class="p-ctrls">
           <button class="p-btn" data-a="play" aria-label="Reproducir/Pausar">${I.play}</button>
           <button class="p-btn hide-xs" data-a="back10" aria-label="Retroceder 10 s">${I.back10}</button>
           <button class="p-btn hide-xs" data-a="fwd10" aria-label="Adelantar 10 s">${I.fwd10}</button>
-          <div class="vol"><button class="p-btn" data-a="mute" aria-label="Volumen"></button>
-            <div class="vol-slider"><input type="range" min="0" max="1" step="0.05" id="volR" aria-label="Volumen"></div></div>
-          <div class="p-name"><b>${esc(ep.cancion || ep.season.cancion || "Temporadas de Nosotros")}</b> &nbsp;${esc(epFull(ep))}</div>
+          <div class="vol"><button class="p-btn" data-a="mute" aria-label="Volumen"></button><div class="vol-slider"><input type="range" min="0" max="1" step="0.05" id="volR" aria-label="Volumen"></div></div>
+          <div class="p-name"><b>${esc(ep.cancion || ep.season.cancion)}</b> &nbsp;${esc(epFull(ep))}</div>
           <button class="p-btn" data-a="next" aria-label="Siguiente título">${I.next}</button>
           <button class="p-btn" data-a="subs" aria-label="Subtítulos">${I.subs}</button>
           <button class="p-btn" data-a="full" aria-label="Pantalla completa">${I.full}</button>
         </div></div></div>`;
-    renderLogos();
-
-    const player = $("#player"), sceneEls = $$(".scene"), sub = $("#sub"), intro = $("#intro"), skip = $("#skip");
+    const player = $("#player"), movie = $("#movie"), music = movie;
     const fill = $("#fill"), knob = $("#knob"), buf = $("#buf"), timeEl = $("#time"), bar = $("#bar");
     const playBtn = $('[data-a="play"]'), muteBtn = $('[data-a="mute"]'), volR = $("#volR");
-    let playing = false, last = 0, cur = -1, curBeat = -1, ended = false, savedAt = 0, introSound = false;
-
-    // --- Audio (música opcional) ---
     let vol = Number(ls.get("groh_vol", 0.8));
     if (!Number.isFinite(vol)) vol = 0.8;
     vol = clamp(vol, 0, 1);
-    const musicSrc = ep.musica || ep.season.musica || C.media.musica;
-    const music = musicSrc ? new Audio(musicSrc) : null;
-    if (music) { music.loop = true; music.preload = "auto"; }
-    const soundPrompt = $("#soundPrompt"), enableSound = $("#enableSound"), soundMessage = $("#soundMessage");
-    let musicPending = false, musicBlocked = false;
-    const applyVol = () => {
-      const v = Sound.muted ? 0 : vol;
-      if (music) { music.volume = v; music.muted = Sound.muted || vol === 0; }
-      $$("video", player).forEach((vd) => { vd.volume = v; vd.muted = vd.classList.contains("media-img") || v === 0; });
-      muteBtn.innerHTML = v === 0 ? I.mute : I.vol;
+    function applyVol() {
+      movie.muted = Sound.muted || vol === 0;
+      movie.volume = vol;
+      muteBtn.innerHTML = movie.muted ? I.mute : I.vol;
       volR.value = vol;
-      if (music) soundPrompt.hidden = !musicBlocked && v > 0;
-    };
-    applyVol();
-    volR.addEventListener("input", () => { vol = +volR.value; ls.set("groh_vol", vol); if (vol > 0) Sound.muted = false; applyVol(); });
-
-    // AUDIO_RECOVERY_START: retry blocked playback only from a user gesture.
-    function requestMusic(userGesture = false) {
-      if (!music || !playing || musicPending || (!userGesture && musicBlocked) || !music.paused) return;
-      musicPending = true;
-      Sound.introAudio?.pause();
-      const failed = (error) => {
-        if (error?.name === "AbortError") return;
-        musicBlocked = true;
-        pause(false);
-        soundPrompt.hidden = false;
-        enableSound.textContent = error?.name === "NotAllowedError" ? "Reproducir con sonido" : "Reintentar audio";
-        soundMessage.textContent = error?.name === "NotAllowedError"
-          ? "Toca para activar la música y continuar."
-          : "No se pudo cargar la canción. Toca para reintentar.";
-      };
-      try {
-        // Keep play() in the click handler's call stack for mobile browsers.
-        Promise.resolve(music.play()).then(() => {
-          musicBlocked = false;
-          soundPrompt.hidden = Sound.muted || vol === 0 ? false : true;
-          if (!playing) music.pause();
-        }).catch(failed).finally(() => { musicPending = false; });
-      } catch (error) { failed(error); musicPending = false; }
     }
-    // AUDIO_RECOVERY_END
-    enableSound.onclick = (event) => {
-      event.stopPropagation();
-      Sound.muted = false;
-      if (vol === 0) vol = 0.8;
-      ls.set("groh_vol", vol);
-      applyVol();
-      if (t < INTRO) { t = INTRO; render(true); }
-      // A failed network load needs a fresh load; autoplay rejection does not.
-      if (music?.error) music.load();
-      play(true);
-    };
-
+    applyVol();
     const subsOn = () => ls.get("groh_subs", true);
-    player.classList.toggle("no-subs", !subsOn());
-    $('[data-a="subs"]').classList.toggle("off", !subsOn());
-
+    function applySubs() {
+      for (const track of movie.textTracks) track.mode = subsOn() ? "showing" : "hidden";
+      $('[data-a="subs"]').classList.toggle("off", !subsOn());
+    }
+    applySubs();
+    volR.addEventListener("input", () => { vol = +volR.value; ls.set("groh_vol", vol); if (vol > 0) Sound.muted = false; applyVol(); });
     function play(userGesture = true) {
       if (ended) return;
-      playing = true; playBtn.innerHTML = I.pause;
-      if (t < INTRO && !introSound) { introSound = true; Sound.tadum(); }
-      if (t >= INTRO) requestMusic(userGesture);
-      const v = $(".scene.on video"); v?.play().catch(() => {});
-      flash(I.play); poke();
+      // One media element contains both the pictures and the song. Start both
+      // synchronously from the ordinary play control; no second audio button.
+      if (userGesture) {
+        Sound.muted = false;
+        if (vol === 0) vol = 0.8;
+        applyVol();
+      }
+      if (movie.error) movie.load();
+      Sound.introAudio?.pause();
+      movie.play().catch((error) => {
+        if (error.name === "AbortError") return;
+        playing = false; playBtn.innerHTML = I.play;
+        player.classList.add("controls-on");
+        if (error.name !== "NotAllowedError") toast("No se pudo cargar el video. Pulsa reproducir para reintentar.");
+      });
+      poke();
     }
     function pause(showFlash = true) {
-      playing = false; playBtn.innerHTML = I.play;
-      music?.pause();
-      $(".scene.on video")?.pause();
+      movie.pause(); playing = false; playBtn.innerHTML = I.play;
       if (showFlash) flash(I.pause);
-      player.classList.add("controls-on");
-      saveWatch(true);
+      player.classList.add("controls-on"); saveWatch(true);
     }
-    const toggle = () => (playing ? pause() : play());
+    const toggle = () => movie.paused ? play() : pause();
     function flash(icon) { const b = $("#bigPlay"); $("span", b).innerHTML = icon; b.classList.remove("flash"); b.offsetWidth; b.classList.add("flash"); }
-
     function seek(to) {
       if (ended) return;
       t = clamp(to, 0, D - 0.2);
-      render(true);
+      movie.currentTime = t; render(true); saveWatch(true);
     }
     function saveWatch(force) {
       if (isDone(ep.id) || ended) return;
       if (force || performance.now() - savedAt > 2000) { S.watch[ep.id] = +(t / D).toFixed(3); save(); savedAt = performance.now(); }
     }
-
-    function render(force) {
-      const pct = (t / D) * 100;
+    function render() {
+      const pct = t / D * 100;
       fill.style.width = pct + "%"; knob.style.left = pct + "%";
-      buf.style.width = Math.min(100, pct + 12) + "%";
-      timeEl.textContent = "-" + fmt(D - t);
-      bar.setAttribute("aria-valuenow", Math.round(t));
-      intro.classList.toggle("hide", t >= INTRO);
-      skip.classList.toggle("hidden", t >= INTRO - 0.4 || t < 0.8);
-      const i = t < INTRO ? 0 : Math.min(scenes.length - 1, Math.floor((t - INTRO) / per));
-      const sc = scenes[i];
-      const lines = Array.isArray(sc.texto) ? sc.texto : [sc.texto || ""];
-      const elapsed = clamp(t - INTRO - i * per, 0, per - .001);
-      const beat = t < INTRO ? -1 : Math.min(lines.length - 1, Math.floor(elapsed / per * lines.length));
-      if (i !== cur || beat !== curBeat || force) {
-        if (i !== cur) {
-          sceneEls.forEach((el, k) => {
-            const on = k === i; el.classList.toggle("on", on);
-            const v = $("video", el); if (v) { if (on && playing) { v.currentTime = 0; v.play().catch(() => {}); } else v.pause(); }
-          });
-          cur = i;
-        }
-        sub.textContent = ("img" in sc || sc.video) && beat >= 0 ? lines[beat] : "";
-        sub.classList.remove("beat-in"); sub.offsetWidth; sub.classList.add("beat-in");
-        curBeat = beat;
-      }
-      if (playing && t >= INTRO && music?.paused) requestMusic();
-      if (playing) saveWatch();
+      const ranges = movie.buffered;
+      buf.style.width = ranges.length ? Math.min(100, ranges.end(ranges.length - 1) / D * 100) + "%" : "0%";
+      timeEl.textContent = "-" + fmt(D - t); bar.setAttribute("aria-valuenow", Math.round(t));
     }
-
-    function frame(ts) {
-      const dt = last ? Math.min(0.25, (ts - last) / 1000) : 0; last = ts;
-      if (playing) {
-        t += dt;
-        if (t >= D) { t = D; finish(); }
-        render();
-      }
-      requestAnimationFrame(frame);
-    }
-
-    // --- Controles auto-ocultables ---
+    movie.addEventListener("loadedmetadata", () => { if (!ended && t > 0) movie.currentTime = t; applySubs(); render(); });
+    movie.textTracks.addEventListener("addtrack", applySubs);
+    movie.addEventListener("timeupdate", () => { t = movie.currentTime; render(); if (playing) saveWatch(); });
+    movie.addEventListener("playing", () => { playing = true; playBtn.innerHTML = I.pause; poke(); });
+    movie.addEventListener("pause", () => { playing = false; playBtn.innerHTML = I.play; player.classList.add("controls-on"); saveWatch(true); });
+    movie.addEventListener("ended", () => { t = D; render(); finish(); });
+    movie.addEventListener("error", () => { playing = false; playBtn.innerHTML = I.play; player.classList.add("controls-on"); toast("No se pudo cargar el video. Pulsa reproducir para reintentar."); });
     let idle;
     function poke() {
-      player.classList.add("controls-on"); player.classList.remove("idle");
-      clearTimeout(idle);
+      player.classList.add("controls-on"); player.classList.remove("idle"); clearTimeout(idle);
       idle = setTimeout(() => { if (playing) { player.classList.remove("controls-on"); player.classList.add("idle"); } }, 3000);
     }
     player.addEventListener("mousemove", poke);
-    // Tocar la imagen: con mouse pausa/reanuda; en táctil, primero muestra controles
-    player.addEventListener("pointerup", (e) => {
-      if (ended || e.target.closest(".p-top, .p-bottom, .skip-intro, .sound-prompt, .endscreen, .title-credits")) return;
-      if (e.pointerType === "mouse") return toggle();
-      if (!player.classList.contains("controls-on")) poke(); else toggle();
+    player.addEventListener("pointerup", (event) => {
+      if (ended || event.target.closest(".p-top, .p-bottom, .endscreen, .title-credits")) return;
+      if (event.pointerType === "mouse" || player.classList.contains("controls-on")) toggle(); else poke();
     });
-    $("#sub").style.pointerEvents = "none";
-
-    // --- Barra de progreso (clic y arrastre) ---
-    const fromEvent = (e) => { const r = bar.getBoundingClientRect(); return ((e.clientX - r.left) / r.width) * D; };
-    bar.addEventListener("pointerdown", (e) => {
-      capture(bar, e); seek(fromEvent(e));
-      const mv = (ev) => seek(fromEvent(ev));
-      const up = () => { bar.removeEventListener("pointermove", mv); bar.removeEventListener("pointerup", up); saveWatch(true); };
-      bar.addEventListener("pointermove", mv); bar.addEventListener("pointerup", up);
+    const fromEvent = event => { const r = bar.getBoundingClientRect(); return (event.clientX - r.left) / r.width * D; };
+    bar.addEventListener("pointerdown", event => {
+      capture(bar, event); seek(fromEvent(event));
+      const move = e => seek(fromEvent(e));
+      const up = () => { bar.removeEventListener("pointermove", move); bar.removeEventListener("pointerup", up); saveWatch(true); };
+      bar.addEventListener("pointermove", move); bar.addEventListener("pointerup", up);
     });
-
-    // --- Botones ---
+    bar.addEventListener("keydown", event => { if (event.key === "ArrowRight" || event.key === "ArrowLeft") { event.preventDefault(); event.stopPropagation(); seek(t + (event.key === "ArrowRight" ? 5 : -5)); } });
     const fsEl = document.documentElement;
     const isFs = () => document.fullscreenElement || document.webkitFullscreenElement;
     const actions = {
-      play: toggle,
-      back10: () => seek(t - 10),
-      fwd10: () => seek(t + 10),
-      mute: () => { Sound.muted = !Sound.muted; if (!Sound.muted && vol === 0) vol = 0.8; applyVol(); if (!Sound.muted && musicBlocked) play(true); },
-      next: () => { saveWatch(true); go(nxt ? epUrl(nxt) : "final.html"); },
-      subs: () => { const on = !subsOn(); ls.set("groh_subs", on); player.classList.toggle("no-subs", !on); $('[data-a="subs"]').classList.toggle("off", !on); toast(on ? "Subtítulos: Español" : "Subtítulos desactivados"); },
+      play: toggle, back10: () => seek(t - 10), fwd10: () => seek(t + 10),
+      mute: () => { Sound.muted = !Sound.muted; if (!Sound.muted && vol === 0) vol = 0.8; applyVol(); },
+      next: () => { pause(false); go(nxt ? epUrl(nxt) : "final.html"); },
+      subs: () => { ls.set("groh_subs", !subsOn()); applySubs(); },
       full: () => {
         if (isFs()) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
         else if (fsEl.requestFullscreen || fsEl.webkitRequestFullscreen) (fsEl.requestFullscreen || fsEl.webkitRequestFullscreen).call(fsEl);
-        else toast("Tu navegador no permite pantalla completa aquí");
+        else if (movie.webkitEnterFullscreen) movie.webkitEnterFullscreen();
       }
     };
-    $$(".p-btn[data-a]").forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); actions[b.dataset.a](); poke(); }));
+    $$(".p-btn[data-a]").forEach(button => button.addEventListener("click", event => { event.stopPropagation(); actions[button.dataset.a](); poke(); }));
     document.addEventListener("fullscreenchange", () => ($('[data-a="full"]').innerHTML = isFs() ? I.unfull : I.full));
-    skip.onclick = () => { seek(INTRO); play(); };
-    $("#back").onclick = () => { saveWatch(true); go(`temporada.html?t=${ep.t}`); };
-    addEventListener("keydown", (e) => {
-      if (ended || e.target.closest("input, textarea")) return;
-      const k = e.key.toLowerCase();
-      if (k === " " || k === "k") { e.preventDefault(); toggle(); }
-      else if (k === "arrowright") actions.fwd10();
-      else if (k === "arrowleft") actions.back10();
-      else if (k === "f") actions.full();
-      else if (k === "m") actions.mute();
-      else if (k === "escape" && !isFs()) $("#back").click();
+    $("#back").onclick = () => { pause(false); go(`temporada.html?t=${ep.t}`); };
+    addEventListener("keydown", event => {
+      if (ended || event.target.closest("input, textarea, button")) return;
+      const key = event.key.toLowerCase();
+      if (key === " " || key === "k") { event.preventDefault(); toggle(); }
+      else if (key === "arrowright") actions.fwd10();
+      else if (key === "arrowleft") actions.back10();
+      else if (key === "f") actions.full();
+      else if (key === "m") actions.mute();
       poke();
     });
-    addEventListener("pagehide", () => saveWatch(true));
+    addEventListener("pagehide", () => { saveWatch(true); movie.pause(); });
 
     // --- Final del episodio ---
     function finish() {
@@ -1060,7 +983,7 @@
       ended = true; playing = false; playBtn.innerHTML = I.play;
       S.done[ep.id] = true; delete S.watch[ep.id]; save();
       const seasonEnd = ep.e === ep.season.episodios.length;
-      if (seasonEnd) { music?.play().catch(() => {}); rollCredits(() => { fadeMusic(); endScreen(); }); }
+      if (seasonEnd) { rollCredits(() => { fadeMusic(); endScreen(); }); }
       else { fadeMusic(); endScreen(); }
     }
     function fadeMusic() {
@@ -1127,11 +1050,10 @@
       const iv = autoNext ? setInterval(() => { n--; $("#nextTxt").textContent = n > 0 ? `${label} en ${n}` : label; if (n <= 0) { clearInterval(iv); go(target); } }, 1000) : 0;
       $(".end-back", es).onclick = () => { clearInterval(iv); go("index.html"); };
       $("#nextBtn").onclick = () => { clearInterval(iv); go(target); };
-      $("#again").onclick = () => { clearInterval(iv); es.remove(); ended = false; t = 0; cur = -1; curBeat = -1; render(true); play(); };
+      $("#again").onclick = () => { clearInterval(iv); es.remove(); ended = false; t = 0; movie.currentTime = 0; cur = -1; curBeat = -1; applyVol(); render(true); play(); };
     }
 
-    render(true);
-    requestAnimationFrame(frame);
+    render();
     setTimeout(() => play(false), 350);
   }
 
@@ -1668,6 +1590,7 @@
 
   /* ================= 12. ARRANQUE ================= */
   const page = document.body.dataset.page;
+  prepareVisitAccess();
   if (!gate(page)) return;
 
   // Aviso en consola de datos pendientes (útil antes de publicar)
