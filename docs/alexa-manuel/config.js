@@ -13,6 +13,7 @@ window.TDN = (function () {
   const P = {
     nombreA: "Alexa",
     nombreB: "Manuel",
+    perfilNombre: "Alexa",            // Nombre del perfil al entrar (lo pidió la clienta)
     apodos: ["mi brillo"],
     fechaInicio: "2026-11-21",        // Solo para el año del pie de página (no dieron aniversario)
     aniosManual: 1,
