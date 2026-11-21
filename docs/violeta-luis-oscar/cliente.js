@@ -4,7 +4,7 @@
  const tracks=[['El amor de mi vida — Calibre 50','amor-de-mi-vida'],['Eres mi todo — Banda MS Style','eres-mi-todo'],['Regalo de Dios — Julión Álvarez','regalo-de-dios'],['Le doy gracias a Dios — Julión Álvarez y Yuridia','gracias-a-dios'],['Siempre te voy a querer — Calibre 50 / Luis R Conriquez','siempre-te-voy-a-querer']].map(([titulo,slug])=>({titulo,src:`assets/audio/${slug}.mp3`}));
  const historia='Yo, Violeta Verónica Torres Pérez, conocí a mi esposo, Luis Oscar Trujillo Martinez, el 16 de abril: ese es nuestro aniversario. Tenemos 13 años juntos y vamos para 14. Tuvimos tres hijos: Luis Oscar, Luis Ramón y Luisa Violeta. Yo ya tenía a Edson Gael y él a Luis Adrián. Los amamos mucho a todos por igual.';
  Object.assign(c.pareja,{nombreA:A,nombreB:B,nombreCompletoA:'Violeta Verónica Torres Pérez',nombreCompletoB:'Luis Oscar Trujillo Martinez',apodos:[B,'mi amor'],apodo:'mi amor',fechaInicio:'',anioInicio:'',anios:13,aniosManual:13,fechaCodigo:'1604',ciudad:'',primeraCita:'',cancion:tracks[0].titulo,artista:'Calibre 50',viajes:[],dificiles:[],anecdota:'Nos conocimos un 16 de abril y hemos construido una familia en la que amamos a nuestros cinco hijos por igual.',culpableAnecdota:2,gustosB:[],suenos:['Seguir cuidando nuestra unión','Acompañar a nuestros cinco hijos con el mismo amor','Compartir muchos aniversarios más'],mensajeFinal:historia});
- Object.assign(c.fotos,{hero:amb('hero'),perfilB:'assets/ambiente/perfil-b.svg',perfilPareja:'assets/ambiente/perfil-pareja.svg',t0:amb('portada-0'),t1:amb('portada-1'),t2:amb('portada-2'),t3:amb('portada-3'),t4:amb('portada-4'),t5:amb('rosas'),t6:amb('cielo'),t7:amb('horizonte'),final:amb('final'),puzzle:amb('rosas'),puzzle2:amb('cielo'),postCreditos:amb('horizonte')});
+ Object.assign(c.fotos,{hero:amb('horizonte'),perfilB:'assets/ambiente/perfil-b.svg',perfilPareja:'assets/ambiente/perfil-pareja.svg',t0:amb('portada-0'),t1:amb('portada-1'),t2:amb('portada-2'),t3:amb('portada-3'),t4:amb('portada-4'),t5:amb('rosas'),t6:amb('cielo'),t7:amb('horizonte'),final:amb('final'),puzzle:amb('rosas'),puzzle2:amb('cielo'),postCreditos:amb('horizonte')});
  Object.assign(c.media,{intro:'assets/audio/intro.mp3',temporadas:tracks.map(t=>t.src),canciones:tracks.map(t=>t.titulo),musica:'',videoFinal:'assets/video/para-luis-oscar.mp4',audioRemitente:''});
  Object.assign(c.acceso,{demo:false,cualquierClave:false,password:'1604',pistaPassword:'El día y mes en que comenzó nuestra historia (DDMM).',estreno:''});
  Object.assign(c.notificacion,{whatsapp:'526565555953',email:'',endpoint:''});
@@ -74,6 +74,7 @@
     [30,'Por muchos abriles más, Luis Oscar.','Te amo. — Violeta Verónica']])
   ]}
  ];
+ for(const t of c.temporadas)for(const e of t.episodios)e.imagen=t.imagen;
  c.extras=[{titulo:'Nuestra historia',img:amb('horizonte'),texto:historia},{titulo:'16 de abril',img:amb('rosas'),texto:'El día en que nos conocimos. Nuestro aniversario, nuestra fecha y el comienzo de esta historia.'},{titulo:'Todos por igual',img:amb('cielo'),texto:'Edson Gael, Luis Adrián, Luis Oscar, Luis Ramón y Luisa Violeta. Los amamos mucho a todos por igual.'}];
  const carta=[
   'Luis Oscar, mi amor:',

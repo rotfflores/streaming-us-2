@@ -685,7 +685,7 @@
       row("top10", "Top series en tu corazón", series.map((x, i) => topCard(x, i + 1)).join(""));
     else rowsEl.innerHTML =
       (continuing.length ? row("continuar", `Continuar viendo como ${esc(pr.name)}`, continuing.map((e) => epCard(e, { progress: true })).join("")) : "") +
-      `<a class="games-promo" href="juegos.html"><span class="games-promo-mark">🎮</span><span><b>Un juego de nuestra historia</b><small>Memorama con nuestras fotos · Juega cuando quieras</small></span><span class="games-promo-arrow">${I.right}</span></a>` +
+      `<a class="games-promo" href="juegos.html"><span class="games-promo-mark">🎮</span><span><b>Un juego de nuestra historia</b><small>Memorama de nuestro amor · Juega cuando quieras</small></span><span class="games-promo-arrow">${I.right}</span></a>` +
       row("peliculas", "Películas de nosotros", SEASONS.filter(isMovie).map(seasonCard).join("")) +
       row("series", "Series de nosotros", SEASONS.filter((x) => !isMovie(x)).map(seasonCard).join("") + finalCard()) +
       row("top10", "Top 10 en tu corazón hoy", tops.map((s, i) => topCard(s, i + 1)).join("")) +
