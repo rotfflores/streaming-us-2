@@ -4,7 +4,7 @@
    Envía: Nancy Paola. Recibe: sin nombre ("Mi persona favorita"). Sin aniversario ni historia.
    Tono amistoso, tema: "una historia que nunca tiene fin". Contraseña: nancy.
    Canciones recortadas poco antes del clímax (Saturno lleva dos cortes: película y serie).
-   Relleno: clips de ../comun/medios en versión vertical (assets/video/v) y tres animaciones
+   Fotos y video del cliente (assets/fotos/v, video/v/tatuajes). Relleno: clips de ../comun/medios en versión vertical y tres animaciones
    hechas para este pedido (infinito, orbitas, continuara).
    ===================================================================== */
 window.TDN = (function () {
@@ -13,7 +13,7 @@ window.TDN = (function () {
   const P = {
     nombreA: "Nancy Paola",
     nombreB: "Mi persona favorita",
-    apodos: ["mi persona favorita"],
+    apodos: ["mi persona favorita", "mi rey"],
     fechaInicio: "2026-11-21",        // Solo para el año del pie de página (no dieron aniversario)
     aniosManual: 1,
     ciudad: "",
@@ -37,17 +37,17 @@ window.TDN = (function () {
   /* 2. FOTOS */
   const fo = (n) => "assets/fotos/" + n + ".webp";
   const F = {
-    hero: fo("infinito"),
-    perfilB: fo("perfil-infinito"),
-    perfilPareja: fo("selfie-montana"),
+    hero: fo("familia-auto"),
+    perfilB: fo("perfil-rey"),
+    perfilPareja: fo("perfil-pareja"),
     // t0..t5 también son las cartas del memorama de fotos
-    t0: fo("cafe-amigas"), t1: fo("sofa-celulares"), t2: fo("ventana-sol"),
-    t3: fo("senderistas"), t4: fo("grupo-balcon"), t5: fo("pizza"),
-    t6: fo("bicis"), t7: fo("atardecer-perro"),
-    final: fo("continuara"),
-    puzzle: fo("amigas-ventana"),
+    t0: fo("fiesta-mesa"), t1: fo("auto"), t2: fo("sofa"),
+    t3: fo("tunel-luces"), t4: fo("familia-auto"), t5: fo("fiesta-selfie"),
+    t6: fo("reja"), t7: fo("alberca"),
+    final: fo("bar"),
+    puzzle: fo("fiesta-mesa"),
     puzzle2: "",
-    postCreditos: fo("amanecer")
+    postCreditos: fo("alberca")
   };
 
   /* 3. AUDIO / VIDEO (cada canción empieza poco antes de su clímax) */
@@ -87,13 +87,13 @@ window.TDN = (function () {
     url: new URL("./", location.href).href,
     coincidencia: 100,
     clasificacion: "TP",
-    clasificacionTexto: "Amistad, risas y complicidad",
+    clasificacionTexto: "Risas, complicidad y familia",
     heroTag: "UNA HISTORIA QUE NUNCA TIENE FIN",
     heroTop: "N.º 1 en el corazón de Nancy Paola",
     sinopsis: `Hay historias que no terminan, solo cambian de capítulo. ` +
               `4 películas y 1 serie originales de ${P.nombreA} para su persona favorita.`,
     estrenoTexto: `4 películas y 1 serie originales de ${P.nombreA}, solo para ti`,
-    generos: ["Amistad", "Comedia", "Basada en hechos reales"],
+    generos: ["Comedia", "Familiar", "Basada en hechos reales"],
     filaRecomendada: "Para mi persona favorita"
   };
 
@@ -109,8 +109,10 @@ window.TDN = (function () {
     64: "n64", 66: "tokio", 69: "final-prueba", 70: "n70", 72: "n72", 74: "esc11"
   };
   const E = (n, a, b) => V(CLIPS[n], a, b);
+  // S(foto): foto del cliente en versión vertical completa (assets/fotos/v/)
+  const S = (n, a, b) => ({ img: "assets/fotos/v/" + n + ".webp?v=1", texto: [a, b] });
   const son = (i) => ({ musica: M.temporadas[i], cancion: M.canciones[i] });
-  const cred = (...extra) => [["Protagonizada por", `Tú (${P.apodo}) y ${P.nombreA}`], ...extra, ["Dirección", "La vida, que nos juntó"]];
+  const cred = (...extra) => [["Protagonizada por", `Mi persona favorita y ${P.nombreA}`], ...extra, ["Dirección", "La vida, que nos juntó"]];
 
   const temporadas = [
     /* =================== PELÍCULAS =================== */
@@ -124,40 +126,40 @@ window.TDN = (function () {
         descripcion: "Lo que no siempre te digo, pero siempre siento.",
         escenas: [
           V("infinito", "Hay personas que llegan a tu vida…", "y se quedan para siempre."),
-          E(15, "Tú eres una de ellas:", "mi persona favorita."),
-          E(18, "Contigo cualquier plan sencillo", "se vuelve el mejor del día."),
-          E(34, "Me haces reír", "hasta que me duele la panza. 😂"),
-          E(31, "Compartimos todo:", "la pizza, los secretos y los sueños. 🍕"),
-          E(20, "A tu lado el camino", "siempre es más ligero."),
-          E(59, "Gracias por estar en las buenas,", "en las malas y en las peores ocurrencias."),
-          E(61, "Gracias por ser tú,", "sin filtros y sin cambiar nada."),
-          E(40, "Y aunque no siempre lo ando diciendo…", "es buen momento para decirte que te quiero."),
-          E(69, "Esta historia no se termina aquí:", "apenas va por el primer capítulo. ∞")
+          S("bar", "Tú eres una de ellas:", "mi persona favorita."),
+          S("sofa", "Contigo cualquier plan sencillo", "se vuelve el mejor del día."),
+          S("tacos", "Unos tacos a tu lado", "saben a gloria. 🌮"),
+          S("reja", "Me encanta cómo me miras", "y cómo me haces sentir en casa."),
+          S("auto", "Contigo al volante,", "cualquier camino se disfruta. 🚗"),
+          S("fiesta-selfie", "Me haces reír", "como nadie más sabe hacerlo. 😂"),
+          S("manos", "Gracias por tomar mi mano", "en las buenas y en las malas."),
+          V("tatuajes", "Tu rey y tu reina:", "lo llevamos hasta en la piel. ♠️♥️"),
+          S("fiesta-brillos", "Y aunque no siempre lo ando diciendo…", "es buen momento para decirte que te quiero. ∞")
         ],
-        recompensa: "Cupón: un café (o los que hagan falta) para platicar de todo ☕"
+        recompensa: "Cupón: unos tacos para platicar de todo, yo invito 🌮"
       }]
     },
     {
       num: 1, tipo: "pelicula", titulo: "Tenemos un Secreto", anio: 2026, clasificacion: "TP",
       imagen: F.t1, ...son(1), top10: true,
-      sinopsis: "Chistes que nadie más entiende, miradas que lo dicen todo y mensajes a deshoras. Una comedia de complicidad.",
+      sinopsis: "Chistes que nadie más entiende, miradas que lo dicen todo y aventuras de noche. Una comedia de complicidad.",
       creditos: cred(["Guion", "Nuestros chistes internos"], ["Banda sonora", M.canciones[1]]),
       episodios: [{
         titulo: "Tenemos un Secreto", duracion: 120,
         descripcion: "Lo que solo tú y yo entendemos.",
         escenas: [
-          E(13, "Entre tú y yo hay un secreto:", "nadie entiende nuestros chistes. 🤫"),
-          E(11, "Mensajes a cualquier hora", "que me sacan una sonrisa."),
-          E(57, "Audios de diez minutos", "que valen cada segundo."),
-          E(58, "Basta una mirada", "para saber lo que piensa la otra persona."),
-          E(17, "Las mejores pláticas", "siempre empiezan con «¿te cuento algo?»."),
-          E(30, "Contigo puedo ser yo,", "sin tener que explicar nada."),
-          E(62, "Fotos que solo nosotros entendemos", "y que nunca verán la luz. 📸"),
-          E(63, "Comidas, antojos", "y planes que salen sobre la marcha."),
-          E(25, "Y una banda sonora", "que ya es solo nuestra. 🎶"),
-          E(34, "Somos un poco tontos, a veces locos…", "pero así nos queremos. 💛")
+          S("auto", "Entre tú y yo hay un secreto:", "nadie entiende nuestros chistes. 🤫"),
+          E(13, "Mensajes a cualquier hora", "que me sacan una sonrisa."),
+          S("pared", "Selfies chuecas", "que valen oro."),
+          S("tacos", "Salidas nocturnas", "que terminan en la mejor plática."),
+          S("bar", "Basta una mirada", "para saber lo que piensas."),
+          S("fiesta-mesa", "En cualquier fiesta", "tú eres mi lugar favorito."),
+          S("amigos-noche", "Con los amigos, la familia o solos:", "siempre somos equipo."),
+          S("sofa", "Contigo puedo ser yo,", "sin tener que explicar nada."),
+          S("reja", "Somos un poco tontos, a veces locos…", "pero tus ojos me dicen todo."),
+          S("fiesta-selfie", "Y este secreto", "es solo nuestro. 💛")
         ],
-        recompensa: "Cupón: una tarde de antojos, tú eliges y yo invito 🍟"
+        recompensa: "Cupón: una noche de salida, tú eliges el lugar 🌙"
       }]
     },
     {
@@ -172,12 +174,12 @@ window.TDN = (function () {
           E(45, "Hay días grises", "en los que todo pesa un poco más."),
           E(49, "Días de lluvia", "en los que no dan ganas de nada."),
           E(46, "Y en esos días", "quiero que sepas algo…"),
-          E(24, "…aquí estoy.", "Para escucharte, sin juzgarte."),
+          S("manos", "…aquí estoy.", "Para escucharte, sin juzgarte."),
           E(4, "Como una flor que vuelve a tomar color,", "siempre sale el sol otra vez. 🌷"),
-          E(53, "Gracias por tenerme paciencia", "cuando la que se marchitaba era yo."),
-          E(70, "Nos cuidamos,", "nos levantamos y seguimos."),
-          E(74, "Porque los amigos de verdad", "no se van cuando oscurece."),
-          E(72, "Prometo cuidar esto que tenemos,", "para que nunca se vaya. 💛")
+          S("sofa", "Gracias por tenerme paciencia", "cuando la que se marchitaba era yo."),
+          S("familia-auto", "Nos cuidamos,", "nos levantamos y seguimos."),
+          V("tatuajes", "Juntos, como el rey y la reina,", "nadie nos gana la partida. ♠️♥️"),
+          S("fiesta-brillos", "Prometo cuidar esto que tenemos,", "para que nunca se vaya. 💛")
         ],
         recompensa: "Cupón: un abrazo largo para el día que lo necesites 🤗"
       }]
@@ -185,22 +187,22 @@ window.TDN = (function () {
     {
       num: 3, tipo: "pelicula", titulo: "Más Allá de Saturno", anio: 2026, clasificacion: "TP",
       imagen: F.t3, ...son(3), top10: true,
-      sinopsis: "Metas, viajes pendientes y sueños gigantes. Una aventura sobre todo lo que todavía nos falta vivir.",
+      sinopsis: "Metas, viajes pendientes, familia y sueños gigantes. Una aventura sobre todo lo que todavía nos falta vivir.",
       creditos: cred(["Destino", "Hasta donde lleguemos"], ["Banda sonora", M.canciones[3]]),
       episodios: [{
         titulo: "Más Allá de Saturno", duracion: 114,
         descripcion: "Todo lo que nos falta por vivir.",
         escenas: [
           V("orbitas", "Dos caminos que se encontraron…", "y decidieron avanzar juntos."),
+          S("tunel-luces", "Cada paseo contigo", "se llena de luces. ✨"),
+          S("alberca", "Días de sol, de risas", "y de toda la familia junta. 💦"),
+          S("restaurante", "Mesas llenas,", "corazones llenos."),
+          S("nina-corazon", "Lo más bonito que tenemos", "cabe en un corazón. 💛"),
+          S("familia-auto", "Metas grandes,", "de esas que dan un poquito de miedo."),
           E(43, "Tenemos un mapa lleno", "de lugares por conocer. 🗺️"),
-          E(64, "Metas grandes,", "de esas que dan un poquito de miedo."),
-          E(44, "Pero con alguien a tu lado", "cualquier camino se recorre."),
-          E(35, "Vamos a llegar lejos,", "lo sé."),
-          E(38, "Quiero estar en cada foto", "de tus logros. 📷"),
-          E(39, "Y en cada viaje", "que nos debemos."),
           E(66, "Mientras más lejos,", "mejor la historia que contaremos."),
-          E(0, "Más allá de Saturno,", "más allá de lo que imaginamos."),
-          V("infinito", "Porque lo nuestro", "no tiene fin. ∞")
+          S("amigos-noche", "Vamos a llegar lejos,", "lo sé."),
+          V("infinito", "Más allá de Saturno:", "lo nuestro no tiene fin. ∞")
         ],
         recompensa: "Cupón: planear juntos nuestro próximo viaje (y sí hacerlo) ✈️"
       }]
@@ -217,11 +219,11 @@ window.TDN = (function () {
           titulo: "Gracias", duracion: 66,
           descripcion: "Todo lo que quiero agradecerte.",
           escenas: [
-            E(21, "Gracias por cada café", "que se volvió terapia. ☕"),
-            E(42, "Gracias por los consejos,", "aunque a veces no los siga. 😅"),
-            E(18, "Gracias por celebrar mis logros", "como si fueran tuyos."),
-            E(32, "Gracias por aguantar mis dramas", "y mis cambios de humor."),
-            E(15, "Y gracias por elegirme", "para seguir en tu historia.")
+            S("restaurante", "Gracias por cada comida en familia", "que se vuelve fiesta."),
+            S("sofa", "Gracias por los consejos,", "aunque a veces no los siga. 😅"),
+            S("nina-corazon", "Gracias por tanto cariño", "para los que más queremos."),
+            S("pared", "Gracias por aguantar mis dramas", "y mis cambios de humor."),
+            S("bar", "Y gracias por elegirme", "para seguir en tu historia.")
           ],
           recompensa: "Cupón: un día de consentirte, tú mandas 👑"
         },
@@ -229,11 +231,11 @@ window.TDN = (function () {
           titulo: "Lo Que Viene", duracion: 66,
           descripcion: "Nuestras metas, una por una.",
           escenas: [
-            E(14, "Tenemos muchas fechas", "por marcar en el calendario. 📅"),
-            E(50, "Nuevos comienzos,", "nuevas casas, nuevos retos."),
+            S("alberca", "Más días de sol", "y de risas con todos."),
+            S("tunel-luces", "Más paseos", "llenos de luces."),
             E(43, "Planes que hoy son sueños", "y mañana serán recuerdos."),
-            E(61, "Metas que vamos a cumplir", "una por una."),
-            E(64, "Y lo mejor:", "las vamos a vivir juntos.")
+            S("familia-auto", "Metas que vamos a cumplir", "una por una."),
+            S("auto", "Y lo mejor:", "las vamos a vivir juntos.")
           ],
           recompensa: "Cupón: una lista de metas escrita juntos, y un brindis por cada una 🥂"
         },
@@ -242,8 +244,8 @@ window.TDN = (function () {
           descripcion: "Una historia que nunca tiene fin.",
           escenas: [
             V("orbitas", "Hay historias que se terminan…", "y otras que solo cambian de capítulo."),
-            E(69, "La nuestra", "es de las segundas."),
-            E(72, "Pase lo que pase,", "pase el tiempo que pase…"),
+            V("tatuajes", "La nuestra", "ya está escrita en la piel. ♠️♥️"),
+            S("manos", "Pase lo que pase,", "pase el tiempo que pase…"),
             V("infinito", "esto que tenemos", "nunca se va a acabar. ∞"),
             V("continuara", "Esta historia continúa.", "Ahora te toca a ti: ve a El Final. 💛")
           ],
@@ -255,10 +257,10 @@ window.TDN = (function () {
 
   /* 6. DETRÁS DE CÁMARAS */
   const extras = [
-    { titulo: "Casting", img: fo("perfil-infinito"), texto: "El papel de persona favorita siempre fue tuyo." },
-    { titulo: "Locaciones", img: fo("cafe"), texto: "Cafés, calles, pláticas eternas y todos los lugares que todavía nos faltan." },
-    { titulo: "Banda sonora", img: fo("mensaje"), texto: M.canciones.slice(0, 4).join(" · ") },
-    { titulo: "Escenas eliminadas", img: fo("risas"), texto: "Las mejores escenas no se grabaron: se vivieron. Y así se quedan, entre tú y yo." }
+    { titulo: "Casting", img: fo("perfil-rey"), texto: "El papel de persona favorita siempre fue tuyo." },
+    { titulo: "Locaciones", img: fo("tunel-luces"), texto: "Taquerías, fiestas, paseos de noche, albercas y todos los lugares que todavía nos faltan." },
+    { titulo: "Banda sonora", img: fo("auto"), texto: M.canciones.slice(0, 4).join(" · ") },
+    { titulo: "Escenas eliminadas", img: fo("pared"), texto: "Las mejores escenas no se grabaron: se vivieron. Y así se quedan, entre tú y yo." }
   ];
 
   /* 7. TEMPORADA FINAL */
@@ -301,9 +303,10 @@ ${P.nombreA}`
     ["Guion", "Nuestras pláticas eternas"],
     ["Banda sonora", M.canciones.slice(0, 4).join(" · ")],
     ["Efectos especiales", "Tus ocurrencias"],
+    ["Con la participación especial de", "Toda la familia y los amigos"],
     ["Dobles de riesgo", "Ninguno. Todo fue real."],
     ["Agradecimientos especiales", "A ti, por quedarte"],
-    ["", "Ninguna amistad fue dañada durante la filmación de estas películas y series."],
+    ["", "Ningún corazón fue dañado durante la filmación de estas películas y series."],
     ["", `© ${new Date().getFullYear()} ${P.nombreA}. Todos los derechos reservados (para nosotros).`]
   ];
 
