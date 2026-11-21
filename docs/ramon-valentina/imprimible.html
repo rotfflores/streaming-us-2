@@ -81,7 +81,7 @@
       document.getElementById("seasons").textContent = C.temporadas.length + " + Final";
       document.getElementById("age").textContent = C.sitio.clasificacion + " Romance";
       const pwWrap = document.getElementById("pwWrap"), cb = document.getElementById("showPw");
-      document.getElementById("pw").textContent = "valentina";
+      document.getElementById("pw").textContent = C.acceso.password;
       const syncPw = () => (pwWrap.style.display = cb.checked && C.acceso.password ? "" : "none");
       cb.onchange = syncPw; syncPw();
       if (!C.sitio.url) { document.getElementById("qr").textContent="El QR estará disponible con el enlace publicado."; document.querySelector(".t-side b").textContent="Tu entrada está reservada"; document.getElementById("png").hidden=true; }

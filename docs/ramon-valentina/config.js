@@ -84,9 +84,9 @@ window.TDN = {
     "audioRemitente": ""
   },
   "acceso": {
-    "password": "valentina",
+    "password": "0502",
     "demo": false,
-    "pistaPassword": "Tu primer nombre, en minúsculas.",
+    "pistaPassword": "La clave de cuatro dígitos de este regalo.",
     "estreno": ""
   },
   "notificacion": {
