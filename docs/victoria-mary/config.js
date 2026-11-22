@@ -101,7 +101,7 @@ window.TDN = (function () {
 
   /* 5. PELÍCULAS Y SERIES */
   // V(n): clip vertical (centrado sobre fondo difuminado) en assets/video/v/
-  const V = (n, a, b) => ({ img: "assets/video/v/" + n + ".mp4?v=1", poster: "assets/video/v/" + n + ".webp?v=1", texto: [a, b] });
+  const V = (n, a, b) => ({ img: "assets/video/v/" + n + ".mp4?v=" + (n === "seismeses" ? 2 : 1), poster: "assets/video/v/" + n + ".webp?v=" + (n === "seismeses" ? 2 : 1), texto: [a, b] });
   // S(foto): foto del cliente en versión vertical completa (assets/fotos/v/)
   const S = (n, a, b) => ({ img: "assets/fotos/v/" + n + ".webp?v=1", texto: [a, b] });
   const son = (i) => ({ musica: M.temporadas[i], cancion: M.canciones[i] });
@@ -127,7 +127,7 @@ window.TDN = (function () {
           V("propuesta-rodilla", "un 3 de junio de 2026", "le pedí que se casara conmigo. 💍"),
           V("motos-salida", "Y así comenzaron nuestras aventuras:", "paseos en moto, fuimos al cine…"),
           V("ruta-moto", "Nos vamos de ruta en moto escuchando música,", "bailando… algo muy bonito. 🏍️"),
-          V("seismeses", "Y hasta ahorita llevamos", "ya 6 meses juntas. ❤")
+          V("seismeses", "Y hasta ahorita llevamos", "ya 7 meses juntas. ❤")
         ],
         recompensa: "Cupón: una ruta en moto a donde tú quieras 🏍️"
       }]
@@ -204,7 +204,7 @@ window.TDN = (function () {
 
     /* =================== SERIE =================== */
     {
-      num: 4, tipo: "serie", titulo: "Seis Meses Juntas", anio: 2026, clasificacion: "TP",
+      num: 4, tipo: "serie", titulo: "Siete Meses Juntas", anio: 2026, clasificacion: "TP",
       imagen: F.t4, ...son(4), top10: true,
       sinopsis: "Gracias, lo que viene y nuestro para siempre. Una serie corta sobre nosotras.",
       creditos: cred(["Guion", "Escrito con todo mi amor"], ["Banda sonora", M.canciones[4]]),
@@ -237,12 +237,12 @@ window.TDN = (function () {
         },
         {
           titulo: "Para Siempre", duracion: 72,
-          descripcion: "6 meses juntas, y lo que nos falta.",
+          descripcion: "7 meses juntas, y lo que nos falta.",
           escenas: [
-            V("atardecer", "Seis meses parecen poco…", "pero ya eres toda mi vida."),
+            V("atardecer", "Siete meses parecen poco…", "pero ya eres toda mi vida."),
             V("esc16", "Siempre voy a cuidar de ti", "y siempre te voy a valorar."),
             S("beso-mejilla", "En las buenas y en las peores,", "aquí voy a estar."),
-            V("seismeses", "6 meses juntas", "y lo que nos falta…"),
+            V("seismeses", "7 meses juntas", "y lo que nos falta…"),
             V("continuara", "Esta historia continúa.", "Ahora te toca a ti: ve a El Final. ❤")
           ],
           recompensa: "Ya puedes ver: EL FINAL 🔴"
