@@ -78,7 +78,7 @@ window.TDN = (function () {
   const acceso = {
     demo: false,
     cualquierClave: false,
-    password: "manuel",
+    password: "",                     // Sin contraseña (lo pidió Obed 2026-11-21)
     pistaPassword: "Tu nombre, en minúsculas",
     estreno: ""
   };
