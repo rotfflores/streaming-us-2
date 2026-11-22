@@ -118,7 +118,7 @@ window.TDN = (function () {
         titulo: "Mi Sorpresa Fuiste Tú", duracion: 116,
         descripcion: "Nuestra historia, desde el principio.",
         escenas: [
-          V("esc05", "Nuestra historia comenzó", "en el mes de septiembre de 2025…"),
+          V("septiembre", "Nuestra historia comenzó", "en el mes de septiembre de 2025…"),
           S("bn-domingo", "…y comenzábamos con nuestros mensajes", "con corazoncitos. 💕"),
           V("primer-mensaje", "Y ya hacíamos videollamadas", "todo el día."),
           V("partida", "Y de ahí comenzó a jugar Free", "para acercarse más a mí. 🎮"),
