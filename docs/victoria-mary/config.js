@@ -1,3 +1,15 @@
+/* ===== PAGO PENDIENTE (2026-11-22) =====
+   Contenido bloqueado hasta que el cliente pague. Para desbloquear: cambia true por false. */
+window.PAGO_PENDIENTE = true;
+if (window.PAGO_PENDIENTE) {
+  document.title = "Contenido bloqueado";
+  document.body.innerHTML = '<div style="position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center;background:#141414;color:#fff;font:16px/1.5 system-ui,sans-serif">' +
+    '<div style="font-size:3.5rem">🔒</div><h1 style="margin:0;font-size:1.8rem">Contenido bloqueado</h1>' +
+    '<p style="margin:0;max-width:26rem;color:#bbb">Este contenido no está disponible por el momento.</p></div>';
+  Object.defineProperty(window, "TDN", { get() { throw new Error("Contenido bloqueado: pago pendiente"); } });
+  throw new Error("Contenido bloqueado: pago pendiente");
+}
+
 /* =====================================================================
    TEMPORADAS DE NOSOTROS — Victoria para Mary
    Paquete Nuestro Capítulo ($79): 4 películas, 1 serie (3 episodios), 1 juego (memorama).
