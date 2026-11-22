@@ -298,7 +298,7 @@ window.TDN = (function () {
         Fo("pastel-carino", "Sueño con seguir abrazándote", "así, todos los días."),
         V("viaje-juntos", "Sueño con conocer lugares nuevos", "de tu mano."),
         Fo("familia-brazos-3", "Sueño con ver crecer", "a nuestra familia."),
-        V("esc05", "Sueño con llenar el calendario", "de fechas para celebrar."),
+        V("esc11", "Sueño con muchas fechas", "para celebrar juntos."),
         Fo("blanco-ramo-4", "Y sueño con que siempre", "sonrías como hoy."),
         V("atardecer", "Todo lo que sueño", "tiene tu nombre. ✨")
       ],
@@ -445,7 +445,7 @@ window.TDN = (function () {
             Fo("pastel-juntos", "Y las vamos a lograr", "juntos."),
             V("viaje-juntos", "Paso a paso,", "de la mano."),
             Fo("abrazo-blanco", "Contigo", "todo es posible."),
-            V("esc05", "Lo mejor", "está por venir. ✨")
+            V("atardecer", "Lo mejor", "está por venir. ✨")
           ],
           recompensa: "Cupón: una noche para escribir juntos nuestras metas 📝"
         },
