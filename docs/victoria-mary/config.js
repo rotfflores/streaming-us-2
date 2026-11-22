@@ -1,7 +1,7 @@
 /* =====================================================================
    TEMPORADAS DE NOSOTROS — Victoria para Mary
    Paquete Nuestro Capítulo ($79): 4 películas, 1 serie (3 episodios), 1 juego (memorama).
-   Envía: Victoria Reyes. Recibe: Mary Olivas. Amigas desde septiembre de 2025, novias desde el
+   Envía: Victoria Reyes. Recibe: Mary Olivas. Su historia empezó en septiembre de 2025; novias desde el
    13 de abril de 2026, propuesta de matrimonio el 3 de junio de 2026. Apodo: "mi chaparrita hermosa preciosa".
    Contraseña: 130426 (su aniversario). Canciones recortadas poco antes del clímax.
    Fotos: 23 del cliente (assets/fotos, versión vertical en assets/fotos/v).
@@ -90,10 +90,10 @@ window.TDN = (function () {
     coincidencia: 100,
     clasificacion: "TP",
     clasificacionTexto: "Amor, aventuras en moto y mucho romance",
-    heroTag: "DE MEJORES AMIGAS A PARA SIEMPRE",
+    heroTag: "MI ESPOSA, MI PARA SIEMPRE",
     heroTop: "N.º 1 en el corazón de Victoria",
-    sinopsis: `De mejores amigas a prometidas: mensajes con corazoncitos, partidas de Free, rutas en moto y un "sí" para siempre. ` +
-              `4 películas y 1 serie originales de ${P.nombreA} para su chaparrita hermosa preciosa.`,
+    sinopsis: `Mensajes con corazoncitos, partidas de Free, rutas en moto y un "sí" para siempre. ` +
+              `4 películas y 1 serie originales de ${P.nombreA} para su esposa, su chaparrita hermosa preciosa.`,
     estrenoTexto: `4 películas y 1 serie originales de ${P.nombreA}, solo para ti`,
     generos: ["Romance", "Aventura", "Basada en hechos reales"],
     filaRecomendada: "Para mi chaparrita hermosa preciosa"
@@ -112,13 +112,13 @@ window.TDN = (function () {
     {
       num: 0, tipo: "pelicula", titulo: "Mi Sorpresa Fuiste Tú", anio: 2026, clasificacion: "TP",
       imagen: F.t0, ...son(0), top10: true,
-      sinopsis: "De mejores amigas a prometidas. Nuestra historia, contada por Victoria.",
+      sinopsis: "Nuestra historia de amor, contada por Victoria para su esposa.",
       creditos: cred(["Historia original", P.nombreA], ["Banda sonora", M.canciones[0]]),
       episodios: [{
         titulo: "Mi Sorpresa Fuiste Tú", duracion: 116,
         descripcion: "Nuestra historia, desde el principio.",
         escenas: [
-          V("esc05", "Nuestra historia comenzó en el mes de septiembre de 2025.", "Todo comenzó como unas mejores amigas…"),
+          V("esc05", "Nuestra historia comenzó", "en el mes de septiembre de 2025…"),
           S("bn-domingo", "…y comenzábamos con nuestros mensajes", "con corazoncitos. 💕"),
           V("primer-mensaje", "Y ya hacíamos videollamadas", "todo el día."),
           V("partida", "Y de ahí comenzó a jugar Free", "para acercarse más a mí. 🎮"),
@@ -293,7 +293,7 @@ ${P.nombreA}`
   /* 8. CRÉDITOS Y POST-CRÉDITOS */
   const creditos = [
     ["Una producción original de", P.nombreA],
-    ["Protagonizada por", "Mary, mi chaparrita hermosa preciosa"],
+    ["Protagonizada por", "Mary, mi esposa, mi chaparrita hermosa preciosa"],
     ["Coprotagonista", P.nombreA],
     ["Dirección", "Dios, que nos juntó"],
     ["Guion", "Nuestros mensajes con corazoncitos"],
