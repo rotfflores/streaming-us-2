@@ -1,6 +1,6 @@
 /* =====================================================================
    TEMPORADAS DE NOSOTROS — Victoria para Mary
-   Paquete Nuestro Capítulo ($79): 4 películas, 1 serie (3 episodios), 1 juego (memorama).
+   Paquete Nuestro Capítulo ($79) + 1 película extra (2026-11-22): 5 películas, 1 serie (3 episodios), 1 juego (memorama).
    Envía: Victoria Reyes. Recibe: Mary Olivas. Su historia empezó en septiembre de 2025; novias desde el
    13 de abril de 2026, propuesta de matrimonio el 3 de junio de 2026. Apodo: "mi chaparrita hermosa preciosa".
    Contraseña: 130426 (su aniversario). Canciones recortadas poco antes del clímax.
@@ -60,14 +60,16 @@ window.TDN = (function () {
       "assets/audio/desde-que-te-tengo.mp3",
       "assets/audio/de-uno-y-de-todos-los-modos.mp3",
       "assets/audio/luz-de-dia.mp3",
-      "assets/audio/mmxxs.mp3"
+      "assets/audio/mmxxs.mp3",
+      "assets/audio/de-aqui-a-la-luna.mp3"
     ],
     canciones: [
       "Mi Sorpresa Fuiste Tú · Calibre 50",
       "Desde Que Te Tengo · Carín León",
       "De Uno y de Todos los Modos · Palomo",
       "Luz de Día · Enanitos Verdes",
-      "MMXXs · Virlán García"
+      "MMXXs · Virlán García",
+      "De Aquí a la Luna"
     ],
     musica: "",
     videoFinal: "assets/video/v/continuara.mp4",
@@ -93,8 +95,8 @@ window.TDN = (function () {
     heroTag: "MI ESPOSA, MI PARA SIEMPRE",
     heroTop: "N.º 1 en el corazón de Victoria",
     sinopsis: `Mensajes con corazoncitos, partidas de Free, rutas en moto y un "sí" para siempre. ` +
-              `4 películas y 1 serie originales de ${P.nombreA} para su esposa, su chaparrita hermosa preciosa.`,
-    estrenoTexto: `4 películas y 1 serie originales de ${P.nombreA}, solo para ti`,
+              `5 películas y 1 serie originales de ${P.nombreA} para su esposa, su chaparrita hermosa preciosa.`,
+    estrenoTexto: `5 películas y 1 serie originales de ${P.nombreA}, solo para ti`,
     generos: ["Romance", "Aventura", "Basada en hechos reales"],
     filaRecomendada: "Para mi chaparrita hermosa preciosa"
   };
@@ -248,6 +250,31 @@ window.TDN = (function () {
           recompensa: "Ya puedes ver: EL FINAL 🔴"
         }
       ]
+    },
+
+    /* =================== PELÍCULA EXTRA (dedicatoria) =================== */
+    {
+      num: 5, tipo: "pelicula", titulo: "De Aquí a la Luna", anio: 2026, clasificacion: "TP",
+      imagen: fo("kodak-juntas"), ...son(5), top10: true,
+      sinopsis: "Una dedicatoria de Victoria para su esposa: un amor que no cabe ni de aquí a la luna.",
+      creditos: cred(["Dedicatoria", P.nombreA], ["Banda sonora", M.canciones[5]]),
+      episodios: [{
+        titulo: "De Aquí a la Luna", duracion: 100,
+        descripcion: "Mi dedicatoria para ti.",
+        escenas: [
+          V("luna", "Cuando me preguntas cuánto te amo…", "no hay una respuesta para explicarlo."),
+          S("kodak-juntas", "Mi chaparrita hermosa preciosa,", "lo que siento por ti no cabe en palabras."),
+          S("corazon-beso", "Me mandas un corazón", "y se me olvida todo lo demás. 💕"),
+          S("mar-abrazadas", "Frente al mar, abrazadas,", "sé que contigo lo tengo todo. 🌊"),
+          S("sonrisa", "Tu sonrisa", "es mi lugar favorito."),
+          S("festejo-globos", "Celebrarte", "es de lo más bonito que me ha pasado. 🌹"),
+          V("playa-abrazo", "De aquí a la luna", "es tan corta la distancia…"),
+          S("bn-beso", "…que no puede compararse", "con lo que siento por ti."),
+          S("manos-anillo", "Te elegí para toda la vida", "y te volvería a elegir mil veces. 💍"),
+          V("luna", "Te amo de aquí a la luna…", "y mucho más allá. 🌙 — Victoria")
+        ],
+        recompensa: "Cupón: una noche viendo la luna juntas 🌙"
+      }]
     }
   ];
 
@@ -262,7 +289,7 @@ window.TDN = (function () {
   /* 7. TEMPORADA FINAL */
   const final = {
     titulo: "El Final: Tu Turno",
-    sinopsis: `Después de 4 películas y 1 serie, la historia sigue. En este final, tú escribes el siguiente capítulo.`,
+    sinopsis: `Después de 5 películas y 1 serie, la historia sigue. En este final, tú escribes el siguiente capítulo.`,
     imagen: F.final,
     preguntas: [
       "¿Cuál es tu película o serie favorita de este regalo y por qué?",
