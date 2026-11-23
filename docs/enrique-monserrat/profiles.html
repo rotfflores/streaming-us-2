@@ -20,21 +20,24 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Para Enrique | Temporadas de Nosotros">
   <meta name="twitter:description" content="Una historia de amor para Enrique: 4 películas, 1 serie y 3 juegos.">
+  <style>html,body{background:#141414;color:#fff}#carga{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center;font:16px/1.4 system-ui,sans-serif;color:#bbb}#app:not(:empty)~#carga{display:none}#carga a{color:#fff}</style>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="styles.css?v=20261006-3">
-  <link rel="stylesheet" href="cliente.css?v=enmo-full-1">
+  <link rel="stylesheet" href="cliente.css?v=enmo-full-2">
   <script src="config.js?v=20261006-2" defer></script>
-  <script src="cliente.js?v=enmo-2" defer></script>
-  <script src="script.js?v=enmo-juegos-3" defer></script>
+  <script src="cliente.js?v=enmo-3" defer></script>
+  <script src="script.js?v=enmo-juegos-4" defer></script>
 <meta property="og:url" content="https://streaming-us-2.rotfstudio.com/enrique-monserrat/index.html?compartir=1">
 <meta property="og:image" content="https://streaming-us-2.rotfstudio.com/enrique-monserrat/assets/og.jpg">
 <meta name="twitter:image" content="https://streaming-us-2.rotfstudio.com/enrique-monserrat/assets/og.jpg">
 </head>
 <body data-page="profiles">
   <div id="app"></div>
+  <div id="carga"><p>Cargando tu serie…</p><p id="carga-ayuda" hidden>Si no aparece, toca los tres puntos (⋮) de arriba y elige <b>Abrir en Chrome</b>, o <a href="">vuelve a intentar</a>.</p></div>
+  <script>setTimeout(function(){var a=document.getElementById("carga-ayuda");if(a)a.hidden=false},10000);window.addEventListener("error",function(){var a=document.getElementById("carga-ayuda");if(a)a.hidden=false});</script>
   <noscript><p style="padding:2rem;color:#fff">Activa JavaScript para ver la serie.</p></noscript>
 </body>
 </html>
