@@ -1,6 +1,7 @@
 /* Juegos de acción independientes del reproductor de episodios. */
 window.TDNArcade = (() => {
-  const W = 720, H = 400;
+  const W = 720;
+  let H = 400;
   const bestKey = (type) => `enmo_record_${type}_dificil`;
   const readBest = (type) => { try { return Number(localStorage.getItem(bestKey(type))) || 0; } catch { return 0; } };
   const saveBest = (type, score) => { try { localStorage.setItem(bestKey(type), String(score)); } catch { /* modo privado */ } };
@@ -39,7 +40,10 @@ window.TDNArcade = (() => {
   function mount(type, body, photoPaths = []) {
     const isFlappy = type === "flappy";
     const title = isFlappy ? "Vuelo de corazones" : "Atrapa el Instante";
-    body.innerHTML = `<div class="arcade-hud"><span>Puntos <strong data-score>0</strong></span><span>${isFlappy ? "Tuberías" : "Vidas"} <strong data-extra>${isFlappy ? "0" : "2"}</strong></span><span>Récord <strong data-best>${readBest(type)}</strong></span></div>
+    const panel = body.closest(".arcade-panel");
+    panel.classList.add("arcade-screen");
+    body.innerHTML = `<div class="arcade-toolbar"><a class="arcade-exit" href="juegos.html" aria-label="Salir del juego">Salir</a><strong>${title}</strong><button class="arcade-fullscreen" type="button" data-fullscreen>Pantalla completa</button></div>
+      <div class="arcade-hud"><span>Puntos <strong data-score>0</strong></span><span>${isFlappy ? "Tuberías" : "Vidas"} <strong data-extra>${isFlappy ? "0" : "2"}</strong></span><span>Récord <strong data-best>${readBest(type)}</strong></span></div>
       <div class="arcade-stage"><canvas width="${W}" height="${H}" aria-label="${title}"></canvas><div class="arcade-overlay" data-overlay><strong>${title}</strong><p>${isFlappy ? "Obstáculos más rápidos y huecos estrechos. Toca la pantalla o pulsa Espacio para volar." : "Recoge las fotos y esquiva las tormentas. Solo tienes dos vidas."}</p><button class="btn btn-red" type="button" data-start>Empezar</button></div></div>
       <p class="arcade-tip">${isFlappy ? "Control: toque, clic o Espacio" : "Control: arrastra el dedo o usa ← →"} · Tu récord se guarda en este navegador.</p>`;
     const canvas = body.querySelector("canvas"), ctx = canvas.getContext("2d");
@@ -47,6 +51,19 @@ window.TDNArcade = (() => {
     const overlay = body.querySelector("[data-overlay]"), startBtn = body.querySelector("[data-start]");
     const photos = photoPaths.map((src) => { const img = new Image(); img.src = src; return img; });
     const state = { active: false, score: 0, lives: 2, time: 0, last: 0, raf: 0, player: { x: 155, y: H / 2, vy: 0 }, items: [], timer: 0, passed: 0, keys: new Set() };
+    const fullBtn = body.querySelector("[data-fullscreen]");
+    const enterFullscreen = () => {
+      if (!document.fullscreenElement && panel.requestFullscreen) {
+        try { Promise.resolve(panel.requestFullscreen()).catch(() => {}); } catch { /* El juego ya ocupa la ventana. */ }
+      }
+    };
+    fullBtn.addEventListener("click", () => {
+      if (document.fullscreenElement && document.exitFullscreen) Promise.resolve(document.exitFullscreen()).catch(() => {});
+      else enterFullscreen();
+    });
+    const syncFullscreen = () => { fullBtn.textContent = document.fullscreenElement ? "Salir de pantalla completa" : "Pantalla completa"; };
+    document.addEventListener("fullscreenchange", syncFullscreen);
+    if (!panel.requestFullscreen) fullBtn.hidden = true;
 
     const record = () => {
       const best = readBest(type);
@@ -63,6 +80,7 @@ window.TDNArcade = (() => {
       startBtn.textContent = "Volver a jugar";
     };
     const start = () => {
+      enterFullscreen();
       state.active = true; state.score = 0; state.lives = 2; state.time = 0; state.last = 0;
       state.player = { x: isFlappy ? 155 : W / 2, y: isFlappy ? H / 2 : H - 55, vy: 0 };
       state.items = []; state.timer = 0; state.passed = 0;
@@ -165,6 +183,26 @@ window.TDNArcade = (() => {
       if (isFlappy) drawFlappy(); else drawCatch();
       state.raf = state.active ? requestAnimationFrame(frame) : 0;
     }
+    const resize = () => {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const oldH = H;
+      H = Math.max(260, Math.round(W * rect.height / rect.width));
+      canvas.height = H;
+      state.player.y = isFlappy ? Math.max(20, Math.min(H - 20, state.player.y * H / oldH)) : H - 55;
+      state.items.forEach(o => { if (isFlappy) o.gapY = Math.max(120, Math.min(H - 120, o.gapY * H / oldH)); else o.y *= H / oldH; });
+      state.keys.clear(); state.last = 0;
+      background(ctx, state.time);
+      if (isFlappy) drawFlappy(); else drawCatch();
+    };
+    const observer = new ResizeObserver(resize);
+    observer.observe(canvas.parentElement);
+    addEventListener("pagehide", () => {
+      observer.disconnect(); cancelAnimationFrame(state.raf);
+      removeEventListener("keydown", keydown); removeEventListener("keyup", keyup);
+      document.removeEventListener("fullscreenchange", syncFullscreen);
+    }, { once: true });
+    resize();
     background(ctx, 0);
     if (isFlappy) drawFlappy(); else drawCatch();
   }
