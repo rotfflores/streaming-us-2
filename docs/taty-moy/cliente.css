@@ -1,0 +1,21 @@
+.home-hero .hero-bg img { object-fit:contain; object-position:right center; background:#08090e; }
+.scene .media-wrap img,.scene .media-wrap video { object-fit:contain; background:#08090e; }
+.thumb img,.ep-thumb img { object-position:center; }
+.games-page .games-grid.arcade-grid { grid-template-columns:repeat(auto-fit,minmax(220px,300px)); }
+[hidden] { display:none !important; }
+.subtitle { bottom:20%;font-family:Arial,sans-serif;font-weight:600;font-size:clamp(1.2rem,2.8vw,2rem);line-height:1.4;text-shadow:0 2px 5px #000,0 0 18px #000; }
+.player.controls-on .subtitle { bottom:29%; }
+@media(max-width:600px) { .home-hero .hero-bg img { object-position:center top; } }
+.arcade-screen.arcade-panel { position:fixed; inset:0; z-index:10000; width:100%; height:100%; height:100dvh; min-height:0; margin:0; padding:max(8px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left)); border:0; border-radius:0; background:#111023; text-align:center; overflow:hidden; box-sizing:border-box; }
+.arcade-screen .inter-body { height:100%; display:grid; grid-template-rows:auto auto minmax(0,1fr) auto; gap:6px; }
+.arcade-toolbar { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:40px; }
+.arcade-toolbar > strong { flex:1; min-width:0; font-size:clamp(1rem,3vw,1.4rem); line-height:1.15; }
+.arcade-exit,.arcade-fullscreen { display:inline-flex; align-items:center; justify-content:center; min-height:40px; padding:8px 12px; border:1px solid #ffffff50; border-radius:6px; background:#211b31; color:white; font:inherit; font-size:14px; text-decoration:none; cursor:pointer; }
+.arcade-exit:focus-visible,.arcade-fullscreen:focus-visible { outline:2px solid white; outline-offset:2px; }
+.arcade-fullscreen { max-width:150px; }
+.arcade-screen .arcade-hud { margin:0; flex-wrap:nowrap; font-size:14px; }
+.arcade-screen .arcade-stage { width:100%; min-height:0; height:100%; border-radius:6px; }
+.arcade-screen .arcade-stage canvas { width:100%; height:100%; aspect-ratio:auto; }
+.arcade-screen .arcade-tip { margin:0; font-size:14px; line-height:1.25; }
+.arcade-screen .arcade-overlay { overflow:auto; }
+@media(max-height:450px) { .arcade-screen .inter-body { gap:3px; } .arcade-screen .arcade-tip { display:none; } .arcade-screen .inter-body { grid-template-rows:auto auto minmax(0,1fr); } .arcade-toolbar { min-height:34px; } .arcade-exit,.arcade-fullscreen { min-height:34px; padding:5px 10px; } .arcade-overlay strong { font-size:2rem; } .arcade-overlay p { margin:.4rem 0; font-size:14px; } }
