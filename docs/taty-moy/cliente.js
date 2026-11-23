@@ -320,8 +320,8 @@ window.TDN={
             {
               "img": "assets/fotos/etapa-3-02.webp",
               "texto": [
-                "Qué bonito poder celebrar tu vida.",
-                "Y agradecer que la mía esté tan unida a la tuya."
+                "¿Quién pensaría que, después de una terapia intensiva,",
+                "nos esperaba una vida juntos?"
               ]
             },
             {
@@ -341,8 +341,8 @@ window.TDN={
             {
               "img": "assets/fotos/etapa-3-05.webp",
               "texto": [
-                "Gracias por todos estos años juntos.",
-                "Por cada parte de nuestra historia que hoy podemos recordar."
+                "Hoy, después de 30 años juntos,",
+                "gracias por cada parte de nuestra historia."
               ]
             },
             {
@@ -401,15 +401,15 @@ window.TDN={
             {
               "img": "assets/fotos/etapa-3-08.webp",
               "texto": [
-                "Moy, empezamos siendo unos niños.",
-                "Y hoy tenemos tantos motivos para agradecer nuestra historia."
+                "¿Quién pensaría que, después de una terapia intensiva,",
+                "nos esperaba una vida juntos?"
               ]
             },
             {
               "img": "assets/fotos/etapa-3-09.webp",
               "texto": [
-                "Hay algo que me conmueve de volver a vernos en estas fotos:",
-                "reconocer todo lo que significa tenerte en mi vida."
+                "Hoy, después de 30 años juntos,",
+                "me emociona mirar todo lo que hemos construido."
               ]
             },
             {
@@ -618,8 +618,8 @@ window.TDN={
             {
               "img": "assets/fotos/etapa-3-12.webp",
               "texto": [
-                "Desde aquel primer beso hasta estas palabras,",
-                "hay una historia que me alegra poder llamar nuestra."
+                "Después de una terapia intensiva, nos esperaba una vida juntos.",
+                "Hoy celebramos 30 años de nuestra historia."
               ]
             },
             {
@@ -709,4 +709,4 @@ window.TDN={
     "sorpresa": "Gracias por todos estos años juntos y por nuestra hermosa familia. Con todo mi amor, Taty."
   }
 };
-window.TDN.final.carta=()=>"Moy, mi cosh:\n\nHoy quiero celebrar tu vida y recordarte cuánto te amo. Feliz cumpleaños, amor.\n\nCuando pienso en nosotros, vuelvo al pentatlón. Éramos solo unos niños: tú de 17 y yo de 14. No sabíamos todo lo que nos esperaba, pero ya estábamos entrando en una historia que llegaría a significar tanto para mí.\n\nRecuerdo aquel 7 de octubre, en mis quince años. Platicamos y bailamos tanto, y entre esos momentos me hiciste una promesa: irías a buscarme a mi casa la siguiente semana, el 12 de octubre. Yo esperé con ansias ese día. Y llegó. Tú llegaste.\n\nNos hicimos novios y aquella noche te di tu primer beso. Me emociona pensar que un recuerdo así siga siendo parte de nosotros después de todos estos años. Mirarlo desde aquí es también darme cuenta de cuánta vida hemos compartido.\n\nHoy nuestras fotos cuentan mucho más que aquel principio. Hablan de nosotros y de nuestra hermosa familia. Gracias por los años juntos, por esta vida que hemos construido y por formar parte de lo que más quiero.\n\nA veces las palabras se quedan pequeñas frente a todo lo que una persona significa. Por eso quise reunir estas imágenes y estas canciones: para detenernos un momento, mirarnos y recordar que nuestra historia merece ser celebrada.\n\nEn tu cumpleaños deseo que te sientas querido. Que este nuevo año de vida te regale alegría, tranquilidad y motivos para sonreír. Que nunca dudes del lugar que tienes en mi corazón.\n\nQuiero seguir compartiendo recuerdos contigo. Seguir cuidando lo que somos, abrazando a nuestra familia y encontrando momentos para decirte algo tan sencillo y tan grande como esto: te amo.\n\nFeliz cumpleaños, mi cosh. Y gracias por todos estos años juntos y por nuestra hermosa familia. Te amo por siempre y para siempre.\n\nCon todo mi amor,\nTaty";
+window.TDN.final.carta=()=>"Moy, mi cosh:\n\nHoy quiero celebrar tu vida y recordarte cuánto te amo. Feliz cumpleaños, amor.\n\nCuando pienso en nosotros, vuelvo al pentatlón. Éramos solo unos niños: tú de 17 y yo de 14. No sabíamos todo lo que nos esperaba, pero ya estábamos entrando en una historia que llegaría a significar tanto para mí.\n\nRecuerdo aquel 7 de octubre, en mis quince años. Platicamos y bailamos tanto, y entre esos momentos me hiciste una promesa: irías a buscarme a mi casa la siguiente semana, el 12 de octubre. Yo esperé con ansias ese día. Y llegó. Tú llegaste.\n\nNos hicimos novios y aquella noche te di tu primer beso. Me emociona pensar que un recuerdo así siga siendo parte de nosotros después de todos estos años. Mirarlo desde aquí es también darme cuenta de cuánta vida hemos compartido.\n\nHoy nuestras fotos cuentan mucho más que aquel principio. Hablan de nosotros y de nuestra hermosa familia. Gracias por los años juntos, por esta vida que hemos construido y por formar parte de lo que más quiero.\n\nA veces las palabras se quedan pequeñas frente a todo lo que una persona significa. Por eso quise reunir estas imágenes y estas canciones: para detenernos un momento, mirarnos y recordar que nuestra historia merece ser celebrada.\n\nEn tu cumpleaños deseo que te sientas querido. Que este nuevo año de vida te regale alegría, tranquilidad y motivos para sonreír. Que nunca dudes del lugar que tienes en mi corazón.\n\nQuiero seguir compartiendo recuerdos contigo. Seguir cuidando lo que somos, abrazando a nuestra familia y encontrando momentos para decirte algo tan sencillo y tan grande como esto: te amo.\n\n¿Quién pensaría que, después de una terapia intensiva, nos esperaba una vida juntos? Hoy, después de 30 años juntos, te digo: feliz cumpleaños, mi cosh. Y gracias por todos estos años juntos y por nuestra hermosa familia. Te amo por siempre y para siempre.\n\nCon todo mi amor,\nTaty";
