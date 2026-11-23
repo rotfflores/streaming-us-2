@@ -75,7 +75,7 @@
       const url = C.sitio.url || location.href.replace(/imprimible\.html.*$/, "index.html");
       document.getElementById("url").textContent = "Enlace del QR: " + url + (C.sitio.url ? "" : "  · Vista local; usa el enlace publicado para compartir.");
       document.getElementById("who").textContent = "Para " + P.nombreB;
-      document.getElementById("sub").textContent = "Una historia original de " + P.nombreA + ": 4 películas, 1 serie y 1 juego para " + P.nombreB + ".";
+      document.getElementById("sub").textContent = "Una historia original de " + P.nombreA + ": 4 películas, 1 serie y 3 juegos para " + P.nombreB + ".";
       document.getElementById("date").textContent = C.acceso.estreno ? new Date(C.acceso.estreno).toLocaleString("es", { dateStyle: "medium", timeStyle: "short" }) : "Ya disponible";
       document.getElementById("seasons").textContent = C.temporadas.length + " + Final";
       document.getElementById("age").textContent = C.sitio.clasificacion + " Romance";

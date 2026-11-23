@@ -1508,6 +1508,8 @@
     const games = EPS.filter((ep) => ep.interaccion && GAMES[ep.interaccion.tipo]);
     const arcadeId = param("arcade");
     const arcades = [
+      { id: "racha", name: "Atrapa el instante", type: "Récord infinito", desc: "Atrapa nuestras fotos y esquiva las tormentas. ¡Supera tu récord!", img: F.t5 },
+      { id: "flappy", name: "Vuelo de corazones", type: "Acción", desc: "Toca para volar entre los obstáculos y sumar puntos.", img: F.t1 },
       { id: "memory", name: "Memorama de nosotros", type: "Memoria", desc: "Encuentra seis parejas entre los detalles que nos unen.", img: F.t3 }
     ];
     const arcade = arcades.find((x) => x.id === arcadeId);
