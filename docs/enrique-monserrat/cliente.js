@@ -1,9 +1,9 @@
 window.TDN={
   "pareja": {
-    "nombreA": "Enrique",
-    "nombreB": "Monserrat",
-    "nombreCompletoA": "Enrique Barba",
-    "nombreCompletoB": "Monserrat Olmedo",
+    "nombreA": "Monserrat",
+    "nombreB": "Enrique",
+    "nombreCompletoA": "Monserrat Olmedo",
+    "nombreCompletoB": "Enrique Barba",
     "apodos": [],
     "apodo": "Amor",
     "fechaInicio": "",
@@ -33,7 +33,7 @@ window.TDN={
       "Seguir conociéndonos",
       "Elegirnos cada día"
     ],
-    "mensajeFinal": "Me haces brillar el corazón. Quiero seguir eligiéndote cada día. — Enrique"
+    "mensajeFinal": "Me haces brillar el corazón. Quiero seguir eligiéndote cada día. — Monserrat"
   },
   "fotos": {
     "hero": "assets/fotos/foto-01.webp",
@@ -86,9 +86,9 @@ window.TDN={
     "coincidencia": 100,
     "clasificacion": "TP",
     "clasificacionTexto": "Nuestra historia de amor",
-    "heroTag": "EXCLUSIVO PARA MONSERRAT",
-    "heroTop": "Enrique y Monserrat · 23 de noviembre de 2026",
-    "sinopsis": "Llegaste sin esperarlo y todo empezó a sentirse diferente. Monserrat, aquí guardé lo que adoro de ti, todo lo que te agradezco y mis ganas de seguir eligiéndote cada día.",
+    "heroTag": "EXCLUSIVO PARA ENRIQUE",
+    "heroTop": "Monserrat y Enrique · 23 de noviembre de 2026",
+    "sinopsis": "Llegaste sin esperarlo y todo empezó a sentirse diferente. Enrique, aquí guardé lo que adoro de ti, todo lo que te agradezco y mis ganas de seguir eligiéndote cada día.",
     "generos": [
       "Nuestra historia",
       "Mi lugar seguro",
@@ -111,11 +111,11 @@ window.TDN={
       "creditos": [
         [
           "Para",
-          "Monserrat Olmedo"
+          "Enrique Barba"
         ],
         [
           "De",
-          "Enrique Barba"
+          "Monserrat Olmedo"
         ],
         [
           "Aniversario",
@@ -133,7 +133,7 @@ window.TDN={
             {
               "img": "assets/fotos/foto-01.webp",
               "texto": [
-                "Monserrat, te conocí sin esperarlo.",
+                "Enrique, te conocí sin esperarlo.",
                 "Sin buscar nada, sin imaginar todo lo que vendría."
               ]
             },
@@ -184,7 +184,7 @@ window.TDN={
               "img": "assets/ambiente/olas.mp4",
               "texto": [
                 "Si pudiera volver a ese comienzo,",
-                "volvería a querer conocerte. — Enrique"
+                "volvería a querer conocerte. — Monserrat"
               ],
               "poster": "assets/ambiente/olas-poster.webp"
             }
@@ -208,11 +208,11 @@ window.TDN={
       "creditos": [
         [
           "Para",
-          "Monserrat Olmedo"
+          "Enrique Barba"
         ],
         [
           "De",
-          "Enrique Barba"
+          "Monserrat Olmedo"
         ],
         [
           "Aniversario",
@@ -230,7 +230,7 @@ window.TDN={
             {
               "img": "assets/fotos/foto-06.webp",
               "texto": [
-                "Gracias por estar, Monserrat.",
+                "Gracias por estar, Enrique.",
                 "Por escuchar incluso lo que me cuesta decir."
               ]
             },
@@ -252,7 +252,7 @@ window.TDN={
               "img": "assets/fotos/foto-08.webp",
               "texto": [
                 "Eso para mí vale un montón.",
-                "La tranquilidad de sentirme acompañado."
+                "La tranquilidad de sentirme acompañada."
               ]
             },
             {
@@ -281,7 +281,7 @@ window.TDN={
               "img": "assets/fotos/foto-06.webp",
               "texto": [
                 "Eres mi persona favorita.",
-                "Y me hace feliz poder decírtelo. — Enrique"
+                "Y me hace feliz poder decírtelo. — Monserrat"
               ]
             }
           ],
@@ -304,11 +304,11 @@ window.TDN={
       "creditos": [
         [
           "Para",
-          "Monserrat Olmedo"
+          "Enrique Barba"
         ],
         [
           "De",
-          "Enrique Barba"
+          "Monserrat Olmedo"
         ],
         [
           "Aniversario",
@@ -376,8 +376,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-11.webp",
               "texto": [
-                "Monserrat, eres indispensable en mi vida.",
-                "Mi lugar seguro y mi persona favorita. — Enrique"
+                "Enrique, eres indispensable en mi vida.",
+                "Mi lugar seguro y mi persona favorita. — Monserrat"
               ]
             }
           ],
@@ -400,11 +400,11 @@ window.TDN={
       "creditos": [
         [
           "Para",
-          "Monserrat Olmedo"
+          "Enrique Barba"
         ],
         [
           "De",
-          "Enrique Barba"
+          "Monserrat Olmedo"
         ],
         [
           "Aniversario",
@@ -473,7 +473,7 @@ window.TDN={
               "img": "assets/fotos/foto-18.webp",
               "texto": [
                 "Y seguir eligiéndote cada día.",
-                "Con todo mi cariño, Enrique Barba."
+                "Con todo mi cariño, Monserrat Olmedo."
               ]
             }
           ],
@@ -495,11 +495,11 @@ window.TDN={
       "creditos": [
         [
           "Para",
-          "Monserrat Olmedo"
+          "Enrique Barba"
         ],
         [
           "Con amor",
-          "Enrique Barba"
+          "Monserrat Olmedo"
         ]
       ],
       "episodios": [
@@ -548,8 +548,8 @@ window.TDN={
             {
               "img": "assets/fotos/foto-18.webp",
               "texto": [
-                "Gracias, Monserrat.",
-                "Soy feliz de estar contigo. — Enrique"
+                "Gracias, Enrique.",
+                "Soy feliz de estar contigo. — Monserrat"
               ]
             }
           ],
@@ -603,7 +603,7 @@ window.TDN={
               "img": "assets/fotos/foto-15.webp",
               "texto": [
                 "Hoy solo sé que me haces brillar el corazón.",
-                "Y que quiero cuidar lo nuestro. — Enrique"
+                "Y que quiero cuidar lo nuestro. — Monserrat"
               ]
             }
           ],
@@ -656,7 +656,7 @@ window.TDN={
               "img": "assets/fotos/foto-18.webp",
               "texto": [
                 "Lo descubriremos paso a paso.",
-                "Hoy quiero seguir caminando contigo. — Enrique"
+                "Hoy quiero seguir caminando contigo. — Monserrat"
               ]
             }
           ],
@@ -691,11 +691,11 @@ window.TDN={
   "final": {
     "titulo": "Una vida a tu lado",
     "imagen": "assets/fotos/foto-18.webp",
-    "sinopsis": "Una carta para Monserrat: gracias por llegar, por quedarte y por hacerme brillar el corazón.",
+    "sinopsis": "Una carta para Enrique: gracias por llegar, por quedarte y por hacerme brillar el corazón.",
     "preguntas": [
       "¿Qué momento nuestro te hizo sonreír al recordarlo?",
       "¿Qué es lo que más disfrutas cuando estamos juntos?",
-      "¿Cómo puedo hacerte sentir más escuchada y acompañada?",
+      "¿Cómo puedo hacerte sentir más escuchado y acompañado?",
       "¿Qué sueño o plan te gustaría que construyéramos juntos?",
       "¿Qué te gustaría decirme en este aniversario?"
     ]
@@ -703,11 +703,11 @@ window.TDN={
   "creditos": [
     [
       "Para",
-      "Monserrat Olmedo"
+      "Enrique Barba"
     ],
     [
       "De",
-      "Enrique Barba"
+      "Monserrat Olmedo"
     ],
     [
       "Aniversario",
@@ -739,8 +739,8 @@ window.TDN={
     "etiqueta": "NUESTRA HISTORIA CONTINÚA",
     "texto": "No sé cuántos capítulos nos esperan.",
     "anuncio": "Quiero vivirlos contigo",
-    "subtitulo": "Monserrat, quiero seguir eligiéndote cada día.",
-    "sorpresa": "Tal vez algún día con suéteres ridículos de Navidad. Lo descubriremos paso a paso. Con amor, Enrique."
+    "subtitulo": "Enrique, quiero seguir eligiéndote cada día.",
+    "sorpresa": "Tal vez algún día con suéteres ridículos de Navidad. Lo descubriremos paso a paso. Con amor, Monserrat."
   }
 };
-window.TDN.final.carta=()=>"Monserrat, amor:\n\nSoy feliz de estar a tu lado.\n\nTe conocí sin esperarlo, sin buscar nada, y poco a poco todo se fue dando. No pensé que fuera a pasar algo así, pero desde que llegaste a mi vida todo es diferente; las cosas están en su lugar.\n\nGracias por estar, por escucharme, por hacerme reír hasta cuando estoy de malas. Contigo me siento yo sin tener que fingir nada, y eso para mí vale un montón.\n\nAdoro todos los momentos que hemos vivido y me gusta pensar en lo que nos falta. Eres indispensable para mí, eres mi lugar seguro y mi persona favorita. Me encanta ver tus ojos, escuchar tu risa, sentir tus labios, tocar tu piel…\n\nDesearía seguir sumando muchísimos momentos a tu lado, seguir conociéndote y elegirte cada día de mi vida.\n\n“Te voy a escribir un poema para agradecerte por seguir aquí, porque no soy la persona más perfecta, tengo un pasado que a veces me alcanza y me apaga, algunos sentimientos están aún por ponerse en su lugar, pero trato cada día de quererte con cada gramo de mi cuerpo. Y a veces siento que hice algo muy lindo por tenerte aquí, porque esa maña tuya tan chula de querer hacerme feliz cada mañana la había esperado desde hace tiempo. Creo que llegamos en el momento justo, ni tantito adelante ni tantito atrás, quizá duraremos algunos meses o nos aventamos docenas de años poniéndonos suéteres ridículos de navidad, supongo que eso lo descubriremos paso a paso. Esta noche sólo sé que me haces brillar el corazón, ojalá nunca te canses de entender mis malos ratos porque yo siempre buscaré la forma de entender los tuyos, es más, le invito un cafecito a tus errores, me llevo a bailar tus cicatrices, le hago el amor a tus defectos y con gusto le invito una vida a todo lo que odies de tu cuerpo”.\n\nEste 23 de noviembre de 2026 celebro nuestro aniversario con la alegría de tenerte en mi vida. Quiero que sigamos encontrando maneras de cuidarnos, de escucharnos y de hacernos felices. Lo que venga lo iremos descubriendo paso a paso.\n\nCon todo mi amor,\nEnrique Barba";
+window.TDN.final.carta=()=>"Enrique, amor:\n\nSoy feliz de estar a tu lado.\n\nTe conocí sin esperarlo, sin buscar nada, y poco a poco todo se fue dando. No pensé que fuera a pasar algo así, pero desde que llegaste a mi vida todo es diferente; las cosas están en su lugar.\n\nGracias por estar, por escucharme, por hacerme reír hasta cuando estoy de malas. Contigo me siento yo sin tener que fingir nada, y eso para mí vale un montón.\n\nAdoro todos los momentos que hemos vivido y me gusta pensar en lo que nos falta. Eres indispensable para mí, eres mi lugar seguro y mi persona favorita. Me encanta ver tus ojos, escuchar tu risa, sentir tus labios, tocar tu piel…\n\nDesearía seguir sumando muchísimos momentos a tu lado, seguir conociéndote y elegirte cada día de mi vida.\n\n“Te voy a escribir un poema para agradecerte por seguir aquí, porque no soy la persona más perfecta, tengo un pasado que a veces me alcanza y me apaga, algunos sentimientos están aún por ponerse en su lugar, pero trato cada día de quererte con cada gramo de mi cuerpo. Y a veces siento que hice algo muy lindo por tenerte aquí, porque esa maña tuya tan chula de querer hacerme feliz cada mañana la había esperado desde hace tiempo. Creo que llegamos en el momento justo, ni tantito adelante ni tantito atrás, quizá duraremos algunos meses o nos aventamos docenas de años poniéndonos suéteres ridículos de navidad, supongo que eso lo descubriremos paso a paso. Esta noche sólo sé que me haces brillar el corazón, ojalá nunca te canses de entender mis malos ratos porque yo siempre buscaré la forma de entender los tuyos, es más, le invito un cafecito a tus errores, me llevo a bailar tus cicatrices, le hago el amor a tus defectos y con gusto le invito una vida a todo lo que odies de tu cuerpo”.\n\nEste 23 de noviembre de 2026 celebro nuestro aniversario con la alegría de tenerte en mi vida. Quiero que sigamos encontrando maneras de cuidarnos, de escucharnos y de hacernos felices. Lo que venga lo iremos descubriendo paso a paso.\n\nCon todo mi amor,\nMonserrat Olmedo";
