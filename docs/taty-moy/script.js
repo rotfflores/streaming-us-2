@@ -655,7 +655,8 @@
           <div class="hero-tags"><span class="tag-red">${esc(C.sitio.heroTag)}</span><span class="top10-mini">TOP<b>10</b></span><span>${esc(C.sitio.heroTop)}</span></div>
           <p class="hero-synopsis">${esc(only ? feat.sinopsis : C.sitio.sinopsis)}</p>
           <div class="hero-btns">
-            <button class="btn btn-play" id="hPlay">${I.play} ${resume ? "Reanudar" : "Reproducir"}</button>
+            <button class="btn btn-play" id="hPlay">${I.play} ${resume ? "Reanudar" : only ? "Reproducir" : "Ver nuestra historia"}</button>
+            ${!only ? `<a class="btn btn-red" href="#cumpleanos">Ver cumpleaños y familia</a>` : ""}
             <button class="btn btn-gray" id="hList">${S.list.includes("serie") ? I.check : I.plus} Mi lista</button>
             <button class="btn btn-gray" id="hInfo">${I.info} Más información</button>
           </div>
@@ -684,6 +685,15 @@
       row("novedades", "Episodios de nuestras series", EPS.filter((e) => !isMovie(e.season)).map((e) => epCard(e)).join("")) +
       row("top10", "Top series en tu corazón", series.map((x, i) => topCard(x, i + 1)).join(""));
     else rowsEl.innerHTML =
+      `<section class="birthday-section" id="cumpleanos" aria-labelledby="birthday-title">
+        <h2 class="section-title" id="birthday-title">Tu cumpleaños y nuestra familia</h2>
+        <p class="birthday-intro">Mi cosh, aquí están tu dedicatoria de cumpleaños, nuestra familia y nuestros 30 años juntos.</p>
+        <div class="birthday-grid">${[2, 3].map((num) => {
+          const title = seasonByNum(num), ep = title.episodios[0];
+          return `<a class="birthday-card" href="${epUrl(ep)}"><img src="${esc(title.imagen)}" alt="${esc(title.titulo)}"><div><h3>${esc(title.titulo)}</h3><p>${esc(title.sinopsis)}</p><span>♫ ${esc(title.cancion)}</span><strong>Ver película</strong></div></a>`;
+        }).join("")}</div>
+        <a class="btn btn-gray birthday-letter" href="final.html">Abrir la carta y el video familiar</a>
+      </section>` +
       (continuing.length ? row("continuar", `Continuar viendo como ${esc(pr.name)}`, continuing.map((e) => epCard(e, { progress: true })).join("")) : "") +
       `<a class="games-promo" href="juegos.html"><span class="games-promo-mark">🎮</span><span><b>Un juego de nuestra historia</b><small>Los detalles que nos unen · Juega cuando quieras</small></span><span class="games-promo-arrow">${I.right}</span></a>` +
       row("peliculas", "Películas de nosotros", SEASONS.filter(isMovie).map(seasonCard).join("")) +

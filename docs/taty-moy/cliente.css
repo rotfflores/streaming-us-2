@@ -19,3 +19,19 @@
 .arcade-screen .arcade-tip { margin:0; font-size:14px; line-height:1.25; }
 .arcade-screen .arcade-overlay { overflow:auto; }
 @media(max-height:450px) { .arcade-screen .inter-body { gap:3px; } .arcade-screen .arcade-tip { display:none; } .arcade-screen .inter-body { grid-template-rows:auto auto minmax(0,1fr); } .arcade-toolbar { min-height:34px; } .arcade-exit,.arcade-fullscreen { min-height:34px; padding:5px 10px; } .arcade-overlay strong { font-size:2rem; } .arcade-overlay p { margin:.4rem 0; font-size:14px; } }
+
+/* Acceso visible a las dos películas del cumpleaños y la familia. */
+.birthday-section { padding:1.4rem 4%; margin:0 0 1rem; scroll-margin-top:90px; }
+.birthday-intro { margin:0 0 1.25rem; color:#ddd; font-size:1rem; line-height:1.5; max-width:760px; }
+.birthday-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.birthday-card { display:block; color:#fff; text-decoration:none; background:#242124; border:1px solid #65505c; border-radius:10px; overflow:hidden; }
+.birthday-card>img { display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#08090e; }
+.birthday-card>div { padding:1.1rem; }
+.birthday-card h3 { font-size:1.35rem; line-height:1.2; margin:0 0 .6rem; }
+.birthday-card p { font-size:1rem; line-height:1.5; margin:0 0 .7rem; color:#ddd; }
+.birthday-card span { display:block; font-size:.9rem; line-height:1.4; color:#eee; }
+.birthday-card strong { display:inline-block; margin-top:1rem; background:#fff; color:#141414; border-radius:4px; padding:.7rem 1rem; font-size:1rem; }
+.birthday-card:focus-visible { outline:3px solid white; outline-offset:4px; }
+.birthday-card:hover { border-color:#fff; }
+.birthday-letter { margin-top:1rem; white-space:normal; }
+@media(max-width:600px) { .birthday-grid { grid-template-columns:1fr; } .birthday-section { padding:1rem 4%; } }
