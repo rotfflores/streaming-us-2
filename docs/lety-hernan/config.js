@@ -6,7 +6,7 @@
    Contraseña: hernan. Canciones recortadas poco antes del clímax.
    Fotos: 23 del cliente (assets/fotos, versión vertical en assets/fotos/v).
    Videos: 2 del cliente (globos-video, volcan-video) en assets/video/v, sin audio.
-   Relleno: clips de ../comun/medios en versión vertical y 6 animaciones hechas para este pedido
+   Relleno: sin stock (la clienta pidió solo sus fotos); 6 animaciones hechas para este pedido
    (infinito, gracias, camino, momentos, corazon, continuara).
    ===================================================================== */
 window.TDN = (function () {
@@ -66,7 +66,8 @@ window.TDN = (function () {
       "Cada Vez Que Vuelvas · Siddhartha",
       "Hasta la Raíz · Natalia Lafourcade",
       "Nunca Me Dejes · Reyno",
-      "Spanish Girl · Zona Rica"
+      "Spanish Girl · Zona Rica",
+      "Tulipanes · Enjambre"
     ],
     musica: "",
     videoFinal: "assets/video/v/continuara.mp4?v=1",
@@ -147,8 +148,8 @@ window.TDN = (function () {
           S("brindis", "Un brindis", "por nosotros. 🥂"),
           S("globo-amarillo", "Con los brazos abiertos", "a todo lo que viene."),
           S("alas", "Contigo", "hasta me salen alas. 😄"),
-          V("esc16", "Cada vez que estoy contigo", "siento que vuelo."),
-          V("atardecer", "Y siempre te llevaré", "como una promesa. ❤")
+          S("amanecer-sol", "Cada vez que estoy contigo", "siento que vuelo."),
+          S("selfie-globo", "Y siempre te llevaré", "como una promesa. ❤")
         ],
         recompensa: "Cupón: elegir nuestra próxima aventura 🎈"
       }]
@@ -169,8 +170,8 @@ window.TDN = (function () {
           S("terraza-volcan", "Aire de bosque", "y tu mano en la mía."),
           S("domo", "Nuestro refugio", "entre montañas."),
           S("fogata", "Malvaviscos en la fogata", "y el calorcito de estar juntos. 🔥"),
-          V("n64", "Cada camino nuevo", "es mejor si es contigo."),
-          V("n61", "Te llevo dentro,", "hasta la raíz."),
+          S("te-amo-el", "En nuestra casita del árbol,", "un TE AMO entre rosas. 🌹"),
+          S("fogata-2", "Te llevo dentro,", "hasta la raíz."),
           S("cabana-volcan", "Y por más que pase el tiempo,", "vas a estar aquí. ❤")
         ],
         recompensa: "Cupón: otra escapada al bosque, tú escoges la cabaña 🌲"
@@ -191,10 +192,10 @@ window.TDN = (function () {
           S("te-amo", "Un TE AMO entre rosas", "y un corazón de pétalos."),
           S("cama-corazon", "Pétalos por todas partes…", "y tú, mi persona favorita."),
           S("selfie-cama", "Ojalá y nunca me dejes,", "porque contigo lo tengo todo."),
-          V("esc03", "Cada momento a tu lado", "es una cita inolvidable."),
+          S("cena", "Cada cena a tu lado", "es una cita inolvidable."),
           S("rosas", "Cada flor me recuerda", "lo mucho que te quiero. 🌹"),
-          V("encuentro", "Solo pienso en ti,", "solamente en ti."),
-          V("n54", "Contigo quiero seguir", "escribiendo esta historia. ❤")
+          S("sobre", "Guardo cada carta tuya:", "“por siempre serás mi corazón de melón”. 💛"),
+          S("estrellas", "Y cada estrellita que me diste", "me sigue diciendo: te quiero mucho. ⭐")
         ],
         recompensa: "Cupón: una cena romántica, yo pongo los pétalos 🌹"
       }]
@@ -215,7 +216,7 @@ window.TDN = (function () {
             S("mirador", "Viendo la ciudad", "desde lo más alto. 🏙️"),
             S("globo-amarillo", "Haciendo locuras", "sin pena. 😄"),
             S("alas", "Tú, mi ángel,", "y yo, siempre abrazada a ti."),
-            V("esc19b", "Y fotos, muchas fotos,", "para no olvidar nada. 📸")
+            S("cumple", "Y celebrar tus cumpleaños", "a tu lado. 🎂")
           ],
           recompensa: "Cupón: una sesión de fotos juntos 📸"
         },
@@ -228,19 +229,22 @@ window.TDN = (function () {
             S("lirios-rosas", "Gracias por consentirme", "como nadie."),
             S("lirios-blancos", "Gracias por tu paciencia", "y tu cariño."),
             S("cabana-volcan", "Gracias por los viajes", "y las aventuras."),
+            S("carta", "Gracias por tus cartas", "y por decirme “mi china bonita”. 💌"),
             S("selfie-cama", "Y gracias por ser tú,", "Hernan. 🙏")
           ],
           recompensa: "Cupón: un día de consentirte, tú mandas 👑"
         },
         {
-          titulo: "Lo Que Viene", duracion: 72,
+          titulo: "Lo Que Viene", duracion: 90,
+          musica: "assets/audio/tulipanes.mp3", cancion: "Tulipanes · Enjambre",
           descripcion: "Nuestras metas, una por una.",
           escenas: [
-            V("esc11", "Lo que viene:", "más amaneceres juntos. 🌅"),
-            V("n73", "Más lugares por conocer,", "siempre de la mano."),
-            V("vinilo", "Más canciones", "que sean nuestras. 🎶"),
+            S("sueno", "Si puedes soñarlo,", "puedes lograrlo. 👑"),
+            S("amanecer-sol", "Lo que viene:", "más amaneceres juntos. 🌅"),
+            S("domo", "Más lugares por conocer", "y más escapadas juntos."),
             S("brindis", "Más brindis", "por nosotros. 🥂"),
-            V("continuara", "Esta historia continúa.", "Ahora te toca a ti: ve a El Final. ❤")
+            V("continuara", "Esta historia continúa…", ""),
+            S("tulipan", "Te quiero infinitamente, Hernan. 🌷", "Ahora te toca a ti: ve a El Final. ❤")
           ],
           recompensa: "Ya puedes ver: EL FINAL 🔴"
         }
