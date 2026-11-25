@@ -3,7 +3,7 @@
    Paquete Nuestro Capítulo ($79): 4 películas, 1 serie (3 episodios), 1 juego (memorama).
    Envía: Ian. Recibe: Paola. Aniversario: no aplica (4 años de conocerse, 1 mes juntos).
    Historia (texto de Ian, va completo en la película 0 "Un Cielo Estrellado").
-   Contraseña: paola. Canciones recortadas poco antes del clímax.
+   Contraseña: maroon. Canciones recortadas poco antes del clímax.
    Fotos: 7 del cliente (assets/fotos, versión vertical en assets/fotos/v).
    Videos: 6 del cliente en assets/video/v, sin audio (abrazo, regalo, pastel, cumple, sudaderas, atardecer).
    Relleno: 10 animaciones hechas para este pedido (cielo, cometa, cuatro, mes, alas, suelo,
@@ -79,8 +79,8 @@ window.TDN = (function () {
   const acceso = {
     demo: false,
     cualquierClave: false,
-    password: "paola",
-    pistaPassword: "Tu nombre, en minúsculas",
+    password: "maroon",
+    pistaPassword: "Tú apodo favorito mío",
     estreno: ""
   };
 
