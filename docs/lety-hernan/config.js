@@ -126,7 +126,8 @@ window.TDN = (function () {
           S("amanecer-globos", "que quedarán grabados", "por siempre"),
           V("corazon", "en mi corazón. 💕", ""),
           S("mirador", "Para mi amor", "no hay distancias ni fronteras."),
-          S("alas", "Te quiero así, tal como eres,", "y más allá del tiempo. ❤")
+          S("selfie-bosque", "Te quiero así, tal como eres,", "cerquita de ti, siempre."),
+          S("alas", "Hasta donde tus ojos no ven", "y más allá del tiempo. ❤")
         ],
         recompensa: "Cupón: un abrazo infinito, cuando tú quieras 🤗"
       }]
@@ -172,7 +173,7 @@ window.TDN = (function () {
           S("fogata", "Malvaviscos en la fogata", "y el calorcito de estar juntos. 🔥"),
           S("te-amo-el", "En nuestra casita del árbol,", "un TE AMO entre rosas. 🌹"),
           S("fogata-2", "Te llevo dentro,", "hasta la raíz."),
-          S("cabana-volcan", "Y por más que pase el tiempo,", "vas a estar aquí. ❤")
+          S("abrazo-volcan", "Y por más que pase el tiempo,", "vas a estar aquí. ❤")
         ],
         recompensa: "Cupón: otra escapada al bosque, tú escoges la cabaña 🌲"
       }]
