@@ -127,7 +127,7 @@ window.TDN = (function () {
           V("abrazo-video", "es el suelo firme", "donde puedo descansar."),
           S("espejo", "No importa a dónde", "nos lleve el mundo,"),
           V("contigo", "mientras sea contigo,", "sé que estaré exactamente donde debo estar."),
-          S("abrazo", "Te quiero, Paola.", "Gracias por este mes tan bonito. ✨")
+          S("abrazo", "Te amo, Paola.", "Gracias por este mes tan bonito. ✨")
         ],
         recompensa: "Cupón: un abrazo largo, de esos que son suelo firme 🤗"
       }]
@@ -170,7 +170,7 @@ window.TDN = (function () {
           S("minecraft", "Hasta en Minecraft", "construimos juntos. ⛏️"),
           S("espejo", "Y un día, después de tanto tiempo…", ""),
           V("mes", "por fin: tú y yo.", "Un mes juntos. ❤"),
-          V("esc16", "Cuatro años para conocerte", "y toda la vida para quererte."),
+          V("esc16", "Cuatro años para conocerte", "y toda la vida para amarte."),
           S("abrazo", "Valió la pena", "cada día de espera.")
         ],
         recompensa: "Cupón: una noche de juegos, tú escoges cuál 🎮"
@@ -240,7 +240,7 @@ window.TDN = (function () {
             V("cumple-video", "Más cumpleaños", "celebrándote. 🎂"),
             V("mes", "Más meses…", "y muchos años juntos."),
             V("continuara", "Esta historia continúa…", ""),
-            S("espejo", "Te quiero, Paola. ✨", "Ahora te toca a ti: ve a El Final. ❤")
+            S("espejo", "Te amo, Paola. ✨", "Ahora te toca a ti: ve a El Final. ❤")
           ],
           recompensa: "Ya puedes ver: EL FINAL 🔴"
         }
@@ -309,7 +309,7 @@ ${P.nombreA}`
     texto: "Esta historia acaba de ser renovada… por muchos meses y años más.",
     anuncio: "Nueva temporada",
     subtitulo: "Próximamente: más cumpleaños, más aventuras y un cielo lleno de estrellas juntos. ✨",
-    sorpresa: "Te quiero, Paola ❤"
+    sorpresa: "Te amo, Paola ❤"
   };
 
   // Paquete de $79: solo el memorama de fotos en Juegos
