@@ -41,7 +41,7 @@ window.TDN = (function () {
   const vp = (n) => "assets/video/v/" + n + ".webp?v=1";
   const F = {
     hero: fo("sudaderas"),
-    perfilB: fo("perfil-paola"),
+    perfilB: fo("perfil-paola-2"),
     perfilPareja: fo("perfil-pareja"),
     // t0..t5 también son las cartas del memorama de fotos
     t0: fo("ramo"), t1: fo("abrazo"), t2: fo("sudaderas"),
