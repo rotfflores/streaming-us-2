@@ -4,8 +4,8 @@
    Envía: Aldo. Recibe: Karina. Aniversario: no aplica. Historia: no dada.
    Contenido escrito a partir de sentimientos, agradecimientos y metas (sin inventar fechas ni lugares).
    Contraseña: karina. Canciones recortadas poco antes del clímax (120 s; So Easy 94 s para la serie).
-   Sin fotos del cliente: todo es stock vertical (assets/video/v, de ../comun/medios) +
-   12 animaciones hechas para este pedido (titulo, persona, gracias, sentir, futuro, siempre,
+   Fotos: 29 del cliente (assets/fotos/p01..p29) + 1 video (navidad, sin audio). Ya no se usa stock;
+   quedan 12 animaciones hechas para este pedido (titulo, persona, gracias, sentir, futuro, siempre,
    promesa, teamo, continuara, ka, gustas, lugar).
    ===================================================================== */
 window.TDN = (function () {
@@ -34,20 +34,20 @@ window.TDN = (function () {
   P.fechaCodigo = "";
   P.apodo = P.apodos[0];
 
-  /* 2. FOTOS (no hay fotos de la pareja: cuadros de stock y de las animaciones) */
+  /* 2. FOTOS (29 fotos del cliente p01..p29, llegaron el 26 nov; versión vertical en assets/fotos/v) */
   const fo = (n) => "assets/fotos/" + n + ".webp?v=1";
   const F = {
-    hero: fo("atardecer"),
+    hero: fo("p07"),
     perfilB: fo("perfil-persona"),
     perfilPareja: fo("perfil-ka"),
     // t0..t5 también son las cartas del memorama de fotos
-    t0: fo("lavanda"), t1: fo("atardecer"), t2: fo("manos"),
-    t3: fo("flores"), t4: fo("playa"), t5: fo("baile"),
-    t6: fo("cerezos"), t7: fo("viaje"),
-    final: fo("final"),
-    puzzle: fo("lavanda"),
+    t0: fo("p12"), t1: fo("p04"), t2: fo("p07"),
+    t3: fo("p29"), t4: fo("p23"), t5: fo("p19"),
+    t6: fo("p09"), t7: fo("p13"),
+    final: fo("p11"),
+    puzzle: fo("p03"),
     puzzle2: "",
-    postCreditos: fo("anim-teamo")
+    postCreditos: fo("p13")
   };
 
   /* 3. AUDIO / VIDEO (cada canción empieza poco antes de su clímax) */
@@ -100,6 +100,8 @@ window.TDN = (function () {
   /* 5. PELÍCULAS Y SERIES */
   // V(n): clip vertical (centrado sobre fondo difuminado) en assets/video/v/
   const V = (n, a, b) => ({ img: "assets/video/v/" + n + ".mp4?v=1", poster: "assets/video/v/" + n + ".webp?v=1", texto: [a, b] });
+  // S(foto): foto del cliente en versión vertical completa (assets/fotos/v/)
+  const S = (n, a, b) => ({ img: "assets/fotos/v/" + n + ".webp?v=1", texto: [a, b] });
   const son = (i) => ({ musica: M.temporadas[i], cancion: M.canciones[i] });
   const cred = (...extra) => [["Protagonizada por", `${P.nombreB} y ${P.nombreA}`], ...extra, ["Dirección", "El amor que te tengo"]];
 
@@ -115,13 +117,13 @@ window.TDN = (function () {
         descripcion: "Una historia de amor con una sola protagonista: tú.",
         escenas: [
           V("titulo", "Esta es nuestra historia,", "y tú eres la protagonista."),
-          V("atardecer", "Hay personas que llegan a tu vida", "y lo cambian todo."),
+          S("p12", "Hay personas que llegan a tu vida", "y lo cambian todo."),
           V("persona", "Tú eres la mía, Karina:", "mi persona favorita."),
-          V("esc08", "Contigo aprendí que el amor", "se siente en las cosas más simples."),
-          V("n23", "En una mirada,", "en una sonrisa, en un abrazo."),
-          V("baile-nuestra-cancion", "Cuando estoy contigo", "el mundo se queda quieto."),
+          S("p07", "Contigo aprendí que el amor", "se siente en las cosas más simples."),
+          S("p04", "En una mirada,", "en una sonrisa, en un abrazo."),
+          S("p13", "Cuando estoy contigo", "el mundo se queda quieto."),
           V("lugar", "Tú eres mi lugar favorito,", "el lugar donde quiero quedarme."),
-          V("n73", "Y si me dieran a escoger otra vez,", "te escogería a ti. Siempre."),
+          S("p03", "Y si me dieran a escoger otra vez,", "te escogería a ti. Siempre."),
           V("teamo", "Te amo, Karina.", "Hoy, mañana y todos los días. ❤")
         ],
         recompensa: "Cupón: un abrazo largo, sin prisa y sin soltarte 🤗"
@@ -137,13 +139,13 @@ window.TDN = (function () {
         descripcion: "Todo lo que quiero agradecerte.",
         escenas: [
           V("gracias", "Hay cosas que no te digo", "tan seguido como debería…"),
-          V("encuentro", "Gracias por llegar a mi vida", "y quedarte en ella."),
-          V("esc13", "Gracias por tu cariño,", "por cada detalle que tienes conmigo."),
-          V("risas-juntos", "Gracias por hacerme reír", "incluso en los días grises."),
-          V("esc16", "Gracias por tomar mi mano", "cuando más lo necesito."),
-          V("cafe", "Gracias por tu paciencia", "y por quererme tal como soy."),
-          V("esc19", "Gracias por los días normales,", "que contigo nunca son normales."),
-          V("n52", "Gracias por ser mi paz,", "mi calma y mi casa."),
+          S("p05", "Gracias por llegar a mi vida", "y quedarte en ella."),
+          S("p11", "Gracias por tu cariño,", "por cada detalle que tienes conmigo."),
+          S("p29", "Gracias por hacerme reír", "incluso en los días grises."),
+          S("p19", "Gracias por tomar mi mano", "cuando más lo necesito."),
+          S("p27", "Gracias por tu paciencia", "y por quererme tal como soy."),
+          S("p14", "Gracias por los días normales,", "que contigo nunca son normales."),
+          S("p17", "Gracias por ser mi paz,", "mi calma y mi casa."),
           V("ka", "Gracias por existir, Karina.", "Gracias por elegirme. 🙏")
         ],
         recompensa: "Cupón: un día entero de consentirte, tú decides el plan 👑"
@@ -159,13 +161,13 @@ window.TDN = (function () {
         descripcion: "Te amo a todas horas, todos los días.",
         escenas: [
           V("siempre", "24 horas al día,", "7 días a la semana, 365 días al año."),
-          V("cotidiano", "Te pienso cuando despierto", "y cuando me voy a dormir."),
-          V("primera-cita", "Te pienso en cada canción bonita", "que escucho."),
+          S("p10", "Te pienso cuando despierto", "y cuando me voy a dormir."),
+          S("p02", "Te pienso en cada canción bonita", "que escucho."),
           V("gustas", "Me gustas tanto", "que hasta me da risa."),
-          V("n20", "Quiero compartir contigo", "los días buenos…"),
-          V("esc14", "…y abrazarte fuerte", "en los días difíciles."),
-          V("pizza", "Quiero compartir contigo", "hasta el último bocado. 🍕"),
-          V("n54", "Porque contigo, Karina,", "cada hora vale la pena."),
+          S("p20", "Quiero compartir contigo", "los días buenos…"),
+          S("p24", "…y abrazarte fuerte", "en los días difíciles."),
+          V("navidad", "Quiero compartir contigo", "cada Navidad y cada fiesta. 🎄"),
+          S("p22", "Porque contigo, Karina,", "cada hora vale la pena."),
           V("sentir", "No hay una hora del día", "en la que no te ame. ❤")
         ],
         recompensa: "Cupón: una cita sorpresa organizada por mí 💌"
@@ -173,7 +175,7 @@ window.TDN = (function () {
     },
     {
       num: 3, tipo: "pelicula", titulo: "Nuestro Futuro", anio: 2026, clasificacion: "TP",
-      imagen: F.t4, ...son(3), top10: true,
+      imagen: F.t6, ...son(3), top10: true,
       sinopsis: "Las metas, los sueños y todos los capítulos que todavía nos faltan por escribir.",
       creditos: cred(["Producción", "Nuestros sueños"], ["Banda sonora", M.canciones[3]]),
       episodios: [{
@@ -181,13 +183,13 @@ window.TDN = (function () {
         descripcion: "Todo lo que quiero vivir contigo.",
         escenas: [
           V("futuro", "Cuando pienso en mi futuro,", "te veo a ti."),
-          V("viaje-juntos", "Quiero conocer el mundo", "de tu mano. ✈️"),
-          V("foto-viaje", "Quiero llenar mil álbumes", "con fotos de nosotros. 📸"),
-          V("n61", "Quiero que lleguemos juntos", "a donde nos propongamos."),
-          V("playa", "Quiero caminar contigo", "frente al mar, sin prisa."),
-          V("esc20", "Quiero un hogar contigo,", "lleno de risas y de amor."),
-          V("final-prueba", "Quiero ver contigo", "muchos atardeceres más."),
-          V("n70", "Quiero celebrar contigo", "cada logro, cada sueño cumplido."),
+          S("p09", "Quiero conocer el mundo", "de tu mano. ✈️"),
+          S("p23", "Quiero ir contigo", "a mil conciertos más. 🎶"),
+          S("p18", "Quiero que lleguemos juntos", "a donde nos propongamos."),
+          S("p21", "Quiero más aventuras contigo,", "a donde sea que nos lleve el camino."),
+          S("p26", "Quiero un hogar contigo,", "lleno de risas y de amor."),
+          S("p08", "Quiero recibir contigo", "cada Año Nuevo. 🎉"),
+          S("p25", "Quiero celebrar contigo", "cada logro, cada sueño cumplido."),
           V("lugar", "Y quiero que mi futuro", "siga teniendo tu nombre: Karina. ❤")
         ],
         recompensa: "Cupón: planeamos juntos nuestro próximo viaje 🗺️"
@@ -206,10 +208,10 @@ window.TDN = (function () {
           descripcion: "Una lista que nunca se termina.",
           escenas: [
             V("persona", "Lo que amo de ti", "no cabe en una sola lista…"),
-            V("risas-juntos", "Tu sonrisa,", "que me alegra el día."),
-            V("n42", "Tu forma de ser,", "auténtica y única."),
-            V("esc03", "La forma en que me miras", "cuando nadie más se da cuenta."),
-            V("vinilo", "Y tu voz, Karina,", "mi canción favorita. 🎶")
+            S("p01", "Tu sonrisa,", "que me alegra el día."),
+            S("p15", "Tu forma de ser,", "auténtica y única."),
+            S("p28", "La forma en que me miras", "cuando nadie más se da cuenta."),
+            S("p16", "Y cómo iluminas", "cualquier lugar al que llegas. ✨")
           ],
           recompensa: "Cupón: una tarde de antojos, yo invito 🍦"
         },
@@ -218,10 +220,10 @@ window.TDN = (function () {
           descripcion: "Lo que me pasa cuando estoy contigo.",
           escenas: [
             V("sentir", "Contigo siento", "que todo está bien."),
-            V("esc19b", "Me haces sentir feliz", "con las cosas más pequeñas."),
-            V("llamada-lluvia", "Me haces falta", "aunque haya pasado un ratito."),
-            V("n72", "Me das paz", "como un amanecer tranquilo."),
-            V("atardecer", "Fue tan fácil", "enamorarme de ti. ❤")
+            S("p06", "Me haces sentir feliz", "con las cosas más pequeñas."),
+            V("navidad", "Me haces reír", "como nadie. 😄"),
+            S("p07", "Me das paz", "como un amanecer tranquilo."),
+            S("p12", "Fue tan fácil", "enamorarme de ti. ❤")
           ],
           recompensa: "Cupón: una noche de película, tú escoges cuál 🍿"
         },
@@ -230,8 +232,8 @@ window.TDN = (function () {
           descripcion: "Mis promesas, una por una.",
           escenas: [
             V("promesa", "Te prometo", "cuidarte y respetarte siempre."),
-            V("esc16", "Te prometo tomar tu mano", "en los días buenos y en los difíciles."),
-            V("n73", "Te prometo seguir enamorándote", "cada día un poquito más."),
+            S("p13", "Te prometo tomar tu mano", "en los días buenos y en los difíciles."),
+            S("p04", "Te prometo seguir enamorándote", "cada día un poquito más."),
             V("siempre", "Te prometo amarte", "24/7, los 365 días del año."),
             V("continuara", "Esta historia continúa…", ""),
             V("teamo", "Te amo, Karina. ✨", "Ahora te toca a ti: ve a El Final. ❤")
@@ -244,10 +246,10 @@ window.TDN = (function () {
 
   /* 6. DETRÁS DE CÁMARAS */
   const extras = [
-    { titulo: "Casting", img: fo("anim-persona"), texto: "El papel principal siempre fue tuyo, Karina." },
-    { titulo: "Locaciones", img: fo("viaje"), texto: "Todos los lugares que nos faltan por conocer juntos." },
-    { titulo: "Banda sonora", img: fo("baile"), texto: M.canciones.join(" · ") },
-    { titulo: "Escenas eliminadas", img: fo("risas"), texto: "Todas las risas y los momentos que todavía no vivimos, pero que vamos a vivir." }
+    { titulo: "Casting", img: fo("p12"), texto: "El papel principal siempre fue tuyo, Karina." },
+    { titulo: "Locaciones", img: fo("p09"), texto: "Todos los lugares que nos faltan por conocer juntos." },
+    { titulo: "Banda sonora", img: fo("p23"), texto: M.canciones.join(" · ") },
+    { titulo: "Escenas eliminadas", img: fo("p20"), texto: "Todas las risas y los momentos que todavía no vivimos, pero que vamos a vivir." }
   ];
 
   /* 7. TEMPORADA FINAL */
