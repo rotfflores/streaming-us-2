@@ -108,8 +108,8 @@ window.TDN = {
     {
       "num": 0,
       "tipo": "pelicula",
-      "titulo": "Solo con verte",
-      "sinopsis": "Un aniversario para celebrar lo que compartimos.",
+      "titulo": "Nuestro aniversario",
+      "sinopsis": "De Vale para Caro: una película para celebrar nuestro amor, agradecer lo que compartimos y soñar juntas con lo que viene.",
       "anio": "",
       "clasificacion": "TP",
       "top10": true,
@@ -128,50 +128,50 @@ window.TDN = {
       ],
       "episodios": [
         {
-          "titulo": "Solo con verte",
-          "descripcion": "Un aniversario para celebrar lo que compartimos.",
+          "titulo": "Nuestro aniversario",
+          "descripcion": "De Vale para Caro: una película para celebrar nuestro amor, agradecer lo que compartimos y soñar juntas con lo que viene.",
           "musica": "assets/audio/cancion-00.mp3",
           "cancion": "Banda MS — Solo con verte",
           "escenas": [
             {
               "img": "assets/fotos/foto-00.webp",
               "texto": [
-                "Feliz aniversario, Caro. Estas fotos son una forma de celebrar nuestro amor."
+                "Feliz aniversario, Caro. Esta película es para celebrar lo que hemos construido juntas y recordarte cuánto te amo."
               ],
               "duracion": 12
             },
             {
               "img": "assets/fotos/foto-01.webp",
               "texto": [
-                "Solo con verte encuentro una razón para sonreír."
+                "Cada foto guarda algo de nosotras: una sonrisa, un abrazo, un momento que quiero conservar contigo. Hoy celebro esos recuerdos."
               ],
               "duracion": 12
             },
             {
               "img": "assets/fotos/foto-02.webp",
               "texto": [
-                "Me gusta volver a nuestras miradas, a nuestros abrazos, a lo sencillo."
+                "Gracias por la calma que me das, por tu paciencia y por hacerme sentir querida. Nuestro aniversario también es un gracias para ti."
               ],
               "duracion": 12
             },
             {
               "img": "assets/fotos/foto-03.webp",
               "texto": [
-                "Hoy quise regalarte un lugar donde guardar algo de nosotras."
+                "Gracias por el cariño que has dado a mis hijos. Tu ternura hacia ellos es parte de lo mucho que valoro de ti."
               ],
               "duracion": 12
             },
             {
               "img": "assets/fotos/foto-04.webp",
               "texto": [
-                "Cada imagen viene acompañada de lo que a veces me cuesta decir."
+                "Me ilusiona seguir compartiendo planes contigo, escuchar tus sueños y crear nuevos recuerdos. Quiero que sigamos eligiéndonos con cariño y respeto."
               ],
               "duracion": 12
             },
             {
               "img": "assets/ambiente/atardecer.webp",
               "texto": [
-                "Esta historia lleva tu nombre y todo mi cariño. — Vale"
+                "Feliz aniversario, mi amor. Que sigamos encontrando tiempo para nosotras, razones para sonreír y ganas de abrazarnos. Con todo mi amor, Vale."
               ],
               "duracion": 12
             }
@@ -672,7 +672,7 @@ window.TDN = {
             "tipo": "ordenar",
             "titulo": "Nuestra dedicatoria",
             "eventos": [
-              "Solo con verte",
+              "Nuestro aniversario",
               "Desde que te tengo",
               "Regalo de Dios",
               "Contigo"
@@ -1493,9 +1493,9 @@ window.TDN = {
   ],
   "extras": [
     {
-      "titulo": "Solo con verte",
+      "titulo": "Nuestro aniversario",
       "img": "assets/fotos/foto-00.webp",
-      "texto": "Una sonrisa para empezar."
+      "texto": "Una película para celebrar nuestro aniversario."
     },
     {
       "titulo": "Un lugar para nosotras",
