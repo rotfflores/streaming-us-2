@@ -49,7 +49,7 @@ window.TDN = (() => {
       V("atardecer","Gracias por recorrer este camino conmigo.","Por darle tu luz a nuestra historia."),
       S(14,"Si pudiera elegir de nuevo a mi compañera,","volvería a buscarte a ti.")
     ]),
-    movie(1,"Mi lugar contigo","Una película sobre el apoyo, la compañía y esa paz que se siente al saber que hay alguien con quien caminar. Con la canción especial dedicada a Marce.",102,[
+    movie(1,"Mi lugar contigo","Una película sobre el apoyo, la compañía y esa paz que se siente al saber que hay alguien con quien caminar. Con la canción especial dedicada a Marce.",156,[
       S(8,"Hay personas que hacen más ligero el camino.","Para mí, tú eres una de ellas, Marce."),
       A("montanas","A veces el día pide más de lo que uno tiene.","Tu compañía me recuerda que puedo seguir."),
       S(7,"No siempre sé decirlo en el momento:","tu apoyo significa mucho para mí."),
@@ -58,6 +58,11 @@ window.TDN = (() => {
       S(19,"Contigo, una pausa puede ser un recuerdo.","Y una conversación, el mejor lugar del día."),
       S(10,"Tu cariño tiene un sitio en mi vida","que nadie más podría ocupar."),
       S(22,"Mi compañera, mi amor, Marce.","Qué suerte compartir este camino contigo."),
+      S(23,"Quiero guardar más imágenes tuyas,","más momentos para volver a sonreír."),
+      S(24,"A veces un paseo se queda con nosotros","por la alegría de haberlo compartido."),
+      S(25,"El paisaje puede ser hermoso,","pero mi parte favorita es estar contigo."),
+      S(26,"Lo bonito de mirar nuestras fotos","es encontrarnos juntos una vez más."),
+      S(27,"Que sigan llegando los recuerdos, Marce,","y que nos sigan encontrando de la mano."),
       S(8,"No necesito esperar una fecha especial:","hoy también quiero decirte cuánto te amo.")
     ]),
     movie(2,"Volvería a elegirte","El tiempo cambia las fotografías y las formas de ver la vida. Esta película celebra lo que sigue importando: encontrar a alguien con quien querer continuar.",90,[
