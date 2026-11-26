@@ -101,7 +101,7 @@ window.TDN = (function () {
   // V(n): clip vertical (centrado sobre fondo difuminado) en assets/video/v/
   const V = (n, a, b) => ({ img: "assets/video/v/" + n + ".mp4?v=1", poster: "assets/video/v/" + n + ".webp?v=1", texto: [a, b] });
   // S(foto): foto del cliente en versión vertical completa (assets/fotos/v/)
-  const S = (n, a, b) => ({ img: "assets/fotos/v/" + n + ".webp?v=1", texto: [a, b] });
+  const S = (n, a, b) => ({ img: "assets/fotos/v/" + n + ".webp?v=" + (n === "p01" ? "2" : "1"), texto: [a, b] });
   const son = (i) => ({ musica: M.temporadas[i], cancion: M.canciones[i] });
   const cred = (...extra) => [["Protagonizada por", `${P.nombreB} y ${P.nombreA}`], ...extra, ["Dirección", "El amor que te tengo"]];
 
