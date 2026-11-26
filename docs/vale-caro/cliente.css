@@ -1,0 +1,44 @@
+/* Vale → Caro. Ajustes de medios verticales; la identidad visual y los componentes vienen de la plantilla original. */
+.home-hero .hero-bg img { object-position: center 30%; }
+.scene .media-wrap img, .scene .media-wrap video { object-fit: contain; background: #080808; }
+.thumb img, .ep-thumb img { object-position: center center; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  .home-hero { min-height: 0; background: var(--netflix-black); }
+  .home-hero .hero-bg { bottom: auto; height: clamp(310px, 48svh, 430px); animation: none; }
+  .home-hero .hero-bg img { content: url('assets/fotos/foto-07.webp'); object-position: center 28%; }
+  .home-hero::before { background: none; }
+  .home-hero .hero-bg::after { content: ""; position: absolute; inset: 62% 0 0; background: linear-gradient(transparent, var(--netflix-black)); }
+  .home-hero .hero-content { padding-top: clamp(285px, 39svh, 370px); padding-bottom: 66px; }
+  .home-hero .hero-synopsis { -webkit-line-clamp: initial; }
+}
+
+/* Juegos a pantalla completa en celular. */
+.game-fs-btn { display: inline-flex; align-items: center; gap: .45rem; float: right; margin: 0 0 1rem 1rem; padding: .5rem .85rem; border: 1px solid #555; border-radius: 999px; background: #222; color: #fff; font: inherit; font-size: .85rem; cursor: pointer; }
+.game-fs-btn svg { width: 18px; height: 18px; }
+body.game-fs { overflow: hidden; }
+body.game-fs .nav, body.game-fs .footer, body.game-fs .tdn-float { display: none !important; }
+body.game-fs .game-detail { position: fixed; inset: 0; z-index: 2000; max-width: none; margin: 0; min-height: 100vh; min-height: 100dvh; height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: calc(env(safe-area-inset-top) + 14px) 14px calc(env(safe-area-inset-bottom) + 18px); background: #141414; display: flex; flex-direction: column; }
+body.game-fs .game-detail .game-fs-btn { position: absolute; top: calc(env(safe-area-inset-top) + 10px); right: 12px; float: none; margin: 0; z-index: 2; }
+body.game-fs .game-detail .games-back { margin: 0 0 .6rem; padding-right: 9rem; }
+body.game-fs .game-detail .game-context { margin: .2rem 0 .8rem; }
+body.game-fs .game-detail .game-context h1 { font-size: clamp(1.3rem, 6vw, 2rem); margin: .2rem 0; }
+body.game-fs .game-detail .game-panel { flex: 1 0 auto; width: 100%; max-width: none; display: flex; flex-direction: column; justify-content: center; border-radius: 10px; }
+@media (max-width: 600px) { .game-fs-btn span { display: none; } body.game-fs .game-detail .games-back { padding-right: 3.5rem; } }
+
+/* Botones flotantes compactos en celular para no tapar el contenido. */
+.tdn-float b { font-weight: 700; margin-right: .35rem; }
+@media (max-width: 600px) {
+  .tdn-float { width: 44px; height: 44px; padding: 0 !important; display: grid !important; place-items: center; font-size: 18px !important; right: 12px !important; }
+  .tdn-float b { margin: 0; }
+  .tdn-float span { display: none; }
+  .tdn-float[href="recuerdos.html"] { bottom: 68px !important; }
+}
+
+
+
+
+.scene-card p { white-space:pre-line; line-height:1.5; }
+.subtitle { bottom:18%; padding:12px 20px; font-weight:600; font-size:clamp(1.05rem,2.4vw,1.8rem); line-height:1.4; text-shadow:0 2px 4px #000,0 0 16px #000; }
+.player.controls-on .subtitle { bottom:28%; }
+@media(max-width:600px){.subtitle{bottom:17%;font-size:1.05rem}.player.controls-on .subtitle{bottom:30%}.home-hero .hero-content{padding-bottom:82px}}
