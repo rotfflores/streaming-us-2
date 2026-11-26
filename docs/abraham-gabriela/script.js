@@ -1513,7 +1513,9 @@
     const games = EPS.filter((ep) => ep.interaccion && GAMES[ep.interaccion.tipo]);
     const arcadeId = param("arcade");
     const arcades = [
-      { id: "memory", name: "Memorama de fotos", type: "Memoria", desc: "Encuentra las parejas con las fotos de Gabriela y Abraham.", img: F.t3 }
+      { id: "memory", name: "Memorama de fotos", type: "Memoria", desc: "Encuentra las parejas con las fotos de Gabriela y Abraham.", img: F.t3 },
+      { id: "flappy", name: "Vuelo de corazones", type: "Habilidad", desc: "Haz volar tu corazón entre los obstáculos y supera tu récord.", img: F.t4 },
+      { id: "racha", name: "Atrapa el Instante", type: "Reflejos", desc: "Recoge nuestras fotos y esquiva las tormentas.", img: F.t1 }
     ];
     const arcade = arcades.find((x) => x.id === arcadeId);
     const selected = games.find((ep) => ep.id === param("j"));
@@ -1522,11 +1524,12 @@
     const names = { quiz: "Trivia", memory: "Memoria", puzzle: "Rompecabezas", sopa: "Sopa de letras", rascar: "Rasca y descubre", codigo: "Código secreto", ordenar: "Ordena la historia", adivinanza: "Adivinanza", completar: "Completa la frase" };
 
     if (arcade) {
+      document.body.classList.add("game-immersive");
       const photoChoices = [F.puzzle, F.t1, F.t3, F.t5, F.t7].filter(Boolean);
       const photoPairs = [F.t0, F.t1, F.t2, F.t3, F.t4, F.t5].filter(Boolean);
       const isAction = arcade.id === "flappy" || arcade.id === "racha";
       $("#app").innerHTML = `<main class="games-page game-detail">
-        <a class="games-back" href="juegos.html">${I.left} Todos los juegos</a>
+        <div class="game-toolbar"><a class="games-back" href="juegos.html">${I.left} Volver a juegos</a><button type="button" class="btn btn-gray" id="gameFull" aria-label="Pantalla completa">Pantalla completa</button></div>
         <div class="game-context"><span class="inter-kicker">Juegos de nosotros · ${esc(arcade.type)}</span><h1>${esc(arcade.name)}</h1><p>${esc(arcade.desc)}</p></div>
         <section class="game-panel ${isAction ? "arcade-panel" : ""}" aria-label="${esc(arcade.name)}">
           ${arcade.id === "puzzle" ? `<div class="photo-picker" aria-label="Elige una foto">${photoChoices.map((src, i) => `<button type="button" data-photo="${i}" class="${i === 0 ? "selected" : ""}" aria-label="Foto ${i + 1}" aria-pressed="${i === 0}"><img src="${esc(src)}" alt="Foto ${i + 1}"></button>`).join("")}</div>` : ""}
@@ -1564,7 +1567,7 @@
     if (!selected) {
       $("#app").innerHTML = `<main class="games-page">
         <header class="games-header"><span class="inter-kicker">Una serie para jugar</span><h1>Juegos de nosotros</h1>
-          <p>Juega cuando quieras, sin interrumpir las películas ni las series.</p></header>
+          <p>Tres juegos para disfrutar en pantalla completa, cuando quieras.</p></header>
         <h2 class="games-section-title">Para jugar ahora</h2>
         <div class="games-grid arcade-grid">${arcades.map((item) => `<a class="game-card" href="juegos.html?arcade=${item.id}">
           <span class="game-card-art">${media(item.img, item.name, item.id)}<span class="game-card-badge">${esc(item.type)}</span></span>

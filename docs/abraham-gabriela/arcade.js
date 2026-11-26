@@ -1,6 +1,7 @@
 /* Juegos de acción independientes del reproductor de episodios. */
 window.TDNArcade = (() => {
-  const W = 720, H = 400;
+  const W = 720;
+  let H = 400;
   const bestKey = (type) => `abga_record_${type}_dificil`;
   const readBest = (type) => { try { return Number(localStorage.getItem(bestKey(type))) || 0; } catch { return 0; } };
   const saveBest = (type, score) => { try { localStorage.setItem(bestKey(type), String(score)); } catch { /* modo privado */ } };
@@ -89,7 +90,7 @@ window.TDNArcade = (() => {
       p.vy += 880 * dt; p.y += p.vy * dt;
       state.timer -= dt;
       if (state.timer <= 0) {
-        state.items.push({ x: W + 30, gapY: random(120, H - 120), gapHalf: Math.max(50, 60 - state.score * .5), scored: false });
+        state.items.push({ x: W + 30, gapY: random(90, Math.max(91, H - 90)), gapHalf: Math.max(50, 60 - state.score * .5), scored: false });
         state.timer = Math.max(.72, 1.1 - state.score * .02);
       }
       const speed = Math.min(370, 255 + state.score * 9);
@@ -165,8 +166,23 @@ window.TDNArcade = (() => {
       if (isFlappy) drawFlappy(); else drawCatch();
       state.raf = state.active ? requestAnimationFrame(frame) : 0;
     }
-    background(ctx, 0);
-    if (isFlappy) drawFlappy(); else drawCatch();
+    const stage = body.querySelector('.arcade-stage');
+    const resize = () => {
+      const rect = stage.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      H = Math.max(220, Math.round(W * rect.height / rect.width));
+      canvas.width = W; canvas.height = H;
+      state.player.y = isFlappy ? Math.max(20, Math.min(H - 20, state.player.y)) : H - 55;
+      if (isFlappy) state.items.forEach(o => { o.gapY = Math.max(90, Math.min(H - 90, o.gapY)); });
+      background(ctx, state.time);
+      if (isFlappy) drawFlappy(); else drawCatch();
+    };
+    if (window.ResizeObserver) {
+      const observer = new ResizeObserver(resize);
+      observer.observe(stage);
+      addEventListener('pagehide', () => observer.disconnect(), { once: true });
+    } else addEventListener('resize', resize);
+    resize();
   }
 
   return { mount, readBest };
