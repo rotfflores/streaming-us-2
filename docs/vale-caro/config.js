@@ -179,11 +179,11 @@ window.TDN = {
           "duracion": 78,
           "interaccion": {
             "tipo": "quiz",
-            "titulo": "Los protagonistas",
+            "titulo": "Las protagonistas",
             "pregunta": "¿Quién preparó este regalo para Caro?",
             "opciones": [
               "Vale",
-              "El director del cine",
+              "La directora del cine",
               "Un personaje secreto"
             ],
             "correcta": 0

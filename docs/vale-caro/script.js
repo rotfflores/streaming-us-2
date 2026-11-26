@@ -1,5 +1,5 @@
 /* =====================================================================
-   Temporadas de Nosotros — LÓGICA
+   Temporadas de Nosotras — LÓGICA
    Vanilla JS, sin dependencias. Lee todo el contenido de config.js.
    Cada página declara <body data-page="..."> y aquí se arranca su módulo.
    Secciones:
@@ -222,14 +222,14 @@
 
   // Logo con curvatura tipo "Netflix": letras exteriores más altas
   function renderLogo(el) {
-    const chars = [...(el.dataset.logo || "Temporadas de Nosotros")];
+    const chars = [...(el.dataset.logo || "Temporadas de Nosotras")];
     const c = (chars.length - 1) / 2;
     el.innerHTML = chars.map((ch, i) => {
       if (ch === " ") return '<span class="sp"></span>';
       const d = (i - c) / c, s = 1 + 0.24 * d * d;
       return `<span style="transform:scaleY(${s.toFixed(3)})">${esc(ch)}</span>`;
     }).join("");
-    el.setAttribute("aria-label", el.dataset.logo || "Temporadas de Nosotros");
+    el.setAttribute("aria-label", el.dataset.logo || "Temporadas de Nosotras");
   }
   const renderLogos = (root = document) => $$("[data-logo]", root).forEach(renderLogo);
 
@@ -297,7 +297,7 @@
     SEASONS.filter((s) => !s.episodios.some((e) => isDone(e.id)) && s !== n?.season).slice(0, 4)
       .forEach((s) => items.push({ t: `${kindName(s)} disponible: ${s.titulo}`, s: String(s.anio), img: s.imagen, seed: "s" + s.num, url: `temporada.html?t=${s.num}` }));
     items.push({ t: `Ya disponible: ${C.final.titulo}`, s: "Solo para ti", img: C.final.imagen, seed: "final", url: "final.html" });
-    items.push({ t: "Estreno: Temporadas de Nosotros", s: `${SEASONS.filter(isMovie).length} películas y ${SEASONS.filter((s) => !isMovie(s)).length} series originales para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
+    items.push({ t: "Estreno: Temporadas de Nosotras", s: `${SEASONS.filter(isMovie).length} películas y ${SEASONS.filter((s) => !isMovie(s)).length} series originales para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
     return items;
   }
 
@@ -309,7 +309,7 @@
     const nav = h(`<header class="nav" id="nav">
       <button class="nav-burger" aria-label="Abrir menú">${I.burger}</button>
       <a href="index.html" class="logo-mono" aria-label="Inicio">V</a>
-      <a href="index.html" class="logo full" data-logo="Temporadas de Nosotros"></a>
+      <a href="index.html" class="logo full" data-logo="Temporadas de Nosotras"></a>
       <ul class="nav-links">${links.map(([k, l, u]) => `<li><a href="${u}" class="${k === active ? "active" : ""}">${l}</a></li>`).join("")}</ul>
       <div class="nav-right">
         <form class="search-box" role="search"><button type="button" class="nav-ico s-btn" aria-label="Buscar">${I.search}</button><input type="search" placeholder="Títulos, momentos…" aria-label="Buscar"></form>
@@ -365,9 +365,9 @@
 
   function footer() {
     return `<footer class="footer">
-      <ul><li>Preguntas frecuentes del amor</li><li>Centro de ayuda (abrazos)</li><li>Términos de nosotros</li><li>Privacidad: solo dos</li>
+      <ul><li>Preguntas frecuentes del amor</li><li>Centro de ayuda (abrazos)</li><li>Términos de nosotras</li><li>Privacidad: solo dos</li>
       <li>Preferencias de besos</li><li>Una historia para Caro y Vale</li><li>Contáctanos: al oído</li><li>Avisos legales</li></ul>
-      <p>© ${P.anioInicio ? P.anioInicio + "–" : ""}${new Date().getFullYear()} Caro y Vale · Temporadas de Nosotros</p></footer>`;
+      <p>© ${P.anioInicio ? P.anioInicio + "–" : ""}${new Date().getFullYear()} Caro y Vale · Temporadas de Nosotras</p></footer>`;
   }
 
   /* ================= 8. FILAS, HOVER-POP Y MODAL ================= */
@@ -542,7 +542,7 @@
 
     if (!estrenoOk()) {
       root.innerHTML = `<div class="splash"><div class="splash-start">
-        <div class="logo" data-logo="Temporadas de Nosotros"></div>
+        <div class="logo" data-logo="Temporadas de Nosotras"></div>
         <p style="letter-spacing:.3em;font-size:.8rem">ESTRENO EXCLUSIVO</p>
         <div class="countdown" id="cd"></div>
         <p>Disponible el ${new Date(estrenoTime()).toLocaleString("es", { dateStyle: "long", timeStyle: "short" })}</p></div></div>`;
@@ -560,13 +560,13 @@
 
     root.innerHTML = `<div class="splash" id="splash">${muteBtn()}
       <div class="splash-start" id="start">
-        <div class="logo" data-logo="Temporadas de Nosotros"></div>
+        <div class="logo" data-logo="Temporadas de Nosotras"></div>
         <p>Películas y series originales para <b style="color:#fff">${esc(P.nombreB)}</b></p>
         <button class="btn btn-red" id="go">${I.play} Comenzar</button>
         <p style="font-size:.8rem">Mejor con sonido 🔊</p>
       </div>
       <div class="tadum" id="tadum"><div class="tadum-ribbons">${ribbons}</div><div class="tadum-letter">T</div>
-        <div class="logo tadum-final" data-logo="Temporadas de Nosotros"></div></div></div>`;
+        <div class="logo tadum-final" data-logo="Temporadas de Nosotras"></div></div></div>`;
     renderLogos(root);
     $(".splash-mute").onclick = (e) => { e.stopPropagation(); Sound.muted = !Sound.muted; e.currentTarget.innerHTML = Sound.muted ? I.mute : I.vol; };
     let started = false;
@@ -586,7 +586,7 @@
   /* ---------- PASSWORD ---------- */
   function pagePassword() {
     $("#app").innerHTML = `<div class="auth-page"><div class="auth-bg">${media(F.hero, "", "hero")}</div>
-      <header class="auth-head"><div class="logo" data-logo="Temporadas de Nosotros"></div></header>
+      <header class="auth-head"><div class="logo" data-logo="Temporadas de Nosotras"></div></header>
       <form class="auth-box" novalidate>
         <h1>Contenido exclusivo</h1>
         <p>Esta serie solo está disponible para una persona en el mundo. Introduce la contraseña para continuar.</p>
@@ -613,7 +613,7 @@
   /* ---------- PERFILES ---------- */
   function pageProfiles() {
     $("#app").innerHTML = `<div class="profiles" id="profiles">
-      <a class="top-logo" href="#"><span class="logo" data-logo="Temporadas de Nosotros"></span></a>
+      <a class="top-logo" href="#"><span class="logo" data-logo="Temporadas de Nosotras"></span></a>
       <h1>¿Quién está viendo?</h1>
       <div class="profile-list">${Object.entries(PROFILES).map(([k, p]) => `
         <button class="profile" data-p="${k}"><div class="pic" style="background:${p.color}">${p.img ? `<img class="media-img" src="${esc(p.img)}" alt="">` : `<span class="initial">${esc(p.mark || initial(p.name))}</span>`}</div>
@@ -642,12 +642,12 @@
     const playTarget = only ? epUrl(feat.episodios.find((e) => !isDone(e.id)) || feat.episodios[0]) : nx ? epUrl(nx) : epUrl(EPS[0]);
     const resume = nx && S.watch[nx.id] > 0;
     const heroImg = only ? feat.imagen : F.hero || feat.imagen;
-    if (only) document.title = `${ver === "peliculas" ? "Películas" : "Series"} | Temporadas de Nosotros`;
+    if (only) document.title = `${ver === "peliculas" ? "Películas" : "Series"} | Temporadas de Nosotras`;
 
     const app = $("#app");
     app.innerHTML = `
       <section class="hero home-hero" aria-label="Destacado">
-        <div class="hero-bg">${heroImg ? media(heroImg, "", "hero") : media("", "Nosotros", "hero")}</div>
+        <div class="hero-bg">${heroImg ? media(heroImg, "", "hero") : media("", "Nosotras", "hero")}</div>
         <div class="hero-content">
           <div class="hero-kicker"><span class="logo-mono">V</span>${only ? kindName(feat) : "Original"}</div>
           <h1 class="hero-title">${esc(only ? feat.titulo : C.sitio.titulo)}</h1>
@@ -675,18 +675,18 @@
     const movies = SEASONS.filter(isMovie), series = SEASONS.filter((x) => !isMovie(x));
     const cont = continuing.length ? row("continuar", `Continuar viendo como ${esc(pr.name)}`, continuing.map((e) => epCard(e, { progress: true })).join("")) : "";
     if (ver === "peliculas") rowsEl.innerHTML = cont +
-      row("peliculas", "Películas de nosotros", movies.map(seasonCard).join("")) +
+      row("peliculas", "Películas de nosotras", movies.map(seasonCard).join("")) +
       row("top10", "Top 10 películas en tu corazón", movies.filter((x) => x.top10).concat(movies.filter((x) => !x.top10)).slice(0, 10).map((x, i) => topCard(x, i + 1)).join("")) +
       row("porque", "Para volver a ver", [...movies].reverse().map(seasonCard).join(""));
     else if (ver === "series") rowsEl.innerHTML = cont +
-      row("series", "Series de nosotros", series.map(seasonCard).join("")) +
+      row("series", "Series de nosotras", series.map(seasonCard).join("")) +
       row("novedades", "Episodios de nuestras series", EPS.filter((e) => !isMovie(e.season)).map((e) => epCard(e)).join("")) +
       row("top10", "Top series en tu corazón", series.map((x, i) => topCard(x, i + 1)).join(""));
     else rowsEl.innerHTML =
       (continuing.length ? row("continuar", `Continuar viendo como ${esc(pr.name)}`, continuing.map((e) => epCard(e, { progress: true })).join("")) : "") +
       `<a class="games-promo" href="juegos.html"><span class="games-promo-mark">🎮</span><span><b>Un juego de nuestra historia</b><small>Memorama con nuestras fotos · Juega cuando quieras</small></span><span class="games-promo-arrow">${I.right}</span></a>` +
-      row("peliculas", "Películas de nosotros", SEASONS.filter(isMovie).map(seasonCard).join("")) +
-      row("series", "Series de nosotros", SEASONS.filter((x) => !isMovie(x)).map(seasonCard).join("") + finalCard()) +
+      row("peliculas", "Películas de nosotras", SEASONS.filter(isMovie).map(seasonCard).join("")) +
+      row("series", "Series de nosotras", SEASONS.filter((x) => !isMovie(x)).map(seasonCard).join("") + finalCard()) +
       row("top10", "Top 10 en tu corazón hoy", tops.map((s, i) => topCard(s, i + 1)).join("")) +
       row("novedades", "Episodios de nuestras series", EPS.filter((e) => !isMovie(e.season)).map((e) => epCard(e)).join("")) +
       row("detras", "Detrás de cámaras", C.extras.map(extraCard).join("")) +
@@ -715,7 +715,7 @@
 
     $("#hPlay").onclick = (e) => expandTo($(".hero"), playTarget);
     $("#hInfo").onclick = () => expandTo($(".hero"), `temporada.html?t=${feat.num}`);
-    $("#hList").onclick = (e) => { const on = only ? toggleList("s:" + feat.num, feat.titulo) : toggleList("serie", "Temporadas de Nosotros"); e.currentTarget.innerHTML = `${on ? I.check : I.plus} Mi lista`; };
+    $("#hList").onclick = (e) => { const on = only ? toggleList("s:" + feat.num, feat.titulo) : toggleList("serie", "Temporadas de Nosotras"); e.currentTarget.innerHTML = `${on ? I.check : I.plus} Mi lista`; };
     $("#hMute").onclick = (e) => { Sound.muted = !Sound.muted; e.currentTarget.innerHTML = Sound.muted ? I.mute : I.vol; toast(Sound.muted ? "Sonido desactivado" : "Sonido activado"); };
 
     const q = param("q");
@@ -743,7 +743,7 @@
   /* ---------- DETALLE DE TEMPORADA ---------- */
   function pageSeason() {
     const s = seasonByNum(param("t")) || SEASONS[0];
-    document.title = `${s.titulo} | Temporadas de Nosotros`;
+    document.title = `${s.titulo} | Temporadas de Nosotras`;
     renderNav("series");
     const lock = !seasonUnlocked(s), nx = seasonNext(s);
     const inL = S.list.includes("s:" + s.num);
@@ -816,7 +816,7 @@
     const ep = epById(`${param("t")}-${param("e")}`);
     if (!ep) return location.replace("index.html");
     if (!unlocked(ep)) { ss.set("vc199_toast", "🔒 Ese episodio aún está bloqueado"); return location.replace(`temporada.html?t=${ep.t}`); }
-    document.title = `${epFull(ep)} | Temporadas de Nosotros`;
+    document.title = `${epFull(ep)} | Temporadas de Nosotras`;
 
     const D = ep.duracion || 75, INTRO = 6;
     let t = !isDone(ep.id) && S.watch[ep.id] ? S.watch[ep.id] * D : 0;
@@ -837,7 +837,7 @@
     $("#app").innerHTML = `<div class="player controls-on" id="player">
       <div class="stage" id="stage">${scenes.map(sceneHtml).join("")}</div>
       <div class="subtitle" id="sub" aria-live="polite"></div>
-      <div class="intro-card ${t >= INTRO ? "hide" : ""}" id="intro"><div class="logo" data-logo="Temporadas de Nosotros"></div>
+      <div class="intro-card ${t >= INTRO ? "hide" : ""}" id="intro"><div class="logo" data-logo="Temporadas de Nosotras"></div>
         <div class="ep-label">${isMovie(ep.season) ? "Una película original" : `Serie original · ${esc(ep.season.titulo)} · Episodio ${ep.e}`}</div><h1>${esc(ep.titulo)}</h1></div>
       <div class="big-play" id="bigPlay"><span></span></div>
       <button class="skip-intro hidden" id="skip">Saltar intro</button>
@@ -853,7 +853,7 @@
           <button class="p-btn hide-xs" data-a="fwd10" aria-label="Adelantar 10 s">${I.fwd10}</button>
           <div class="vol"><button class="p-btn" data-a="mute" aria-label="Volumen"></button>
             <div class="vol-slider"><input type="range" min="0" max="1" step="0.05" id="volR" aria-label="Volumen"></div></div>
-          <div class="p-name"><b>${esc(ep.cancion || ep.season.cancion || "Temporadas de Nosotros")}</b> &nbsp;${esc(epFull(ep))}</div>
+          <div class="p-name"><b>${esc(ep.cancion || ep.season.cancion || "Temporadas de Nosotras")}</b> &nbsp;${esc(epFull(ep))}</div>
           <button class="p-btn" data-a="next" aria-label="Siguiente título">${I.next}</button>
           <button class="p-btn" data-a="subs" aria-label="Subtítulos">${I.subs}</button>
           <button class="p-btn" data-a="full" aria-label="Pantalla completa">${I.full}</button>
@@ -1046,7 +1046,7 @@
       const s = ep.season;
       const list = [...(s.creditos || []), ["Banda sonora", ep.cancion || s.cancion || C.sitio.generos.join(" · ")], ["", `© ${s.anio ? s.anio + " " : ""}Caro y Vale`]];
       const el = h(`<div class="title-credits"><div class="credits"><div class="credits-roll">
-          <div class="logo" data-logo="Temporadas de Nosotros"></div>
+          <div class="logo" data-logo="Temporadas de Nosotras"></div>
           <div class="credit solo" style="margin:0 auto 2.4rem;font-style:normal;color:#fff;font-size:1.5rem">${esc(s.titulo)}</div>
           ${list.map(([r, w]) => r ? `<div class="credit"><div class="role">${esc(r)}</div><div class="who">${esc(w)}</div></div>` : `<div class="credit solo">${esc(w)}</div>`).join("")}
         </div></div><button class="credits-back end-back" type="button" aria-label="Volver al inicio">${I.back}</button>
@@ -1198,18 +1198,18 @@
   // Notifica a quien regala: endpoint (POST JSON) + WhatsApp o correo
   function notify(r) {
     const N = C.notificacion;
-    const txt = `🎬 Temporadas de Nosotros\n${P.nombreB} terminó la serie y respondió la Temporada Final:\n\n` +
+    const txt = `🎬 Temporadas de Nosotras\n${P.nombreB} terminó la serie y respondió la Temporada Final:\n\n` +
       C.final.preguntas.map((q, i) => `${i + 1}. ${q}\n→ ${r[i]}`).join("\n\n");
     if (N.endpoint) {
       fetch(N.endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ _subject: `${P.nombreB} terminó Temporadas de Nosotros`, serie: "Temporadas de Nosotros", nombre: P.nombreB, respuestas: txt }) })
+        body: JSON.stringify({ _subject: `${P.nombreB} terminó Temporadas de Nosotras`, serie: "Temporadas de Nosotras", nombre: P.nombreB, respuestas: txt }) })
         .catch(() => {});
     }
     if (N.whatsapp) {
       window.open(`https://wa.me/${digits(N.whatsapp)}?text=${encodeURIComponent(txt)}`, "_blank", "noopener");
       return toast("Borrador listo en WhatsApp");
     }
-    else if (N.email) location.href = `mailto:${N.email}?subject=${encodeURIComponent("Temporadas de Nosotros: mi respuesta")}&body=${encodeURIComponent(txt)}`;
+    else if (N.email) location.href = `mailto:${N.email}?subject=${encodeURIComponent("Temporadas de Nosotras: mi respuesta")}&body=${encodeURIComponent(txt)}`;
     else if (!N.endpoint) return toast("[PENDIENTE] Configura WhatsApp o correo en config.js");
     S.sent = true; save();
     $("#send").textContent = "Respuesta enviada ✓ (enviar otra vez)";
@@ -1221,7 +1221,7 @@
     document.body.classList.add("credits-page");
     const pc = C.postCreditos;
     $("#app").innerHTML = `<div class="credits"><div class="credits-roll" id="roll">
-        <div class="logo" data-logo="Temporadas de Nosotros"></div>
+        <div class="logo" data-logo="Temporadas de Nosotras"></div>
         ${C.creditos.map(([r, w]) => r ? `<div class="credit"><div class="role">${esc(r)}</div><div class="who">${esc(w)}</div></div>` : `<div class="credit solo">${esc(w)}</div>`).join("")}
       </div></div>
       <button class="credits-back" id="back" aria-label="Volver">${I.back}</button>
@@ -1548,7 +1548,7 @@
     const arcade = arcades.find((x) => x.id === arcadeId);
     const selected = games.find((ep) => ep.id === param("j"));
     const done = games.filter((ep) => S.inter[ep.id]).length;
-    document.title = `${arcade ? arcade.name + " | " : selected ? selected.titulo + " | " : ""}Juegos | Temporadas de Nosotros`;
+    document.title = `${arcade ? arcade.name + " | " : selected ? selected.titulo + " | " : ""}Juegos | Temporadas de Nosotras`;
     const names = { quiz: "Trivia", memory: "Memoria", puzzle: "Rompecabezas", sopa: "Sopa de letras", rascar: "Rasca y descubre", codigo: "Código secreto", ordenar: "Ordena la historia", adivinanza: "Adivinanza", completar: "Completa la frase" };
 
     if (arcade) {
@@ -1557,7 +1557,7 @@
       const isAction = arcade.id === "flappy" || arcade.id === "racha";
       $("#app").innerHTML = `<main class="games-page game-detail">
         <a class="games-back" href="juegos.html">${I.left} Todos los juegos</a>
-        <div class="game-context"><span class="inter-kicker">Juegos de nosotros · ${esc(arcade.type)}</span><h1>${esc(arcade.name)}</h1><p>${esc(arcade.desc)}</p></div>
+        <div class="game-context"><span class="inter-kicker">Juegos de nosotras · ${esc(arcade.type)}</span><h1>${esc(arcade.name)}</h1><p>${esc(arcade.desc)}</p></div>
         <section class="game-panel ${isAction ? "arcade-panel" : ""}" aria-label="${esc(arcade.name)}">
           ${arcade.id === "puzzle" ? `<div class="photo-picker" aria-label="Elige una foto">${photoChoices.map((src, i) => `<button type="button" data-photo="${i}" class="${i === 0 ? "selected" : ""}" aria-label="Foto ${i + 1}" aria-pressed="${i === 0}"><img src="${esc(src)}" alt="Foto ${i + 1}"></button>`).join("")}</div>` : ""}
           <div class="inter-body"></div><div class="feedback" role="status" aria-live="polite"></div>
@@ -1594,7 +1594,7 @@
 
     if (!selected) {
       $("#app").innerHTML = `<main class="games-page">
-        <header class="games-header"><span class="inter-kicker">Una serie para jugar</span><h1>Juegos de nosotros</h1>
+        <header class="games-header"><span class="inter-kicker">Una serie para jugar</span><h1>Juegos de nosotras</h1>
           <p>Juega cuando quieras, sin interrumpir las películas ni las series.</p></header>
         ${arcades.length ? `<h2 class="games-section-title">Para jugar ahora</h2>
         <div class="games-grid arcade-grid">${arcades.map((item) => `<a class="game-card" href="juegos.html?arcade=${item.id}">
@@ -1664,7 +1664,7 @@
   // Aviso en consola de datos pendientes (útil antes de publicar)
   try {
     const pend = (JSON.stringify(C, (k, v) => (typeof v === "function" ? undefined : v)).match(/\[[A-ZÁÉÍÓÚÑ_ 0-9—-]+[^\]]*\]/g) || []);
-    if (pend.length && false) console.info(`%cTemporadas de Nosotros: ${new Set(pend).size} datos [PENDIENTE]`, "color:#E50914;font-weight:bold", [...new Set(pend)]);
+    if (pend.length && false) console.info(`%cTemporadas de Nosotras: ${new Set(pend).size} datos [PENDIENTE]`, "color:#E50914;font-weight:bold", [...new Set(pend)]);
   } catch { }
 
   const pages = { splash: pageSplash, password: pagePassword, profiles: pageProfiles, home: pageHome, season: pageSeason, player: pagePlayer, games: pageGames, final: pageFinal, credits: pageCredits };
