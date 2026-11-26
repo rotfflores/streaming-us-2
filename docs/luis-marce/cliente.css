@@ -1,0 +1,11 @@
+/* Personalización exclusiva de Luis y Marce. */
+.scene .media-wrap img { object-fit: contain; background: #08090e; }
+.hero-bg img { object-position: 64% 36%; }
+.profile-avatar img { object-position: center 35%; }
+.subtitle { text-shadow: 0 2px 7px #000, 0 0 24px #000; }
+.games-promo small { font-size: 0; }
+.games-promo small::after { content: "Un memorama con nuestras fotos · Juega cuando quieras"; font-size: .875rem; }
+@media (max-width: 600px) {
+  .hero-title { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .hero-synopsis { line-height: 1.5; }
+}
