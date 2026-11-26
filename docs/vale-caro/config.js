@@ -9,8 +9,8 @@ window.TDN = {
     "apodo": "Caro",
     "fechaInicio": "",
     "anioInicio": "",
-    "anios": "",
-    "aniosManual": 0,
+    "anios": "6",
+    "aniosManual": 6,
     "fechaCodigo": "",
     "aniversario": "",
     "ciudad": "",
@@ -26,7 +26,7 @@ window.TDN = {
       "Escucharnos con cariño",
       "Acompañarnos en nuestras metas"
     ],
-    "mensajeFinal": "Caro:\n\nFeliz aniversario, mi amor. Quise reunir estas fotos y canciones para celebrar lo que compartimos y decirte con calma cuánto te amo. Al mirarlas vuelvo a nuestras sonrisas, a los abrazos y a esos ratitos que hacen bonito estar contigo.\n\nGracias por la tranquilidad que me das. Por tu tiempo, tu paciencia y tu cariño. Contigo me siento importante, querida y acompañada; quería dejarte estas palabras en un lugar al que puedas volver siempre que quieras sentirme cerca.\n\nTambién quiero agradecerte por mis hijos. El cariño y la ternura con los que les has dado un lugar significan muchísimo para mí. Hay gestos que abrazan un mundo entero, y los tuyos forman parte de lo que hoy quiero reconocer.\n\nDeseo corresponderte con cuidado y atención. Escucharte, preguntarte cómo estás y hacer espacio para lo que necesitas. Que el amor que te digo aquí también se note en mis acciones, en la paciencia y en el respeto por tu voz.\n\nMe ilusiona seguir creando recuerdos contigo. Conocer tus metas, compartirte mis sueños y encontrar planes que nos emocionen a las dos. No necesitamos tener todas las respuestas para disfrutar el presente y elegir juntas el siguiente paso.\n\nEn nuestro aniversario quiero recordarte lo mucho que significas para mí y lo bonito que es seguir construyendo nuestra historia juntas. Gracias por tu forma de querer, por la calma y por el cariño que compartes. Ojalá todavía nos esperen muchas sonrisas, conversaciones y abrazos.\n\nCon todo mi amor,\nVale"
+    "mensajeFinal": "Caro:\n\nFelices 6 años, mi amor. Quise reunir estas fotos y canciones para celebrar lo que compartimos y decirte con calma cuánto te amo. Al mirarlas vuelvo a nuestras sonrisas, a los abrazos y a esos ratitos que hacen bonito estar contigo.\n\nGracias por la tranquilidad que me das. Por tu tiempo, tu paciencia y tu cariño. Contigo me siento importante, querida y acompañada; quería dejarte estas palabras en un lugar al que puedas volver siempre que quieras sentirme cerca.\n\nTambién quiero agradecerte por mis hijos. El cariño y la ternura con los que les has dado un lugar significan muchísimo para mí. Hay gestos que abrazan un mundo entero, y los tuyos forman parte de lo que hoy quiero reconocer.\n\nDeseo corresponderte con cuidado y atención. Escucharte, preguntarte cómo estás y hacer espacio para lo que necesitas. Que el amor que te digo aquí también se note en mis acciones, en la paciencia y en el respeto por tu voz.\n\nMe ilusiona seguir creando recuerdos contigo. Conocer tus metas, compartirte mis sueños y encontrar planes que nos emocionen a las dos. No necesitamos tener todas las respuestas para disfrutar el presente y elegir juntas el siguiente paso.\n\nDespués de 6 años juntas, quiero recordarte lo mucho que significas para mí y lo bonito que es seguir construyendo nuestra historia juntas. Gracias por tu forma de querer, por la calma y por el cariño que compartes. Ojalá todavía nos esperen muchas sonrisas, conversaciones y abrazos.\n\nCon todo mi amor,\nVale"
   },
   "fotos": {
     "hero": "assets/fotos/hero.webp",
@@ -90,13 +90,13 @@ window.TDN = {
   },
   "sitio": {
     "url": "https://streaming-us-2.rotfstudio.com/vale-caro/",
-    "titulo": "Caro & Vale",
-    "heroTop": "De Vale, para Caro · Nuestro aniversario",
-    "heroTag": "FELIZ ANIVERSARIO, CARO",
+    "titulo": "Un día a la vez",
+    "heroTop": "De Vale, para Caro · 6 años juntas",
+    "heroTag": "FELIZ SEXTO ANIVERSARIO, CARO",
     "coincidencia": 100,
     "clasificacion": "TP",
     "clasificacionTexto": "Amor y recuerdos compartidos",
-    "sinopsis": "Caro, feliz aniversario. Reuní nuestras imágenes y estas canciones para celebrar nuestro amor, agradecer lo que compartimos y soñar con las páginas que nos esperan juntas.",
+    "sinopsis": "Caro, felices 6 años juntas. Reuní nuestras imágenes y estas canciones para celebrar nuestro amor, agradecer lo que compartimos y soñar con las páginas que nos esperan juntas.",
     "generos": [
       "Romance",
       "Aniversario",
@@ -109,7 +109,7 @@ window.TDN = {
       "num": 0,
       "tipo": "pelicula",
       "titulo": "Nuestro aniversario",
-      "sinopsis": "De Vale para Caro: una película para celebrar nuestro amor, agradecer lo que compartimos y soñar juntas con lo que viene.",
+      "sinopsis": "Seis años juntas, un día a la vez: una película para celebrar nuestro amor.",
       "anio": "",
       "clasificacion": "TP",
       "top10": true,
@@ -129,14 +129,14 @@ window.TDN = {
       "episodios": [
         {
           "titulo": "Nuestro aniversario",
-          "descripcion": "De Vale para Caro: una película para celebrar nuestro amor, agradecer lo que compartimos y soñar juntas con lo que viene.",
+          "descripcion": "Seis años juntas, un día a la vez: una película para celebrar nuestro amor.",
           "musica": "assets/audio/cancion-00.mp3",
           "cancion": "Banda MS — Solo con verte",
           "escenas": [
             {
               "img": "assets/fotos/foto-00.webp",
               "texto": [
-                "Feliz aniversario, Caro. Esta película es para celebrar lo que hemos construido juntas y recordarte cuánto te amo."
+                "Felices 6 años, Caro. Un día a la vez hemos construido nuestra historia juntas y recordarte cuánto te amo."
               ],
               "duracion": 12
             },
@@ -150,7 +150,7 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-02.webp",
               "texto": [
-                "Gracias por la calma que me das, por tu paciencia y por hacerme sentir querida. Nuestro aniversario también es un gracias para ti."
+                "Gracias por la calma que me das, por tu paciencia y por hacerme sentir querida. Estos 6 años también son un gracias para ti."
               ],
               "duracion": 12
             },
@@ -171,7 +171,7 @@ window.TDN = {
             {
               "img": "assets/ambiente/atardecer.webp",
               "texto": [
-                "Feliz aniversario, mi amor. Que sigamos encontrando tiempo para nosotras, razones para sonreír y ganas de abrazarnos. Con todo mi amor, Vale."
+                "Felices 6 años, mi amor. Que sigamos encontrando tiempo para nosotras, razones para sonreír y ganas de abrazarnos. Con todo mi amor, Vale."
               ],
               "duracion": 12
             }
@@ -1514,9 +1514,9 @@ window.TDN = {
     }
   ],
   "final": {
-    "titulo": "Feliz aniversario, Caro",
+    "titulo": "Felices 6 años, Caro",
     "imagen": "assets/fotos/portada-15.webp",
-    "sinopsis": "Una carta de Vale para celebrar nuestro aniversario y un espacio para compartir lo que sientes.",
+    "sinopsis": "Una carta de Vale para celebrar 6 años juntas y un espacio para compartir lo que sientes.",
     "preguntas": [
       "¿Qué imagen de este regalo te gustó más?",
       "¿Qué canción te gustaría volver a escuchar conmigo?",
@@ -1557,7 +1557,7 @@ window.TDN = {
     "texto": "Caro, todavía hay páginas que podemos imaginar juntas.",
     "anuncio": "La siguiente página, contigo",
     "subtitulo": "Que siempre encontremos tiempo para nosotras.",
-    "sorpresa": "Feliz aniversario, Caro. Te amo. Con todo mi cariño, Vale."
+    "sorpresa": "Felices 6 años, Caro. Te amo. Con todo mi cariño, Vale."
   }
 };
 window.TDN.final.carta = () => window.TDN.pareja.mensajeFinal;
