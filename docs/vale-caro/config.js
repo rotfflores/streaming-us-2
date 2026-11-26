@@ -26,7 +26,7 @@ window.TDN = {
       "Escucharnos con cariño",
       "Acompañarnos en nuestras metas"
     ],
-    "mensajeFinal": "Mi amor:\n\nFelices 6 años, mi amor. Quise reunir estas fotos y canciones para celebrar lo que compartimos y decirte con calma cuánto te amo. Al mirarlas vuelvo a nuestras sonrisas, a los abrazos y a esos ratitos que hacen bonito estar contigo.\n\nGracias por la tranquilidad que me das. Por tu tiempo, tu paciencia y tu cariño. Contigo me siento importante, querida y acompañada; quería dejarte estas palabras en un lugar al que puedas volver siempre que quieras sentirme cerca.\n\nTambién quiero agradecerte por mis hijos. El cariño y la ternura con los que les has dado un lugar significan muchísimo para mí. Hay gestos que abrazan un mundo entero, y los tuyos forman parte de lo que hoy quiero reconocer.\n\nDeseo corresponderte con cuidado y atención. Escucharte, preguntarte cómo estás y hacer espacio para lo que necesitas. Que el amor que te digo aquí también se note en mis acciones, en la paciencia y en el respeto por tu voz.\n\nMe ilusiona seguir creando recuerdos contigo. Conocer tus metas, compartirte mis sueños y encontrar planes que nos emocionen a las dos. No necesitamos tener todas las respuestas para disfrutar el presente y elegir juntas el siguiente paso.\n\nDespués de 6 años juntas, quiero recordarte lo mucho que significas para mí y lo bonito que es seguir construyendo nuestra historia juntas. Gracias por tu forma de querer, por la calma y por el cariño que compartes. Ojalá todavía nos esperen muchas sonrisas, conversaciones y abrazos.\n\nCon todo mi amor,\nVale"
+    "mensajeFinal": "Mi amor:\n\nFelices 6 años, mi amor. Quise reunir estas fotos y canciones para celebrar lo que compartimos y decirte con calma cuánto te amo. Al mirarlas vuelvo a nuestras sonrisas, a los abrazos y a esos ratitos que hacen bonito estar contigo.\n\nGracias por la tranquilidad que me das. Por tu tiempo, tu paciencia y tu cariño. Contigo me siento importante, querida y acompañada; quería dejarte estas palabras en un lugar al que puedas volver siempre que quieras sentirme cerca.\n\nTambién quiero agradecerte por mis hijos. El cariño y la ternura con los que les has dado un lugar significan muchísimo para mí. Hay gestos que abrazan un mundo entero, y los tuyos forman parte de lo que hoy quiero reconocer.\n\nDeseo corresponderte con cuidado y atención. Escucharte, preguntarte cómo estás y hacer espacio para lo que necesitas. Que el amor que te digo aquí también se note en mis acciones, en la paciencia y en el respeto por tu voz.\n\nMe ilusiona seguir creando recuerdos contigo. Conocer tus metas, compartirte mis sueños y encontrar planes que nos emocionen a las dos. No necesitamos tener todas las respuestas para disfrutar el presente y elegir juntas el siguiente paso.\n\nDespués de 6 años juntas, quiero recordarte lo mucho que significas para mí y lo bonito que es seguir construyendo nuestra historia juntas. Gracias por tu forma de querer, por la calma y por el cariño que compartes. Ojalá todavía nos esperen muchas sonrisas, conversaciones y abrazos.\n\nCon todo mi amor,\nVale\n\nGracias por existir 💖"
   },
   "fotos": {
     "hero": "assets/fotos/hero.webp",
@@ -141,30 +141,44 @@ window.TDN = {
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-29.webp",
+              "img": "assets/fotos/foto-01.webp",
               "texto": [
                 "Cada foto guarda algo de nosotras: una sonrisa, un abrazo, un momento que quiero conservar contigo. Hoy celebro esos recuerdos."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-36.webp",
+              "img": "assets/fotos/foto-02.webp",
               "texto": [
                 "Gracias por la calma que me das, por tu paciencia y por hacerme sentir querida. Estos 6 años también son un gracias para ti."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-31.webp",
+              "img": "assets/fotos/foto-03.webp",
               "texto": [
                 "Gracias por el cariño que has dado a mis hijos. Tu ternura hacia ellos es parte de lo mucho que valoro de ti."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-20.webp",
+              "img": "assets/fotos/foto-04.webp",
               "texto": [
                 "Me ilusiona seguir compartiendo planes contigo, escuchar tus sueños y crear nuevos recuerdos. Quiero que sigamos eligiéndonos con cariño y respeto."
+              ],
+              "duracion": 12
+            },
+            {
+              "img": "assets/fotos/foto-29.webp",
+              "texto": [
+                "Felices 6 años, mi amor. Que sigamos encontrando tiempo para nosotras, razones para sonreír y ganas de abrazarnos. Con todo mi amor, Vale."
+              ],
+              "duracion": 12
+            },
+            {
+              "img": "assets/fotos/foto-36.webp",
+              "texto": [
+                "Felices 6 años, mi amor. Un día a la vez hemos construido nuestra historia juntas; esta película es para recordarte cuánto te amo."
               ],
               "duracion": 12
             },
@@ -176,7 +190,7 @@ window.TDN = {
               "duracion": 12
             }
           ],
-          "duracion": 78,
+          "duracion": 102,
           "interaccion": {
             "tipo": "quiz",
             "titulo": "Las protagonistas",
@@ -740,7 +754,7 @@ window.TDN = {
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-00.webp",
+              "img": "assets/fotos/foto-39.webp",
               "texto": [
                 "Quiero quedarme con lo que aprendemos sobre valorar el cariño."
               ],
@@ -768,7 +782,7 @@ window.TDN = {
       "anio": "",
       "clasificacion": "TP",
       "top10": true,
-      "imagen": "assets/fotos/portada-01.webp",
+      "imagen": "assets/fotos/portada-40.webp",
       "musica": "assets/audio/cancion-01.mp3",
       "cancion": "Cardenales de Nuevo León — Qué no daría",
       "creditos": [
@@ -789,35 +803,35 @@ window.TDN = {
           "cancion": "Cardenales de Nuevo León — Qué no daría",
           "escenas": [
             {
-              "img": "assets/fotos/foto-01.webp",
+              "img": "assets/fotos/foto-40.webp",
               "texto": [
                 "Qué bonito poder dedicarte algo hecho pensando en tu sonrisa."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-02.webp",
+              "img": "assets/fotos/foto-41.webp",
               "texto": [
                 "Quiero encontrar más maneras de hacerte sentir querida."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-03.webp",
+              "img": "assets/fotos/foto-42.webp",
               "texto": [
                 "Dedicarte tiempo sin prisas, escucharte y preguntar por tus ilusiones."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-04.webp",
+              "img": "assets/fotos/foto-43.webp",
               "texto": [
                 "Tener un detalle porque sí, sin esperar una fecha especial."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-05.webp",
+              "img": "assets/fotos/foto-44.webp",
               "texto": [
                 "Reconocer tu esfuerzo y decirte lo que admiro de ti."
               ],
@@ -856,7 +870,7 @@ window.TDN = {
       "anio": "",
       "clasificacion": "TP",
       "top10": true,
-      "imagen": "assets/fotos/portada-06.webp",
+      "imagen": "assets/fotos/portada-45.webp",
       "musica": "assets/audio/cancion-08.mp3",
       "cancion": "La Arrolladora — El ruido de tus zapatos",
       "creditos": [
@@ -877,35 +891,35 @@ window.TDN = {
           "cancion": "La Arrolladora — El ruido de tus zapatos",
           "escenas": [
             {
-              "img": "assets/fotos/foto-06.webp",
+              "img": "assets/fotos/foto-45.webp",
               "texto": [
                 "Deseo que podamos hablar con confianza de lo que sentimos."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-07.webp",
+              "img": "assets/fotos/foto-46.webp",
               "texto": [
                 "Que haya espacio para las palabras y también para las pausas."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-08.webp",
+              "img": "assets/fotos/foto-47.webp",
               "texto": [
                 "Quiero escucharte con la misma atención que valoro recibir."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-09.webp",
+              "img": "assets/fotos/foto-48.webp",
               "texto": [
                 "Preguntar antes de suponer y cuidar la manera en que me acerco a ti."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-10.webp",
+              "img": "assets/fotos/foto-49.webp",
               "texto": [
                 "Seguir aprendiendo a querer con respeto y con paciencia."
               ],
@@ -933,7 +947,7 @@ window.TDN = {
       "anio": "",
       "clasificacion": "TP",
       "top10": false,
-      "imagen": "assets/fotos/portada-11.webp",
+      "imagen": "assets/fotos/portada-50.webp",
       "musica": "assets/audio/cancion-06.mp3",
       "cancion": "Intocable — Soñador eterno",
       "creditos": [
@@ -954,35 +968,35 @@ window.TDN = {
           "cancion": "Intocable — Soñador eterno",
           "escenas": [
             {
-              "img": "assets/fotos/foto-11.webp",
+              "img": "assets/fotos/foto-50.webp",
               "texto": [
                 "Me hace ilusión imaginar nuevas páginas contigo."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-12.webp",
+              "img": "assets/fotos/foto-51.webp",
               "texto": [
                 "Quiero conocer tus metas y las cosas que te emocionan."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-13.webp",
+              "img": "assets/fotos/foto-52.webp",
               "texto": [
                 "Celebrar tus avances y preguntarte cómo puedo acompañarte."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-14.webp",
+              "img": "assets/fotos/foto-53.webp",
               "texto": [
                 "Compartirte mis sueños sin dejar de escuchar los tuyos."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-15.webp",
+              "img": "assets/fotos/foto-54.webp",
               "texto": [
                 "Encontrar planes que nos hagan ilusión a las dos."
               ],
@@ -1035,35 +1049,35 @@ window.TDN = {
           "cancion": "Llegaste a mi vida",
           "escenas": [
             {
-              "img": "assets/fotos/foto-16.webp",
+              "img": "assets/fotos/foto-55.webp",
               "texto": [
                 "Llegaste a mi vida y hoy quiero agradecerte lo que me haces sentir."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-17.webp",
+              "img": "assets/fotos/foto-56.webp",
               "texto": [
                 "La calma, el cariño y la posibilidad de volver a creer en el amor."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-18.webp",
+              "img": "assets/fotos/foto-57.webp",
               "texto": [
                 "Estas fotos reúnen apenas una parte de lo que quiero conservar."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-19.webp",
+              "img": "assets/fotos/foto-58.webp",
               "texto": [
                 "Todavía deseo más conversaciones, más abrazos y más recuerdos contigo."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-20.webp",
+              "img": "assets/fotos/foto-59.webp",
               "texto": [
                 "Feliz aniversario, mi amor. Gracias por compartir tu vida conmigo."
               ],
@@ -1100,42 +1114,42 @@ window.TDN = {
           "cancion": "Para mi amor — canción personalizada de Vale",
           "escenas": [
             {
-              "img": "assets/fotos/foto-16.webp",
+              "img": "assets/fotos/foto-60.webp",
               "texto": [
                 "Mi amor, en la canción personalizada para ti encontré una palabra: paz."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-28.webp",
+              "img": "assets/fotos/foto-61.webp",
               "texto": [
                 "Esa tranquilidad que se siente cuando una sabe que importa."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-32.webp",
+              "img": "assets/fotos/foto-62.webp",
               "texto": [
                 "Quise que estas imágenes acompañaran ese agradecimiento."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-35.webp",
+              "img": "assets/fotos/foto-63.webp",
               "texto": [
                 "Por la serenidad que me das y por tu forma de acercarte a mí."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-03.webp",
+              "img": "assets/fotos/foto-64.webp",
               "texto": [
                 "Por hacerme sentir querida sin tener que encontrar una explicación perfecta."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-06.webp",
+              "img": "assets/fotos/foto-65.webp",
               "texto": [
                 "Este capítulo es un abrazo para ti."
               ],
@@ -1160,42 +1174,42 @@ window.TDN = {
           "cancion": "Banda MS — Solo con verte",
           "escenas": [
             {
-              "img": "assets/fotos/foto-17.webp",
+              "img": "assets/fotos/foto-66.webp",
               "texto": [
                 "Me gusta sentir que mi voz tiene un lugar contigo."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-29.webp",
+              "img": "assets/fotos/foto-00.webp",
               "texto": [
                 "Que puedo compartir lo que llevo dentro y encontrar cariño."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-33.webp",
+              "img": "assets/fotos/foto-01.webp",
               "texto": [
                 "Quiero que tú también sientas ese mismo espacio a mi lado."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-36.webp",
+              "img": "assets/fotos/foto-02.webp",
               "texto": [
                 "Que puedas contarme tus alegrías, tus dudas y lo que necesitas."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-04.webp",
+              "img": "assets/fotos/foto-03.webp",
               "texto": [
                 "Acompañarnos sin dejar de ser quienes somos."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-07.webp",
+              "img": "assets/fotos/foto-04.webp",
               "texto": [
                 "Eso es parte del amor que deseo seguir cuidando contigo."
               ],
@@ -1232,42 +1246,49 @@ window.TDN = {
           "cancion": "Para mi amor — canción personalizada de Vale",
           "escenas": [
             {
-              "img": "assets/fotos/foto-18.webp",
+              "img": "assets/fotos/foto-05.webp",
               "texto": [
                 "Hay agradecimientos que merecen un capítulo completo."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-30.webp",
+              "img": "assets/fotos/foto-06.webp",
               "texto": [
                 "El tuyo empieza por tu tiempo, tu paciencia y tu cariño."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-34.webp",
+              "video": "assets/video/escena-00.mp4",
+              "texto": [
+                "Y por la ternura que has tenido también con mis hijos."
+              ],
+              "duracion": 10
+            },
+            {
+              "img": "assets/fotos/foto-07.webp",
               "texto": [
                 "Y por la ternura que has tenido también con mis hijos."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-37.webp",
+              "img": "assets/fotos/foto-08.webp",
               "texto": [
                 "Son cosas que guardo en el corazón y que hoy quiero reconocer."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-05.webp",
+              "img": "assets/fotos/foto-09.webp",
               "texto": [
                 "Gracias por hacerme sentir que mi mundo puede encontrar un abrazo en el tuyo."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-08.webp",
+              "img": "assets/fotos/foto-10.webp",
               "texto": [
                 "Mi amor, valoro mucho lo que compartes con nosotras."
               ],
@@ -1281,7 +1302,7 @@ window.TDN = {
               "duracion": 9
             }
           ],
-          "duracion": 87,
+          "duracion": 97,
           "interaccion": {
             "tipo": "sopa",
             "titulo": "Palabras con cariño",
@@ -1304,42 +1325,42 @@ window.TDN = {
           "cancion": "Costumbre — Cuánto te amo",
           "escenas": [
             {
-              "img": "assets/fotos/foto-19.webp",
+              "img": "assets/fotos/foto-11.webp",
               "texto": [
                 "Quiero que mi gratitud también se convierta en acciones."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-31.webp",
+              "img": "assets/fotos/foto-12.webp",
               "texto": [
                 "En estar pendiente de cómo te sientes."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-35.webp",
+              "img": "assets/fotos/foto-13.webp",
               "texto": [
                 "En hacer espacio para escucharte sin mirar el reloj."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-38.webp",
+              "img": "assets/fotos/foto-14.webp",
               "texto": [
                 "En reconocer tus esfuerzos y valorar tu presencia."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-06.webp",
+              "img": "assets/fotos/foto-15.webp",
               "texto": [
                 "En cuidar las palabras con las que te hablo."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-09.webp",
+              "img": "assets/fotos/foto-16.webp",
               "texto": [
                 "Que nunca tengas que adivinar cuánto significas para mí."
               ],
@@ -1376,42 +1397,42 @@ window.TDN = {
           "cancion": "Intocable — Soñador eterno",
           "escenas": [
             {
-              "img": "assets/fotos/foto-20.webp",
+              "img": "assets/fotos/foto-17.webp",
               "texto": [
                 "Mi amor, me ilusiona saber qué sueños guardas para ti."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-32.webp",
+              "img": "assets/fotos/foto-18.webp",
               "texto": [
                 "Qué te gustaría aprender, intentar o conocer."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-36.webp",
+              "img": "assets/fotos/foto-19.webp",
               "texto": [
                 "Quiero compartirte también mis deseos y escuchar los tuyos."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-00.webp",
+              "img": "assets/fotos/foto-20.webp",
               "texto": [
                 "Buscar acuerdos que nos permitan crecer con cariño y libertad."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-07.webp",
+              "img": "assets/fotos/foto-21.webp",
               "texto": [
                 "Celebrar lo que logres, aunque sean pasos pequeños."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-10.webp",
+              "img": "assets/fotos/foto-22.webp",
               "texto": [
                 "Que tus metas encuentren atención y alegría a mi lado."
               ],
@@ -1436,42 +1457,42 @@ window.TDN = {
           "cancion": "Llegaste a mi vida",
           "escenas": [
             {
-              "img": "assets/fotos/foto-21.webp",
+              "img": "assets/fotos/foto-23.webp",
               "texto": [
                 "La siguiente página todavía está por escribirse."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-33.webp",
+              "img": "assets/fotos/foto-24.webp",
               "texto": [
                 "Me gustaría llenarla de tiempo de calidad, risas y tranquilidad."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-37.webp",
+              "img": "assets/fotos/foto-25.webp",
               "texto": [
                 "De planes que podamos elegir juntas, sin prisas."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-01.webp",
+              "img": "assets/fotos/foto-26.webp",
               "texto": [
                 "De recuerdos que algún día volvamos a mirar con esta misma ternura."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-08.webp",
+              "img": "assets/fotos/foto-27.webp",
               "texto": [
                 "Gracias por tu cariño y por todo lo bonito que hoy puedo agradecer."
               ],
               "duracion": 12
             },
             {
-              "img": "assets/fotos/foto-11.webp",
+              "img": "assets/fotos/foto-28.webp",
               "texto": [
                 "Mi amor, quiero seguir construyendo momentos contigo. — Vale"
               ],
@@ -1558,7 +1579,7 @@ window.TDN = {
     "texto": "Mi amor, todavía hay páginas que podemos imaginar juntas.",
     "anuncio": "La siguiente página, contigo",
     "subtitulo": "Que siempre encontremos tiempo para nosotras.",
-    "sorpresa": "Felices 6 años, mi amor. Te amo. Con todo mi cariño, Vale."
+    "sorpresa": "Felices 6 años, mi amor. Te amo. Con todo mi cariño, Vale. Gracias por existir 💖"
   }
 };
 window.TDN.final.carta = () => window.TDN.pareja.mensajeFinal;
