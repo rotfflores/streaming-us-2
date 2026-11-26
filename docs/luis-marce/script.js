@@ -823,7 +823,7 @@
     if (!unlocked(ep)) { ss.set("tdn_toast", "🔒 Ese episodio aún está bloqueado"); return location.replace(`temporada.html?t=${ep.t}`); }
     document.title = `${epFull(ep)} | Temporadas de Nosotros`;
 
-    const D = ep.duracion || 75, INTRO = 6;
+    const D = ep.duracion || 75, fullSong = ep.cancionCompleta === true, INTRO = fullSong ? 0 : 6;
     let t = !isDone(ep.id) && S.watch[ep.id] ? S.watch[ep.id] * D : 0;
     if (t > D - 3) t = 0;
     const scenes = ep.escenas?.length ? ep.escenas : [{ texto: ep.descripcion }];
@@ -871,7 +871,11 @@
     let vol = ls.get("tdn_vol", 0.8);
     const musicSrc = ep.musica || ep.season.musica || C.media.musica;
     const music = musicSrc ? new Audio(musicSrc) : null;
-    if (music) { music.loop = true; music.preload = "auto"; music.addEventListener("loadedmetadata", () => { if (t > INTRO && music.duration) music.currentTime = (t - INTRO) % music.duration; }); }
+    if (music) {
+      music.loop = !fullSong; music.preload = "auto";
+      music.addEventListener("loadedmetadata", () => { if (t > INTRO && music.duration) music.currentTime = fullSong ? Math.min(t, music.duration) : (t - INTRO) % music.duration; });
+      if (fullSong) music.addEventListener("ended", () => { t = D; finish(); render(true); });
+    }
     const applyVol = () => {
       const v = Sound.muted ? 0 : vol;
       if (music) music.volume = v;
@@ -908,7 +912,7 @@
     function seek(to) {
       if (ended) return;
       t = clamp(to, 0, D - 0.2);
-      if (music && Number.isFinite(music.duration)) music.currentTime = Math.max(0, t - INTRO) % music.duration;
+      if (music && Number.isFinite(music.duration)) music.currentTime = fullSong ? Math.min(t, music.duration) : Math.max(0, t - INTRO) % music.duration;
       if (t < INTRO) music?.pause();
       render(true);
     }
@@ -949,7 +953,7 @@
     function frame(ts) {
       const dt = last ? Math.min(0.25, (ts - last) / 1000) : 0; last = ts;
       if (playing) {
-        t += dt;
+        if (fullSong && music) { if (!music.paused) t = music.currentTime; } else t += dt;
         if (t >= D) { t = D; finish(); }
         render();
       }
@@ -1020,7 +1024,8 @@
       ended = true; playing = false; playBtn.innerHTML = I.play;
       S.done[ep.id] = true; delete S.watch[ep.id]; save();
       const seasonEnd = ep.e === ep.season.episodios.length;
-      if (seasonEnd) { music?.play().catch(() => {}); rollCredits(() => { fadeMusic(); endScreen(); }); }
+      if (fullSong) { music?.pause(); endScreen(); }
+      else if (seasonEnd) { music?.play().catch(() => {}); rollCredits(() => { fadeMusic(); endScreen(); }); }
       else { fadeMusic(); endScreen(); }
     }
     function fadeMusic() {

@@ -18,8 +18,8 @@ window.TDN = (() => {
   };
   const M = {
     intro: "assets/audio/intro.mp3",
-    temporadas: ["assets/audio/a-ella-climax.mp3", "assets/audio/marce-mi-companera-climax.mp3", "assets/audio/cant-help-falling-in-love-climax.mp3", "assets/audio/just-the-way-you-are-climax.mp3", "assets/audio/you-climax.mp3"],
-    canciones: ["A Ella · El Poder del Norte", "Marce, mi compañera · Canción personalizada", "Can't Help Falling in Love · Elvis Presley", "Just the Way You Are · Bruno Mars", "you! · LANY"],
+    temporadas: ["assets/audio/marce-completa.ogg", "assets/audio/a-ella-completa.mp3", "assets/audio/cant-help-falling-in-love-climax.mp3", "assets/audio/just-the-way-you-are-climax.mp3", "assets/audio/you-climax.mp3"],
+    canciones: ["Marce, mi compañera · Canción personalizada", "A Ella · El Poder del Norte", "Can't Help Falling in Love · Elvis Presley", "Just the Way You Are · Bruno Mars", "you! · LANY"],
     musica: "", videoFinal: "assets/video/para-marce.mp4", audioRemitente: ""
   };
   const acceso = {demo:false, cualquierClave:false, password:"marce", pistaPassword:"Tu nombre, en minúsculas", estreno:""};
@@ -38,18 +38,22 @@ window.TDN = (() => {
   const credits = i => [["De",P.nombreA],["Para",P.nombreB],["Nuestra historia","Casi 11 años compartiendo el camino"],["Banda sonora",M.canciones[i]]];
   const movie = (num,titulo,sinopsis,duracion,escenas) => ({num,tipo:"pelicula",titulo,anio:2026,clasificacion:"TP",imagen:`assets/fotos/portada-${num}.webp`,...son(num),top10:true,sinopsis,creditos:credits(num),episodios:[{titulo,duracion,descripcion:sinopsis,escenas}]});
   const temporadas = [
-    movie(0,"Casi 11 años contigo","Hay historias que se cuentan con fechas. La nuestra también se cuenta con miradas, compañía y recuerdos. Una película de Luis para Marce, para volver a mirar todo lo que significa estar juntos.",102,[
-      S(2,"Marce, casi 11 años…","y todavía hay tanto que quiero decirte."),
-      S(1,"Entre una foto y otra","hay una parte de nuestra vida que solo nosotros conocemos."),
-      V("olas","No todo lo importante se queda en una fotografía.","Hay momentos que se guardan en la forma de sentir."),
-      S(3,"Miro estas imágenes y veo más que el paso del tiempo:","veo la alegría de haberlo compartido contigo."),
-      S(6,"Cada versión de nosotros","forma parte de lo que somos hoy."),
-      S(5,"Unas veces bastó una sonrisa;","otras, saber que estabas cerca."),
-      S(9,"Casi 11 años no caben en una película.","Pero caben en dos palabras: gracias, Marce."),
-      V("atardecer","Gracias por recorrer este camino conmigo.","Por darle tu luz a nuestra historia."),
-      S(14,"Si pudiera elegir de nuevo a mi compañera,","volvería a buscarte a ti.")
+    movie(0,"Casi 11 años contigo","Nuestra canción personalizada completa, acompañada de las fotografías de nuestra historia, en el orden elegido para ti, Marce.",172.393979,[
+      S(29,"Marce, esta canción es para ti.","Por casi 11 años de nuestra historia."),
+      S(7,"Tu compañía tiene un lugar enorme en mi vida.","Gracias por caminar conmigo."),
+      S(13,"Al mirar nuestros recuerdos,","siempre encuentro una razón para sonreír."),
+      S(11,"Hay paisajes que se quedan en una foto.","Y momentos que se quedan en el corazón."),
+      S(15,"Me gusta volver a estos instantes,","y recordar lo bonito de compartirlos contigo."),
+      S(16,"Contigo quiero seguir descubriendo","nuevos motivos para estar juntos."),
+      S(12,"Me gusta esa forma tan tuya de ser.","Todo eso que te hace única, Marce."),
+      S(18,"Entre luces y recuerdos,","lo más bonito es tenerte cerca."),
+      S(22,"Gracias por tu apoyo y tu cariño.","Por todo lo que significas para mí."),
+      S(19,"Por cada momento de compañía,","y por la tranquilidad de compartir el camino."),
+      S(20,"Quiero cuidar lo que hemos construido.","Y seguir haciendo recuerdos contigo."),
+      S(1,"Nuestra historia también vive en estas fotos,","en las miradas y en todo lo compartido."),
+      S(30,"Casi 11 años contigo, Marce.","Y todavía quiero muchos capítulos más.")
     ]),
-    movie(1,"Mi lugar contigo","Una película sobre el apoyo, la compañía y esa paz que se siente al saber que hay alguien con quien caminar. Con la canción especial dedicada a Marce.",221,[
+    movie(1,"Mi lugar contigo","Una película sobre el apoyo, la compañía y esa paz que se siente al saber que hay alguien con quien caminar. Con «A Ella», de El Poder del Norte, completa.",225.814063,[
       S(8,"Hay personas que hacen más ligero el camino.","Para mí, tú eres una de ellas, Marce."),
       A("montanas","A veces el día pide más de lo que uno tiene.","Tu compañía me recuerda que puedo seguir."),
       S(7,"No siempre sé decirlo en el momento:","tu apoyo significa mucho para mí."),
@@ -58,8 +62,8 @@ window.TDN = (() => {
       S(19,"Contigo, una pausa puede ser un recuerdo.","Y una conversación, el mejor lugar del día."),
       S(10,"Tu cariño tiene un sitio en mi vida","que nadie más podría ocupar."),
       S(22,"Mi compañera, mi amor, Marce.","Qué suerte compartir este camino contigo."),
-      S(23,"Quiero guardar más imágenes tuyas,","más momentos para volver a sonreír."),
-      S(24,"A veces un paseo se queda con nosotros","por la alegría de haberlo compartido."),
+      S(12,"Quiero guardar más imágenes tuyas,","más momentos para volver a sonreír."),
+      S(15,"A veces un paseo se queda con nosotros","por la alegría de haberlo compartido."),
       S(25,"El paisaje puede ser hermoso,","pero mi parte favorita es estar contigo."),
       S(26,"Lo bonito de mirar nuestras fotos","es encontrarnos juntos una vez más."),
       S(27,"Que sigan llegando los recuerdos, Marce,","y que nos sigan encontrando de la mano."),
@@ -123,9 +127,10 @@ window.TDN = (() => {
       ]
     }
   ];
+  temporadas.slice(0, 2).forEach(t => { t.episodios[0].cancionCompleta = true; });
   const extras = [
     {titulo:"La protagonista",img:photo(22),texto:"Marce Montoya. La persona para quien Luis quiso reunir estas imágenes y estas palabras."},
-    {titulo:"Nuestros recuerdos",img:photo(11),texto:"22 fotografías de su historia, acompañadas de paisajes para darle espacio a lo que se siente."},
+    {titulo:"Nuestros recuerdos",img:photo(11),texto:"30 archivos de fotografías de su historia, acompañadas de paisajes para darle espacio a lo que se siente."},
     {titulo:"Cinco canciones",img:photo(8),texto:"A Ella, una canción personalizada para Marce, Can't Help Falling in Love, Just the Way You Are y you!"},
     {titulo:"Fuera de cámara",img:photo(10),texto:"La parte más grande de esta historia vive fuera de una pantalla: en todo lo que solo ustedes conocen."}
   ];
