@@ -7,7 +7,7 @@
    llegó con su niña, el carro y la plática, el beso que no se atrevió a dar, hoy es su esposa),
    sin inventar fechas ni lugares.
    Contraseña: lizeth. Canciones del cliente recortadas poco antes del clímax.
-   11 fotos del cliente (assets/fotos/v = foto completa sobre fondo difuminado) +
+   12 fotos y 1 video del cliente (assets/fotos/v = foto completa sobre fondo difuminado) +
    13 animaciones hechas para este pedido + algunos clips de stock verticales.
    ===================================================================== */
 window.TDN = (function () {
@@ -122,8 +122,8 @@ window.TDN = (function () {
           V("beso", "Yo quería robarte un beso,", "pero los nervios no me dejaron intentar,", "me quedé mirando tu carita,", "y escuchando tu manera de hablar."),
           Fv("p01", "Había algo especial en tu sonrisa,", "en cada palabra que salía de tu voz,", "sin darme cuenta fui enamorándome,", "y supe que eras alguien para mí, mi amor."),
           Fv("p06", "Lizeth, desde aquella primera mirada,", "algo muy bonito nació en mi corazón,", "hoy eres mi esposa, mi compañera,", "la mujer que conquistó todo mi amor."),
-          V("dios", "Lizeth, qué bonito fue encontrarte,", "qué regalo tan hermoso me dio Dios,", "aquella cita que empezó con una plática,", "se convirtió en nuestra historia de amor."),
-          Fv("p02", "Quién diría que aquella primera cita,", "sería el comienzo de una vida juntos,", "que aquella mujer que esperaba en su esquina,", "se convertiría en mi amor más profundo."),
+          V("familia", "Lizeth, qué bonito fue encontrarte,", "qué regalo tan hermoso me dio Dios,", "aquella cita que empezó con una plática,", "se convirtió en nuestra historia de amor."),
+          Fv("p12", "Quién diría que aquella primera cita,", "sería el comienzo de una vida juntos,", "que aquella mujer que esperaba en su esquina,", "se convertiría en mi amor más profundo."),
           Fv("p09", "Y aunque aquel beso no me atreví a darte,", "nunca he dejado de quererte demostrar,", "que desde el día en que te conocí, Lizeth,", "mi corazón te eligió para amar."),
           V("esperar", "Lizeth, mi esposa y mi alegría,", "mi compañera y mi felicidad,", "si volviera a vivir aquella tarde,", "en la misma esquina te volvería a esperar."),
           Fv("p05", "Porque aquel encuentro fue el comienzo,", "de esta historia que no quiero terminar,", "te amo, Lizeth, más de lo que imaginas,", "y toda mi vida te voy a amar. ❤")
