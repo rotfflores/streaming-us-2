@@ -49,7 +49,7 @@ window.TDN = (() => {
       V("atardecer","Gracias por recorrer este camino conmigo.","Por darle tu luz a nuestra historia."),
       S(14,"Si pudiera elegir de nuevo a mi compañera,","volvería a buscarte a ti.")
     ]),
-    movie(1,"Mi lugar contigo","Una película sobre el apoyo, la compañía y esa paz que se siente al saber que hay alguien con quien caminar. Con la canción especial dedicada a Marce.",156,[
+    movie(1,"Mi lugar contigo","Una película sobre el apoyo, la compañía y esa paz que se siente al saber que hay alguien con quien caminar. Con la canción especial dedicada a Marce.",221,[
       S(8,"Hay personas que hacen más ligero el camino.","Para mí, tú eres una de ellas, Marce."),
       A("montanas","A veces el día pide más de lo que uno tiene.","Tu compañía me recuerda que puedo seguir."),
       S(7,"No siempre sé decirlo en el momento:","tu apoyo significa mucho para mí."),
@@ -63,6 +63,12 @@ window.TDN = (() => {
       S(25,"El paisaje puede ser hermoso,","pero mi parte favorita es estar contigo."),
       S(26,"Lo bonito de mirar nuestras fotos","es encontrarnos juntos una vez más."),
       S(27,"Que sigan llegando los recuerdos, Marce,","y que nos sigan encontrando de la mano."),
+      S(28,"Hay fotos que me devuelven una sonrisa","con solo volver a mirarlas."),
+      S(29,"Compartir la alegría contigo","hace que el recuerdo se quede un poco más."),
+      S(30,"Entre tantas imágenes,","siempre encuentro una razón para acercarme a ti."),
+      S(31,"Esa mirada tuya, Marce,","también tiene un lugar en mis mejores recuerdos."),
+      S(26,"Y aquí estamos, juntos una vez más,","sumando momentos a nuestra historia."),
+      S(32,"Quiero seguir guardando fotografías contigo,","y viviendo todo lo que pasa entre ellas."),
       S(8,"No necesito esperar una fecha especial:","hoy también quiero decirte cuánto te amo.")
     ]),
     movie(2,"Volvería a elegirte","El tiempo cambia las fotografías y las formas de ver la vida. Esta película celebra lo que sigue importando: encontrar a alguien con quien querer continuar.",90,[
