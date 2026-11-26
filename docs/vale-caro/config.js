@@ -2,11 +2,11 @@
 window.TDN = {
   "pareja": {
     "nombreA": "Vale",
-    "nombreB": "Caro",
+    "nombreB": "Amor",
     "apodos": [
-      "Caro"
+      "Amor"
     ],
-    "apodo": "Caro",
+    "apodo": "Amor",
     "fechaInicio": "",
     "anioInicio": "",
     "anios": "6",
@@ -26,7 +26,7 @@ window.TDN = {
       "Escucharnos con cariño",
       "Acompañarnos en nuestras metas"
     ],
-    "mensajeFinal": "Caro:\n\nFelices 6 años, mi amor. Quise reunir estas fotos y canciones para celebrar lo que compartimos y decirte con calma cuánto te amo. Al mirarlas vuelvo a nuestras sonrisas, a los abrazos y a esos ratitos que hacen bonito estar contigo.\n\nGracias por la tranquilidad que me das. Por tu tiempo, tu paciencia y tu cariño. Contigo me siento importante, querida y acompañada; quería dejarte estas palabras en un lugar al que puedas volver siempre que quieras sentirme cerca.\n\nTambién quiero agradecerte por mis hijos. El cariño y la ternura con los que les has dado un lugar significan muchísimo para mí. Hay gestos que abrazan un mundo entero, y los tuyos forman parte de lo que hoy quiero reconocer.\n\nDeseo corresponderte con cuidado y atención. Escucharte, preguntarte cómo estás y hacer espacio para lo que necesitas. Que el amor que te digo aquí también se note en mis acciones, en la paciencia y en el respeto por tu voz.\n\nMe ilusiona seguir creando recuerdos contigo. Conocer tus metas, compartirte mis sueños y encontrar planes que nos emocionen a las dos. No necesitamos tener todas las respuestas para disfrutar el presente y elegir juntas el siguiente paso.\n\nDespués de 6 años juntas, quiero recordarte lo mucho que significas para mí y lo bonito que es seguir construyendo nuestra historia juntas. Gracias por tu forma de querer, por la calma y por el cariño que compartes. Ojalá todavía nos esperen muchas sonrisas, conversaciones y abrazos.\n\nCon todo mi amor,\nVale"
+    "mensajeFinal": "Mi amor:\n\nFelices 6 años, mi amor. Quise reunir estas fotos y canciones para celebrar lo que compartimos y decirte con calma cuánto te amo. Al mirarlas vuelvo a nuestras sonrisas, a los abrazos y a esos ratitos que hacen bonito estar contigo.\n\nGracias por la tranquilidad que me das. Por tu tiempo, tu paciencia y tu cariño. Contigo me siento importante, querida y acompañada; quería dejarte estas palabras en un lugar al que puedas volver siempre que quieras sentirme cerca.\n\nTambién quiero agradecerte por mis hijos. El cariño y la ternura con los que les has dado un lugar significan muchísimo para mí. Hay gestos que abrazan un mundo entero, y los tuyos forman parte de lo que hoy quiero reconocer.\n\nDeseo corresponderte con cuidado y atención. Escucharte, preguntarte cómo estás y hacer espacio para lo que necesitas. Que el amor que te digo aquí también se note en mis acciones, en la paciencia y en el respeto por tu voz.\n\nMe ilusiona seguir creando recuerdos contigo. Conocer tus metas, compartirte mis sueños y encontrar planes que nos emocionen a las dos. No necesitamos tener todas las respuestas para disfrutar el presente y elegir juntas el siguiente paso.\n\nDespués de 6 años juntas, quiero recordarte lo mucho que significas para mí y lo bonito que es seguir construyendo nuestra historia juntas. Gracias por tu forma de querer, por la calma y por el cariño que compartes. Ojalá todavía nos esperen muchas sonrisas, conversaciones y abrazos.\n\nCon todo mi amor,\nVale"
   },
   "fotos": {
     "hero": "assets/fotos/hero.webp",
@@ -71,7 +71,7 @@ window.TDN = {
       "Julión Álvarez — Regalo de Dios",
       "La Arrolladora — El ruido de tus zapatos",
       "Llegaste a mi vida",
-      "Para Caro — canción personalizada de Vale"
+      "Para mi amor — canción personalizada de Vale"
     ],
     "musica": "",
     "videoFinal": "assets/video/montaje-final.mp4",
@@ -80,7 +80,7 @@ window.TDN = {
   "acceso": {
     "password": "caro",
     "demo": false,
-    "pistaPassword": "Tu nombre, en cuatro letras.",
+    "pistaPassword": "La clave que Vale te compartió.",
     "estreno": ""
   },
   "notificacion": {
@@ -91,12 +91,12 @@ window.TDN = {
   "sitio": {
     "url": "https://streaming-us-2.rotfstudio.com/vale-caro/",
     "titulo": "Un día a la vez",
-    "heroTop": "De Vale, para Caro · 6 años juntas",
-    "heroTag": "FELIZ SEXTO ANIVERSARIO, CARO",
+    "heroTop": "De Vale, para mi amor · 6 años juntas",
+    "heroTag": "FELIZ SEXTO ANIVERSARIO, MI AMOR",
     "coincidencia": 100,
     "clasificacion": "TP",
     "clasificacionTexto": "Amor y recuerdos compartidos",
-    "sinopsis": "Caro, felices 6 años juntas. Reuní nuestras imágenes y estas canciones para celebrar nuestro amor, agradecer lo que compartimos y soñar con las páginas que nos esperan juntas.",
+    "sinopsis": "Mi amor, felices 6 años juntas. Reuní nuestras imágenes y estas canciones para celebrar nuestro amor, agradecer lo que compartimos y soñar con las páginas que nos esperan juntas.",
     "generos": [
       "Romance",
       "Aniversario",
@@ -123,7 +123,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -136,7 +136,7 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-00.webp",
               "texto": [
-                "Felices 6 años, Caro. Un día a la vez hemos construido nuestra historia juntas y recordarte cuánto te amo."
+                "Felices 6 años, mi amor. Un día a la vez hemos construido nuestra historia juntas; esta película es para recordarte cuánto te amo."
               ],
               "duracion": 12
             },
@@ -180,7 +180,7 @@ window.TDN = {
           "interaccion": {
             "tipo": "quiz",
             "titulo": "Las protagonistas",
-            "pregunta": "¿Quién preparó este regalo para Caro?",
+            "pregunta": "¿Quién preparó este regalo para su amor?",
             "opciones": [
               "Vale",
               "La directora del cine",
@@ -210,7 +210,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -287,7 +287,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -307,7 +307,7 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-11.webp",
               "texto": [
-                "Para mí, tú eres una de ellas, Caro."
+                "Para mí, tú eres una de ellas, amor."
               ],
               "duracion": 12
             },
@@ -374,7 +374,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -451,7 +451,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -464,7 +464,7 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-00.webp",
               "texto": [
-                "Te amo, Caro, y hoy quiero decírtelo despacio."
+                "Te amo, mi amor, y hoy quiero decírtelo despacio."
               ],
               "duracion": 12
             },
@@ -509,11 +509,12 @@ window.TDN = {
             "tipo": "codigo",
             "titulo": "La protagonista",
             "modo": "texto",
-            "pregunta": "¿Cómo se llama la protagonista?",
+            "pregunta": "¿Cómo llama Vale de cariño a la protagonista?",
             "respuestas": [
-              "Caro"
+              "amor",
+              "mi amor"
             ],
-            "pista": "Su nombre empieza con C."
+            "pista": "Es una palabra de cuatro letras."
           },
           "recompensa": ""
         }
@@ -529,7 +530,7 @@ window.TDN = {
       "top10": true,
       "imagen": "assets/fotos/portada-05.webp",
       "musica": "assets/audio/para-caro.mp3",
-      "cancion": "Para Caro — canción personalizada de Vale",
+      "cancion": "Para mi amor — canción personalizada de Vale",
       "creditos": [
         [
           "De",
@@ -537,7 +538,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -545,7 +546,7 @@ window.TDN = {
           "titulo": "Gracias por abrazar mi mundo",
           "descripcion": "Un agradecimiento que incluye a mis hijos.",
           "musica": "assets/audio/para-caro.mp3",
-          "cancion": "Para Caro — canción personalizada de Vale",
+          "cancion": "Para mi amor — canción personalizada de Vale",
           "escenas": [
             {
               "img": "assets/fotos/foto-05.webp",
@@ -585,7 +586,7 @@ window.TDN = {
             {
               "img": "assets/ambiente/atardecer.webp",
               "texto": [
-                "Caro, gracias por abrirnos un espacio en tu vida."
+                "Mi amor, gracias por abrirnos un espacio en tu vida."
               ],
               "duracion": 12
             }
@@ -614,7 +615,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -700,7 +701,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -713,7 +714,7 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-15.webp",
               "texto": [
-                "Elegí estas canciones pensando en ti, Caro."
+                "Elegí estas canciones pensando en ti, amor."
               ],
               "duracion": 12
             },
@@ -777,7 +778,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -865,7 +866,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -913,7 +914,7 @@ window.TDN = {
             {
               "video": "assets/ambiente/atardecer.mp4",
               "texto": [
-                "Porque tu tranquilidad también me importa, Caro."
+                "Porque tu tranquilidad también me importa, amor."
               ],
               "duracion": 9
             }
@@ -942,7 +943,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -1023,7 +1024,7 @@ window.TDN = {
         ],
         [
           "Para",
-          "Caro"
+          "mi amor"
         ]
       ],
       "episodios": [
@@ -1071,7 +1072,7 @@ window.TDN = {
             {
               "img": "assets/ambiente/cielo.webp",
               "texto": [
-                "Con todo mi amor, Caro. Continuará… — Vale"
+                "Con todo mi amor, amor. Continuará… — Vale"
               ],
               "duracion": 12
             }
@@ -1096,12 +1097,12 @@ window.TDN = {
           "titulo": "La paz que encontré",
           "descripcion": "Lo que siento · Episodio 1.",
           "musica": "assets/audio/para-caro.mp3",
-          "cancion": "Para Caro — canción personalizada de Vale",
+          "cancion": "Para mi amor — canción personalizada de Vale",
           "escenas": [
             {
               "img": "assets/fotos/foto-16.webp",
               "texto": [
-                "Caro, en la canción personalizada para ti encontré una palabra: paz."
+                "Mi amor, en la canción personalizada para ti encontré una palabra: paz."
               ],
               "duracion": 12
             },
@@ -1228,7 +1229,7 @@ window.TDN = {
           "titulo": "Gracias por tu ternura",
           "descripcion": "Lo que agradezco · Episodio 1.",
           "musica": "assets/audio/para-caro.mp3",
-          "cancion": "Para Caro — canción personalizada de Vale",
+          "cancion": "Para mi amor — canción personalizada de Vale",
           "escenas": [
             {
               "img": "assets/fotos/foto-18.webp",
@@ -1268,14 +1269,14 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-07.webp",
               "texto": [
-                "Caro, valoro mucho lo que compartes con nosotras."
+                "Mi amor, valoro mucho lo que compartes con nosotras."
               ],
               "duracion": 12
             },
             {
               "video": "assets/ambiente/atardecer.mp4",
               "texto": [
-                "Caro, valoro mucho lo que compartes con nosotras."
+                "Mi amor, valoro mucho lo que compartes con nosotras."
               ],
               "duracion": 9
             }
@@ -1377,7 +1378,7 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-00.webp",
               "texto": [
-                "Caro, me ilusiona saber qué sueños guardas para ti."
+                "Mi amor, me ilusiona saber qué sueños guardas para ti."
               ],
               "duracion": 12
             },
@@ -1472,14 +1473,14 @@ window.TDN = {
             {
               "img": "assets/fotos/foto-10.webp",
               "texto": [
-                "Caro, quiero seguir construyendo momentos contigo. — Vale"
+                "Mi amor, quiero seguir construyendo momentos contigo. — Vale"
               ],
               "duracion": 12
             },
             {
               "img": "assets/ambiente/mar.webp",
               "texto": [
-                "Caro, quiero seguir construyendo momentos contigo. — Vale"
+                "Mi amor, quiero seguir construyendo momentos contigo. — Vale"
               ],
               "duracion": 12
             }
@@ -1514,7 +1515,7 @@ window.TDN = {
     }
   ],
   "final": {
-    "titulo": "Felices 6 años, Caro",
+    "titulo": "Felices 6 años, mi amor",
     "imagen": "assets/fotos/portada-15.webp",
     "sinopsis": "Una carta de Vale para celebrar 6 años juntas y un espacio para compartir lo que sientes.",
     "preguntas": [
@@ -1532,11 +1533,11 @@ window.TDN = {
     ],
     [
       "Para",
-      "Caro"
+      "mi amor"
     ],
     [
       "Protagonistas",
-      "Caro y Vale"
+      "Vale y su amor"
     ],
     [
       "Recuerdos",
@@ -1544,7 +1545,7 @@ window.TDN = {
     ],
     [
       "Banda sonora",
-      "Banda MS — Solo con verte · Cardenales de Nuevo León — Qué no daría · Carín León — Desde que te tengo · Costumbre — Cuánto te amo · Edén Muñoz — Te juro que te amo · Josi Cuen y Jorge Medina — El final de nuestra historia · Intocable — Soñador eterno · Julión Álvarez — Regalo de Dios · La Arrolladora — El ruido de tus zapatos · Llegaste a mi vida · Para Caro — canción personalizada de Vale"
+      "Banda MS — Solo con verte · Cardenales de Nuevo León — Qué no daría · Carín León — Desde que te tengo · Costumbre — Cuánto te amo · Edén Muñoz — Te juro que te amo · Josi Cuen y Jorge Medina — El final de nuestra historia · Intocable — Soñador eterno · Julión Álvarez — Regalo de Dios · La Arrolladora — El ruido de tus zapatos · Llegaste a mi vida · Para mi amor — canción personalizada de Vale"
     ],
     [
       "",
@@ -1554,10 +1555,10 @@ window.TDN = {
   "postCreditos": {
     "imagen": "assets/fotos/foto-08.webp",
     "etiqueta": "CONTINUARÁ",
-    "texto": "Caro, todavía hay páginas que podemos imaginar juntas.",
+    "texto": "Mi amor, todavía hay páginas que podemos imaginar juntas.",
     "anuncio": "La siguiente página, contigo",
     "subtitulo": "Que siempre encontremos tiempo para nosotras.",
-    "sorpresa": "Felices 6 años, Caro. Te amo. Con todo mi cariño, Vale."
+    "sorpresa": "Felices 6 años, mi amor. Te amo. Con todo mi cariño, Vale."
   }
 };
 window.TDN.final.carta = () => window.TDN.pareja.mensajeFinal;
