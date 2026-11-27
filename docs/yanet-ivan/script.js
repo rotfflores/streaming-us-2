@@ -168,6 +168,15 @@
   };
 
   /* ================= 5. TRANSICIONES Y TOAST ================= */
+  // Back/Forward can restore the outgoing page, including its faded body and
+  // fullscreen transition clone. Clear those temporary effects on restoration.
+  addEventListener("pageshow", (event) => {
+    document.body.classList.remove("is-leaving");
+    if (event.persisted) document.body.classList.add("no-anim");
+    $$(".expand-clone, .loader").forEach(el => el.remove());
+    $("#profiles")?.classList.remove("leaving");
+    $$(".profile.chosen").forEach(el => el.classList.remove("chosen"));
+  });
   function go(url) {
     document.body.classList.add("is-leaving");
     setTimeout(() => (location.href = url), 260);
@@ -994,7 +1003,7 @@
     $$(".p-btn[data-a]").forEach((b) => b.addEventListener("click", (e) => { e.stopPropagation(); actions[b.dataset.a](); poke(); }));
     document.addEventListener("fullscreenchange", () => ($('[data-a="full"]').innerHTML = isFs() ? I.unfull : I.full));
     skip.onclick = () => { seek(INTRO); play(); };
-    $("#back").onclick = () => { saveWatch(true); go(`temporada.html?t=${ep.t}`); };
+    $("#back").onclick = () => { saveWatch(true); pause(false); go(`temporada.html?t=${ep.t}`); };
     addEventListener("keydown", (e) => {
       if (ended || e.target.closest("input, textarea")) return;
       const k = e.key.toLowerCase();
@@ -1006,7 +1015,7 @@
       else if (k === "escape" && !isFs()) $("#back").click();
       poke();
     });
-    addEventListener("pagehide", () => saveWatch(true));
+    addEventListener("pagehide", () => { saveWatch(true); pause(false); });
 
     // --- Final del episodio ---
     function finish() {
