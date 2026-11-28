@@ -51,17 +51,17 @@ window.TDN={
     "intro": "assets/audio/intro.mp3",
     "temporadas": [
       "assets/audio/cancion-principal.mp3",
-      "assets/audio/you.mp3",
+      "assets/audio/creere.mp3",
       "assets/audio/lover.mp3",
-      "assets/audio/baila-mi-corazon.mp3",
-      "assets/audio/bruno-mars.mp3"
+      "assets/audio/toma-mi-mano.mp3",
+      "assets/audio/mi-regalo-de-dios.mp3"
     ],
     "canciones": [
       "Nuestra canción especial",
-      "you! — LANY",
+      "Creeré — Tercer Cielo",
       "Lover — Taylor Swift",
-      "Baila mi corazón — Belanova",
-      "Just the Way You Are — Bruno Mars"
+      "Toma mi mano — Tercer Cielo",
+      "Mi regalo de Dios"
     ],
     "musica": "",
     "videoFinal": "assets/video/para-emily.mp4",
@@ -207,8 +207,8 @@ window.TDN={
       "anio": "2026",
       "clasificacion": "TP",
       "imagen": "assets/fotos/portada-20.webp",
-      "musica": "assets/audio/you.mp3",
-      "cancion": "you! — LANY",
+      "musica": "assets/audio/creere.mp3",
+      "cancion": "Creeré — Tercer Cielo",
       "top10": true,
       "sinopsis": "Una película dedicada al valor de los detalles, la compañía y los recuerdos que elegimos guardar.",
       "creditos": [
@@ -226,8 +226,8 @@ window.TDN={
           "titulo": "El amor en lo pequeño",
           "descripcion": "Una película dedicada al valor de los detalles, la compañía y los recuerdos que elegimos guardar.",
           "duracion": 88,
-          "musica": "assets/audio/you.mp3",
-          "cancion": "you! — LANY",
+          "musica": "assets/audio/creere.mp3",
+          "cancion": "Creeré — Tercer Cielo",
           "escenas": [
             {
               "img": "assets/fotos/foto-20.webp",
@@ -420,8 +420,8 @@ window.TDN={
       "anio": "2026",
       "clasificacion": "TP",
       "imagen": "assets/fotos/portada-10.webp",
-      "musica": "assets/audio/baila-mi-corazon.mp3",
-      "cancion": "Baila mi corazón — Belanova",
+      "musica": "assets/audio/toma-mi-mano.mp3",
+      "cancion": "Toma mi mano — Tercer Cielo",
       "top10": true,
       "sinopsis": "Los deseos que quiero compartir contigo: más tiempo, nuevos recuerdos y sueños que construyamos entre los dos.",
       "creditos": [
@@ -439,8 +439,8 @@ window.TDN={
           "titulo": "Todo lo que viene",
           "descripcion": "Los deseos que quiero compartir contigo: más tiempo, nuevos recuerdos y sueños que construyamos entre los dos.",
           "duracion": 88,
-          "musica": "assets/audio/baila-mi-corazon.mp3",
-          "cancion": "Baila mi corazón — Belanova",
+          "musica": "assets/audio/toma-mi-mano.mp3",
+          "cancion": "Toma mi mano — Tercer Cielo",
           "escenas": [
             {
               "img": "assets/fotos/foto-15.webp",
@@ -527,15 +527,15 @@ window.TDN={
       "clasificacion": "TP",
       "imagen": "assets/fotos/portada-22.webp",
       "sinopsis": "Tres capítulos para decirte lo que siento, cuidar lo nuestro y soñar con lo que viene.",
-      "musica": "assets/audio/bruno-mars.mp3",
-      "cancion": "Just the Way You Are — Bruno Mars",
+      "musica": "assets/audio/mi-regalo-de-dios.mp3",
+      "cancion": "Mi regalo de Dios",
       "episodios": [
         {
           "titulo": "Palabras para ti",
           "descripcion": "Lo que quiero que recuerdes al abrir esta historia.",
           "duracion": 66,
-          "musica": "assets/audio/bruno-mars.mp3",
-          "cancion": "Just the Way You Are — Bruno Mars",
+          "musica": "assets/audio/mi-regalo-de-dios.mp3",
+          "cancion": "Mi regalo de Dios",
           "escenas": [
             {
               "img": "assets/fotos/foto-22.webp",
@@ -588,8 +588,8 @@ window.TDN={
           "titulo": "Cuidarnos cada día",
           "descripcion": "El deseo de acompañarnos con respeto, escucha y paciencia.",
           "duracion": 66,
-          "musica": "assets/audio/elvis.mp3",
-          "cancion": "Can't Help Falling in Love — Elvis Presley",
+          "musica": "assets/audio/mi-regalo-de-dios.mp3",
+          "cancion": "Mi regalo de Dios",
           "escenas": [
             {
               "img": "assets/fotos/foto-16.webp",
@@ -642,8 +642,8 @@ window.TDN={
           "titulo": "Continuará contigo",
           "descripcion": "Una invitación a seguir sumando recuerdos y proyectos compartidos.",
           "duracion": 66,
-          "musica": "assets/audio/you.mp3",
-          "cancion": "you! — LANY",
+          "musica": "assets/audio/creere.mp3",
+          "cancion": "Creeré — Tercer Cielo",
           "escenas": [
             {
               "img": "assets/fotos/foto-29.webp",
@@ -747,7 +747,7 @@ window.TDN={
     ],
     [
       "Banda sonora",
-      "Elvis Presley · LANY · Taylor Swift · Belanova · Bruno Mars"
+      "Canción enviada por Everardo · Lover — Taylor Swift · Mi regalo de Dios · Creeré — Tercer Cielo · Toma mi mano — Tercer Cielo"
     ],
     [
       "Paisajes simbólicos",
