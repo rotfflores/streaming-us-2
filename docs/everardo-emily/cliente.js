@@ -17,7 +17,7 @@ window.TDN={
     "fechaCodigo": "",
     "ciudad": "",
     "primeraCita": "",
-    "cancion": "Can't Help Falling in Love — Elvis Presley",
+    "cancion": "Nuestra canción especial",
     "artista": "",
     "viajes": [],
     "dificiles": [],
@@ -50,14 +50,14 @@ window.TDN={
   "media": {
     "intro": "assets/audio/intro.mp3",
     "temporadas": [
-      "assets/audio/elvis.mp3",
+      "assets/audio/cancion-principal.mp3",
       "assets/audio/you.mp3",
       "assets/audio/lover.mp3",
       "assets/audio/baila-mi-corazon.mp3",
       "assets/audio/bruno-mars.mp3"
     ],
     "canciones": [
-      "Can't Help Falling in Love — Elvis Presley",
+      "Nuestra canción especial",
       "you! — LANY",
       "Lover — Taylor Swift",
       "Baila mi corazón — Belanova",
@@ -101,8 +101,8 @@ window.TDN={
       "anio": "2026",
       "clasificacion": "TP",
       "imagen": "assets/fotos/portada-22.webp",
-      "musica": "assets/audio/elvis.mp3",
-      "cancion": "Can't Help Falling in Love — Elvis Presley",
+      "musica": "assets/audio/cancion-principal.mp3",
+      "cancion": "Nuestra canción especial",
       "top10": true,
       "sinopsis": "Emily, estas imágenes guardan algo muy sencillo: lo bonito que es compartir la vida contigo.",
       "creditos": [
@@ -120,8 +120,8 @@ window.TDN={
           "titulo": "Mi lugar favorito",
           "descripcion": "Emily, estas imágenes guardan algo muy sencillo: lo bonito que es compartir la vida contigo.",
           "duracion": 88,
-          "musica": "assets/audio/elvis.mp3",
-          "cancion": "Can't Help Falling in Love — Elvis Presley",
+          "musica": "assets/audio/cancion-principal.mp3",
+          "cancion": "Nuestra canción especial",
           "escenas": [
             {
               "img": "assets/fotos/foto-22.webp",
