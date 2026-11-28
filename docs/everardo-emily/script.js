@@ -297,12 +297,12 @@
     SEASONS.filter((s) => !s.episodios.some((e) => isDone(e.id)) && s !== n?.season).slice(0, 4)
       .forEach((s) => items.push({ t: `${kindName(s)} disponible: ${s.titulo}`, s: String(s.anio), img: s.imagen, seed: "s" + s.num, url: `temporada.html?t=${s.num}` }));
     items.push({ t: `Ya disponible: ${C.final.titulo}`, s: "Solo para ti", img: C.final.imagen, seed: "final", url: "final.html" });
-    items.push({ t: "Estreno: Temporadas de Nosotros", s: `${SEASONS.filter(isMovie).length} películas y ${SEASONS.filter((s) => !isMovie(s)).length} serie original para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
+    items.push({ t: "Estreno: Temporadas de Nosotros", s: `${SEASONS.filter(isMovie).length} películas y ${SEASONS.filter((s) => !isMovie(s)).length} series originales para ${P.nombreB}`, img: F.hero, seed: "hero", url: "index.html" });
     return items;
   }
 
   function renderNav(active) {
-    const links = [["home", "Inicio", "index.html"], ["movies", "Películas", "index.html?ver=peliculas"], ["series", "Series", "index.html?ver=series"], ["games", "Juegos", "juegos.html"], ["list", "Mi lista", "index.html#mi-lista"], ["new", "Novedades", "index.html#novedades"]];
+    const links = [["home", "Inicio", "index.html"], ["movies", "Películas", "index.html?ver=peliculas"], ["series", "Series", "index.html?ver=series"], ["games", "Juegos", "juegos.html"], ["list", "Mi lista", "index.html#mi-lista"], ["songs", "Canciones", "canciones.html"], ["memories", "Recuerdos", "recuerdos.html"]];
     const pr = profile(), notes = notifications();
     const sig = notes.map((n) => n.t).join("|");
     const unread = S.notifSeen === sig ? 0 : notes.length;
@@ -685,7 +685,7 @@
       row("top10", "Top series en tu corazón", series.map((x, i) => topCard(x, i + 1)).join(""));
     else rowsEl.innerHTML =
       (continuing.length ? row("continuar", `Continuar viendo como ${esc(pr.name)}`, continuing.map((e) => epCard(e, { progress: true })).join("")) : "") +
-      `<a class="games-promo" href="juegos.html"><span class="games-promo-mark">🎮</span><span><b>Un juego de nuestra historia</b><small>Memorama con nuestras fotos · Juega cuando quieras</small></span><span class="games-promo-arrow">${I.right}</span></a>` +
+      `<a class="games-promo" href="juegos.html"><span class="games-promo-mark">🎮</span><span><b>Siete juegos de nuestra historia</b><small>Memorama, rompecabezas y más · Juega cuando quieras</small></span><span class="games-promo-arrow">${I.right}</span></a>` +
       row("peliculas", "Películas de nosotros", SEASONS.filter(isMovie).map(seasonCard).join("")) +
       row("series", "Series de nosotros", SEASONS.filter((x) => !isMovie(x)).map(seasonCard).join("") + finalCard()) +
       row("top10", "Top 10 en tu corazón hoy", tops.map((s, i) => topCard(s, i + 1)).join("")) +
@@ -1620,6 +1620,25 @@
     return cv.toDataURL("image/jpeg", 0.85);
   }
 
+  function wireMediaList(root) {
+    const players = [...root.querySelectorAll('audio,video')];
+    players.forEach(player => player.addEventListener('play', () => players.forEach(other => { if (other !== player) other.pause(); })));
+  }
+  function pageSongs() {
+    renderNav('songs');
+    const tracks = window.CLIENT_MEDIA?.audios || [];
+    document.title = 'Nuestras canciones · Everardo y Emily Marié';
+    $('#app').innerHTML = `<main class="collection-page"><a href="index.html" class="collection-back">Volver a nuestra historia</a><span class="inter-kicker">La música de nosotros</span><h1>Nuestras canciones</h1><p>Ocho canciones acompañan nuestros recuerdos. Una selección preparada para ti, Emily.</p><div class="song-grid">${tracks.map(track => `<article class="song-card"><h2>${esc(track.titulo)}</h2><p>Un fragmento para acompañar nuestra historia</p><audio controls preload="none" src="${esc(track.src)}" aria-label="${esc(track.titulo)}"></audio></article>`).join('')}</div></main>${footer()}`;
+    wireMediaList($('#app'));
+  }
+  function pageMemories() {
+    renderNav('memories');
+    const manifest = window.CLIENT_MEDIA || { fotos: [], videos: [] };
+    document.title = 'Nuestros recuerdos · Everardo y Emily Marié';
+    $('#app').innerHTML = `<main class="collection-page"><a href="index.html" class="collection-back">Volver a nuestra historia</a><span class="inter-kicker">Momentos que se quedan</span><h1>Nuestros recuerdos</h1><p>Las fotografías y los videos que dan vida a este regalo. De Everardo para Emily Marié.</p><section aria-labelledby="album-title"><h2 id="album-title">Nuestras fotografías</h2><p>${manifest.fotos.length} imágenes para volver a mirar con cariño. Toca una foto para verla completa.</p><div class="photo-grid">${manifest.fotos.map((photo, i) => `<a href="${esc(photo.ruta)}" target="_blank" rel="noopener" aria-label="Ver fotografía ${i + 1}"><img src="${esc(photo.ruta)}" alt="Recuerdo de nuestra historia ${i + 1}" loading="lazy" decoding="async"></a>`).join('')}</div></section><section aria-labelledby="videos-title"><h2 id="videos-title">Momentos en movimiento</h2><p>Los cuatro videos completos, con sus controles de sonido.</p><div class="video-grid">${manifest.videos.map((video, i) => `<figure><video controls playsinline preload="none" src="${esc(video.ruta)}" poster="${esc(video.poster)}" aria-label="Recuerdo en video ${i + 1}"></video><figcaption>Un recuerdo para volver a vivir · Video ${i + 1}</figcaption></figure>`).join('')}</div></section></main>${footer()}`;
+    wireMediaList($('#app'));
+  }
+
   /* ================= 12. ARRANQUE ================= */
   const page = document.body.dataset.page;
   if (!gate(page)) return;
@@ -1630,7 +1649,7 @@
     if (pend.length) console.info(`%cTemporadas de Nosotros: ${new Set(pend).size} datos [PENDIENTE]`, "color:#E50914;font-weight:bold", [...new Set(pend)]);
   } catch { }
 
-  const pages = { splash: pageSplash, password: pagePassword, profiles: pageProfiles, home: pageHome, season: pageSeason, player: pagePlayer, games: pageGames, final: pageFinal, credits: pageCredits };
+  const pages = { splash: pageSplash, password: pagePassword, profiles: pageProfiles, home: pageHome, season: pageSeason, player: pagePlayer, games: pageGames, final: pageFinal, credits: pageCredits, songs: pageSongs, memories: pageMemories };
   (pages[page] || pageHome)();
   renderLogos();
 
